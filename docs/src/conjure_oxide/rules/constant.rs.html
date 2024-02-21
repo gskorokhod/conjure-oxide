@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/rules/constant.rs`."><title>constant.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (3246e7951 2024-02-19)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-c37d3936c59ababd.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/rules/constant.rs`."><title>constant.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (bb594538f 2024-02-20)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-c37d3936c59ababd.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
             <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
     <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../conjure_oxide/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
@@ -114,6 +114,10 @@
 <a href="#112" id="112">112</a>
 <a href="#113" id="113">113</a>
 <a href="#114" id="114">114</a>
+<a href="#115" id="115">115</a>
+<a href="#116" id="116">116</a>
+<a href="#117" id="117">117</a>
+<a href="#118" id="118">118</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>conjure_core::{
     ast::Constant <span class="kw">as </span>Const, ast::Expression <span class="kw">as </span>Expr, metadata::Metadata, rule::RuleApplicationError,
 };
@@ -136,33 +140,37 @@
 /// `Some(Const)` if the expression can be simplified to a constant
 </span><span class="kw">pub fn </span>eval_constant(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Option</span>&lt;Const&gt; {
     <span class="kw">match </span>expr {
-        Expr::Constant(m, c) =&gt; <span class="prelude-val">Some</span>(c.clone()),
-        Expr::Reference(<span class="kw">_</span>) =&gt; <span class="prelude-val">None</span>,
+        Expr::Constant(metadata, c) =&gt; <span class="prelude-val">Some</span>(c.clone()),
+        Expr::Reference(metadata, <span class="kw">_</span>) =&gt; <span class="prelude-val">None</span>,
 
-        Expr::Eq(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a == b, a, b)
+        Expr::Eq(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a == b, a, b)
             .or_else(|| bin_op::&lt;bool, bool&gt;(|a, b| a == b, a, b))
             .map(Const::Bool),
-        Expr::Neq(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a != b, a, b).map(Const::Bool),
-        Expr::Lt(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &lt; b, a, b).map(Const::Bool),
-        Expr::Gt(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &gt; b, a, b).map(Const::Bool),
-        Expr::Leq(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &lt;= b, a, b).map(Const::Bool),
-        Expr::Geq(a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &gt;= b, a, b).map(Const::Bool),
+        Expr::Neq(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a != b, a, b).map(Const::Bool),
+        Expr::Lt(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &lt; b, a, b).map(Const::Bool),
+        Expr::Gt(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &gt; b, a, b).map(Const::Bool),
+        Expr::Leq(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &lt;= b, a, b).map(Const::Bool),
+        Expr::Geq(metadata, a, b) =&gt; bin_op::&lt;i32, bool&gt;(|a, b| a &gt;= b, a, b).map(Const::Bool),
 
-        Expr::Not(expr) =&gt; un_op::&lt;bool, bool&gt;(|e| !e, expr).map(Const::Bool),
+        Expr::Not(metadata, expr) =&gt; un_op::&lt;bool, bool&gt;(|e| !e, expr).map(Const::Bool),
 
-        Expr::And(exprs) =&gt; vec_op::&lt;bool, bool&gt;(|e| e.iter().all(|<span class="kw-2">&amp;</span>e| e), exprs).map(Const::Bool),
-        Expr::Or(exprs) =&gt; vec_op::&lt;bool, bool&gt;(|e| e.iter().any(|<span class="kw-2">&amp;</span>e| e), exprs).map(Const::Bool),
+        Expr::And(metadata, exprs) =&gt; {
+            vec_op::&lt;bool, bool&gt;(|e| e.iter().all(|<span class="kw-2">&amp;</span>e| e), exprs).map(Const::Bool)
+        }
+        Expr::Or(metadata, exprs) =&gt; {
+            vec_op::&lt;bool, bool&gt;(|e| e.iter().any(|<span class="kw-2">&amp;</span>e| e), exprs).map(Const::Bool)
+        }
 
-        Expr::Sum(exprs) =&gt; vec_op::&lt;i32, i32&gt;(|e| e.iter().sum(), exprs).map(Const::Int),
+        Expr::Sum(metadata, exprs) =&gt; vec_op::&lt;i32, i32&gt;(|e| e.iter().sum(), exprs).map(Const::Int),
 
-        Expr::Ineq(a, b, c) =&gt; {
+        Expr::Ineq(metadata, a, b, c) =&gt; {
             tern_op::&lt;i32, bool&gt;(|a, b, c| a &lt;= (b + c), a, b, c).map(Const::Bool)
         }
 
-        Expr::SumGeq(exprs, a) =&gt; {
+        Expr::SumGeq(metadata, exprs, a) =&gt; {
             flat_op::&lt;i32, bool&gt;(|e, a| e.iter().sum::&lt;i32&gt;() &gt;= a, exprs, a).map(Const::Bool)
         }
-        Expr::SumLeq(exprs, a) =&gt; {
+        Expr::SumLeq(metadata, exprs, a) =&gt; {
             flat_op::&lt;i32, bool&gt;(|e, a| e.iter().sum::&lt;i32&gt;() &lt;= a, exprs, a).map(Const::Bool)
         }
         <span class="kw">_ </span>=&gt; {

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/rules/minion.rs`."><title>minion.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (3246e7951 2024-02-19)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-c37d3936c59ababd.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/rules/minion.rs`."><title>minion.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (bb594538f 2024-02-20)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-c37d3936c59ababd.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
             <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
     <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../conjure_oxide/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
@@ -186,6 +186,13 @@
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
 <a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
+<a href="#188" id="188">188</a>
+<a href="#189" id="189">189</a>
+<a href="#190" id="190">190</a>
+<a href="#191" id="191">191</a>
+<a href="#192" id="192">192</a>
+<a href="#193" id="193">193</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>conjure_core::{
     ast::Constant <span class="kw">as </span>Const, ast::Expression <span class="kw">as </span>Expr, metadata::Metadata, rule::RuleApplicationError,
 };
@@ -197,7 +204,7 @@
 
 </span><span class="kw">fn </span>is_nested_sum(exprs: <span class="kw-2">&amp;</span>Vec&lt;Expr&gt;) -&gt; bool {
     <span class="kw">for </span>e <span class="kw">in </span>exprs {
-        <span class="kw">if let </span>Expr::Sum(<span class="kw">_</span>) = e {
+        <span class="kw">if let </span>Expr::Sum(<span class="kw">_</span>, <span class="kw">_</span>) = e {
             <span class="kw">return </span><span class="bool-val">true</span>;
         }
     }
@@ -209,7 +216,7 @@
  */
 </span><span class="kw">fn </span>sum_to_vector(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;Expr&gt;, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Sum(exprs) =&gt; {
+        Expr::Sum(metadata, exprs) =&gt; {
             <span class="kw">if </span>is_nested_sum(exprs) {
                 <span class="prelude-val">Err</span>(RuleApplicationError::RuleNotApplicable)
             } <span class="kw">else </span>{
@@ -229,9 +236,9 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>flatten_sum_geq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Geq(a, b) =&gt; {
+        Expr::Geq(metadata, a, b) =&gt; {
             <span class="kw">let </span>exprs = sum_to_vector(a)<span class="question-mark">?</span>;
-            <span class="prelude-val">Ok</span>(Expr::SumGeq(exprs, b.clone()))
+            <span class="prelude-val">Ok</span>(Expr::SumGeq(metadata.clone(), exprs, b.clone()))
         }
         <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(RuleApplicationError::RuleNotApplicable),
     }
@@ -246,9 +253,9 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>sum_leq_to_sumleq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Leq(a, b) =&gt; {
+        Expr::Leq(metadata, a, b) =&gt; {
             <span class="kw">let </span>exprs = sum_to_vector(a)<span class="question-mark">?</span>;
-            <span class="prelude-val">Ok</span>(Expr::SumLeq(exprs, b.clone()))
+            <span class="prelude-val">Ok</span>(Expr::SumLeq(metadata.clone(), exprs, b.clone()))
         }
         <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(RuleApplicationError::RuleNotApplicable),
     }
@@ -263,9 +270,9 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>sum_eq_to_sumeq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Eq(a, b) =&gt; {
+        Expr::Eq(metadata, a, b) =&gt; {
             <span class="kw">let </span>exprs = sum_to_vector(a)<span class="question-mark">?</span>;
-            <span class="prelude-val">Ok</span>(Expr::SumEq(exprs, b.clone()))
+            <span class="prelude-val">Ok</span>(Expr::SumEq(metadata.clone(), exprs, b.clone()))
         }
         <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(RuleApplicationError::RuleNotApplicable),
     }
@@ -289,10 +296,13 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>sumeq_to_minion(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::SumEq(exprs, eq_to) =&gt; <span class="prelude-val">Ok</span>(Expr::And(<span class="macro">vec!</span>[
-            Expr::SumGeq(exprs.clone(), Box::from(<span class="kw-2">*</span>eq_to.clone())),
-            Expr::SumLeq(exprs.clone(), Box::from(<span class="kw-2">*</span>eq_to.clone())),
-        ])),
+        Expr::SumEq(metadata, exprs, eq_to) =&gt; <span class="prelude-val">Ok</span>(Expr::And(
+            metadata.clone(),
+            <span class="macro">vec!</span>[
+                Expr::SumGeq(metadata.clone(), exprs.clone(), Box::from(<span class="kw-2">*</span>eq_to.clone())),
+                Expr::SumLeq(metadata.clone(), exprs.clone(), Box::from(<span class="kw-2">*</span>eq_to.clone())),
+            ],
+        )),
         <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(RuleApplicationError::RuleNotApplicable),
     }
 }
@@ -307,7 +317,8 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>lt_to_ineq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Lt(a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+        Expr::Lt(metadata, a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+            metadata.clone(),
             a.clone(),
             b.clone(),
             Box::new(Expr::Constant(Metadata::new(), Const::Int(-<span class="number">1</span>))),
@@ -326,7 +337,8 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>gt_to_ineq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Gt(a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+        Expr::Gt(metadata, a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+            metadata.clone(),
             b.clone(),
             a.clone(),
             Box::new(Expr::Constant(Metadata::new(), Const::Int(-<span class="number">1</span>))),
@@ -345,7 +357,8 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>geq_to_ineq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Geq(a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+        Expr::Geq(metadata, a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+            metadata.clone(),
             b.clone(),
             a.clone(),
             Box::new(Expr::Constant(Metadata::new(), Const::Int(<span class="number">0</span>))),
@@ -364,7 +377,8 @@
 </span><span class="attr">#[register_rule]
 </span><span class="kw">fn </span>leq_to_ineq(expr: <span class="kw-2">&amp;</span>Expr) -&gt; <span class="prelude-ty">Result</span>&lt;Expr, RuleApplicationError&gt; {
     <span class="kw">match </span>expr {
-        Expr::Leq(a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+        Expr::Leq(metadata, a, b) =&gt; <span class="prelude-val">Ok</span>(Expr::Ineq(
+            metadata.clone(),
             a.clone(),
             b.clone(),
             Box::new(Expr::Constant(Metadata::new(), Const::Int(<span class="number">0</span>))),
