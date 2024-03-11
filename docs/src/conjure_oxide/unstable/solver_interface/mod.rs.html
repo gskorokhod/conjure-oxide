@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/unstable/solver_interface/mod.rs`."><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (b6d2d841b 2024-03-05)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../../src-files.js"></script><script defer src="../../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/unstable/solver_interface/mod.rs`."><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (3b1717c05 2024-03-10)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../../src-files.js"></script><script defer src="../../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
             <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
     <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../../conjure_oxide/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
@@ -243,13 +243,210 @@
 <a href="#241" id="241">241</a>
 <a href="#242" id="242">242</a>
 <a href="#243" id="243">243</a>
-</pre></div><pre class="rust"><code><span class="attr">#![cfg(feature = <span class="string">"unstable-solver-interface"</span>)]
-
-</span><span class="doccomment">//! A new interface for interacting with solvers.
+<a href="#244" id="244">244</a>
+<a href="#245" id="245">245</a>
+<a href="#246" id="246">246</a>
+<a href="#247" id="247">247</a>
+<a href="#248" id="248">248</a>
+<a href="#249" id="249">249</a>
+<a href="#250" id="250">250</a>
+<a href="#251" id="251">251</a>
+<a href="#252" id="252">252</a>
+<a href="#253" id="253">253</a>
+<a href="#254" id="254">254</a>
+<a href="#255" id="255">255</a>
+<a href="#256" id="256">256</a>
+<a href="#257" id="257">257</a>
+<a href="#258" id="258">258</a>
+<a href="#259" id="259">259</a>
+<a href="#260" id="260">260</a>
+<a href="#261" id="261">261</a>
+<a href="#262" id="262">262</a>
+<a href="#263" id="263">263</a>
+<a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
+<a href="#268" id="268">268</a>
+<a href="#269" id="269">269</a>
+<a href="#270" id="270">270</a>
+<a href="#271" id="271">271</a>
+<a href="#272" id="272">272</a>
+<a href="#273" id="273">273</a>
+<a href="#274" id="274">274</a>
+<a href="#275" id="275">275</a>
+<a href="#276" id="276">276</a>
+<a href="#277" id="277">277</a>
+<a href="#278" id="278">278</a>
+<a href="#279" id="279">279</a>
+<a href="#280" id="280">280</a>
+<a href="#281" id="281">281</a>
+<a href="#282" id="282">282</a>
+<a href="#283" id="283">283</a>
+<a href="#284" id="284">284</a>
+<a href="#285" id="285">285</a>
+<a href="#286" id="286">286</a>
+<a href="#287" id="287">287</a>
+<a href="#288" id="288">288</a>
+<a href="#289" id="289">289</a>
+<a href="#290" id="290">290</a>
+<a href="#291" id="291">291</a>
+<a href="#292" id="292">292</a>
+<a href="#293" id="293">293</a>
+<a href="#294" id="294">294</a>
+<a href="#295" id="295">295</a>
+<a href="#296" id="296">296</a>
+<a href="#297" id="297">297</a>
+<a href="#298" id="298">298</a>
+<a href="#299" id="299">299</a>
+<a href="#300" id="300">300</a>
+<a href="#301" id="301">301</a>
+<a href="#302" id="302">302</a>
+<a href="#303" id="303">303</a>
+<a href="#304" id="304">304</a>
+<a href="#305" id="305">305</a>
+<a href="#306" id="306">306</a>
+<a href="#307" id="307">307</a>
+<a href="#308" id="308">308</a>
+<a href="#309" id="309">309</a>
+<a href="#310" id="310">310</a>
+<a href="#311" id="311">311</a>
+<a href="#312" id="312">312</a>
+<a href="#313" id="313">313</a>
+<a href="#314" id="314">314</a>
+<a href="#315" id="315">315</a>
+<a href="#316" id="316">316</a>
+<a href="#317" id="317">317</a>
+<a href="#318" id="318">318</a>
+<a href="#319" id="319">319</a>
+<a href="#320" id="320">320</a>
+<a href="#321" id="321">321</a>
+<a href="#322" id="322">322</a>
+<a href="#323" id="323">323</a>
+<a href="#324" id="324">324</a>
+<a href="#325" id="325">325</a>
+<a href="#326" id="326">326</a>
+<a href="#327" id="327">327</a>
+<a href="#328" id="328">328</a>
+<a href="#329" id="329">329</a>
+<a href="#330" id="330">330</a>
+<a href="#331" id="331">331</a>
+<a href="#332" id="332">332</a>
+<a href="#333" id="333">333</a>
+<a href="#334" id="334">334</a>
+<a href="#335" id="335">335</a>
+<a href="#336" id="336">336</a>
+<a href="#337" id="337">337</a>
+<a href="#338" id="338">338</a>
+<a href="#339" id="339">339</a>
+<a href="#340" id="340">340</a>
+<a href="#341" id="341">341</a>
+<a href="#342" id="342">342</a>
+<a href="#343" id="343">343</a>
+<a href="#344" id="344">344</a>
+<a href="#345" id="345">345</a>
+<a href="#346" id="346">346</a>
+<a href="#347" id="347">347</a>
+<a href="#348" id="348">348</a>
+<a href="#349" id="349">349</a>
+<a href="#350" id="350">350</a>
+<a href="#351" id="351">351</a>
+<a href="#352" id="352">352</a>
+<a href="#353" id="353">353</a>
+<a href="#354" id="354">354</a>
+<a href="#355" id="355">355</a>
+<a href="#356" id="356">356</a>
+<a href="#357" id="357">357</a>
+<a href="#358" id="358">358</a>
+<a href="#359" id="359">359</a>
+<a href="#360" id="360">360</a>
+<a href="#361" id="361">361</a>
+<a href="#362" id="362">362</a>
+<a href="#363" id="363">363</a>
+<a href="#364" id="364">364</a>
+<a href="#365" id="365">365</a>
+<a href="#366" id="366">366</a>
+<a href="#367" id="367">367</a>
+<a href="#368" id="368">368</a>
+<a href="#369" id="369">369</a>
+<a href="#370" id="370">370</a>
+<a href="#371" id="371">371</a>
+<a href="#372" id="372">372</a>
+<a href="#373" id="373">373</a>
+<a href="#374" id="374">374</a>
+<a href="#375" id="375">375</a>
+<a href="#376" id="376">376</a>
+<a href="#377" id="377">377</a>
+<a href="#378" id="378">378</a>
+<a href="#379" id="379">379</a>
+<a href="#380" id="380">380</a>
+</pre></div><pre class="rust"><code><span class="doccomment">//! A high-level API for interacting with constraints solvers.
 //!
-//! # Example
+//! This module provides a consistent, solver-independent API for interacting with constraints
+//! solvers. It also provides incremental solving support, and the returning of run stats from
+//! solvers.
 //!
-//! TODO
+//! -----
+//!
+//! - [Solver&lt;Adaptor&gt;] provides the API for interacting with constraints solvers.
+//!
+//! - The [SolverAdaptor] trait controls how solving actually occurs and handles translation
+//! between the [Solver] type and a specific solver.
+//!
+//! - [adaptors] contains all implemented solver adaptors.
+//!
+//! - The [model_modifier] submodule defines types to help with incremental solving / changing a
+//!   model during search. The entrypoint for incremental solving is the [Solver&lt;A,ModelLoaded&gt;::solve_mut]
+//!   function.
+//!
+//! # Examples
+//!
+//! ## A Successful Minion Model
+//!
+//! ```rust
+//! # use conjure_oxide::generate_custom::get_example_model;
+//! use conjure_oxide::rule_engine::rewrite::rewrite_model;
+//! use conjure_oxide::rule_engine::resolve_rules::resolve_rule_sets;
+//! use conjure_oxide::unstable::solver_interface::{Solver,adaptors,SolverAdaptor};
+//! use conjure_oxide::unstable::solver_interface::states::*;
+//! use std::sync::{Arc,Mutex};
+//!
+//! // Define and rewrite a model for minion.
+//! let model = get_example_model("bool-03").unwrap();
+//! let rule_sets = resolve_rule_sets(vec!["Minion", "Constant"]).unwrap();
+//! let model = rewrite_model(&amp;model,&amp;rule_sets).unwrap();
+//!
+//!
+//! // Solve using Minion.
+//! let solver = Solver::new(adaptors::Minion::new());
+//! let solver: Solver&lt;adaptors::Minion,ModelLoaded&gt; = solver.load_model(model).unwrap();
+//!
+//! // In this example, we will count solutions.
+//! //
+//! // The solver interface is designed to allow adaptors to use multiple-threads / processes if
+//! // necessary. Therefore, the callback type requires all variables inside it to have a static
+//! // lifetime and to implement Send (i.e. the variable can be safely shared between theads).
+//! //
+//! // We use Arc&lt;Mutex&lt;T&gt;&gt; to create multiple references to a threadsafe mutable
+//! // variable of type T.
+//! //
+//! // Using the move |x| ... closure syntax, we move one of these references into the closure.
+//! // Note that a normal closure borrow variables from the parent so is not
+//! // thread-safe.
+//!
+//! let counter_ref = Arc::new(Mutex::new(0));
+//! let counter_ref_2 = counter_ref.clone();
+//! solver.solve(Box::new(move |_| {
+//!   let mut counter = (*counter_ref_2).lock().unwrap();
+//!   *counter += 1;
+//!   true
+//!   }));
+//!
+//! let mut counter = (*counter_ref).lock().unwrap();
+//! assert_eq!(*counter,2);
+//! ```
+//!
+//!
 
 </span><span class="comment">// # Implementing Solver interfaces
 //
@@ -268,27 +465,70 @@
 #![allow(unused)]
 #![warn(clippy::exhaustive_enums)]
 
-#[doc(hidden)]
-</span><span class="kw">mod </span>private {
-    <span class="comment">// Used to limit calling trait functions outside this module.
-    </span><span class="attr">#[doc(hidden)]
-    </span><span class="kw">pub struct </span>Internal;
+</span><span class="kw">pub mod </span>adaptors;
+<span class="kw">pub mod </span>model_modifier;
+<span class="kw">pub mod </span>stats;
 
-    <span class="comment">// https://predr.ag/blog/definitive-guide-to-sealed-traits-in-rust/#the-trick-for-sealing-traits
-    // Make traits unimplementable from outside of this module.
-    </span><span class="attr">#[doc(hidden)]
-    </span><span class="kw">pub trait </span>Sealed {}
-}
+<span class="attr">#[doc(hidden)]
+</span><span class="kw">mod </span>private;
 
-<span class="kw">use </span><span class="self">self</span>::incremental::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="self">self</span>::solver_states::<span class="kw-2">*</span>;
+<span class="kw">pub mod </span>states;
+
+<span class="kw">use </span><span class="self">self</span>::model_modifier::<span class="kw-2">*</span>;
+<span class="kw">use </span><span class="self">self</span>::states::<span class="kw-2">*</span>;
+<span class="kw">use </span><span class="self">self</span>::stats::Stats;
 <span class="kw">use </span>anyhow::anyhow;
+<span class="kw">use </span>conjure_core::ast::Constant;
+<span class="kw">use </span>conjure_core::ast::DecisionVariable;
 <span class="kw">use </span>conjure_core::ast::{Domain, Expression, Model, Name};
+<span class="kw">use </span>itertools::Either;
 <span class="kw">use </span>std::collections::HashMap;
 <span class="kw">use </span>std::error::Error;
 <span class="kw">use </span>std::fmt::{Debug, Display};
+<span class="kw">use </span>std::time::Instant;
+<span class="kw">use </span>thiserror::Error;
 
-<span class="doccomment">/// A [`SolverAdaptor`] provide an interface to an underlying solver. Used by [`Solver`].
+<span class="doccomment">/// The type for user-defined callbacks for use with [Solver].
+///
+/// Note that this enforces threadsafetyb
+</span><span class="kw">pub type </span>SolverCallback = Box&lt;<span class="kw">dyn </span>Fn(HashMap&lt;Name, Constant&gt;) -&gt; bool + Send&gt;;
+<span class="kw">pub type </span>SolverMutCallback&lt;A&gt; =
+    Box&lt;<span class="kw">dyn </span>Fn(HashMap&lt;Name, Constant&gt;, &lt;A <span class="kw">as </span>SolverAdaptor&gt;::Modifier) -&gt; bool + Send&gt;;
+
+<span class="doccomment">/// A common interface for calling underlying solver APIs inside a [`Solver`].
+///
+/// Implementations of this trait arn't directly callable and should be used through [`Solver`] .
+///
+/// The below documentation lists the formal requirements that all implementations of
+/// [`SolverAdaptor`] should follow - **see the top level module documentation and [`Solver`] for
+/// usage details.**
+///
+/// # Encapsulation
+///  
+///  The [`SolverAdaptor`] trait **must** only be implemented inside a submodule of this one,
+///  and **should** only be called through [`Solver`].
+///
+/// The `private::Sealed` trait and `private::Internal` type enforce these requirements by only
+/// allowing trait implementations and calling of methods of SolverAdaptor to occur inside this
+/// module.
+///
+/// # Thread Safety
+///
+/// Multiple instances of [`Solver`] can be run in parallel across multiple threads.
+///
+/// [`Solver`] provides no concurrency control or thread-safety; therefore, adaptors **must**
+/// ensure that multiple instances of themselves can be ran in parallel. This applies to all
+/// stages of solving including having two active `solve()` calls happening at a time, loading
+/// a model while another is mid-solve, loading two models at once, etc.
+///
+/// A [SolverAdaptor] **may** use whatever threading or process model it likes underneath the hood,
+/// as long as it obeys the above.
+///
+/// Method calls **should** block instead of erroring where possible.
+///
+/// Underlying solvers that only have one instance per process (such as Minion) **should** block
+/// (eg. using a [`Mutex&lt;()&gt;`](`std::sync::Mutex`)) to run calls to
+/// [`Solver&lt;A,ModelLoaded&gt;::solve()`] and [`Solver&lt;A,ModelLoaded&gt;::solve_mut()`] sequentially.
 </span><span class="kw">pub trait </span>SolverAdaptor: private::Sealed {
     <span class="doccomment">/// The native model type of the underlying solver.
     </span><span class="kw">type </span>Model: Clone;
@@ -296,92 +536,83 @@
     <span class="doccomment">/// The native solution type of the underlying solver.
     </span><span class="kw">type </span>Solution: Clone;
 
-    <span class="doccomment">/// The [`ModelModifier`](incremental::ModelModifier) used during incremental search.
+    <span class="doccomment">/// The [`ModelModifier`](model_modifier::ModelModifier) used during incremental search.
     ///
-    /// If incremental solving is not supported, this SHOULD be set to [NotModifiable](`incremental::NotModifiable`) .
-    </span><span class="kw">type </span>Modifier: incremental::ModelModifier;
+    /// If incremental solving is not supported, this **should** be set to [NotModifiable](model_modifier::NotModifiable) .
+    </span><span class="kw">type </span>Modifier: model_modifier::ModelModifier;
 
-    <span class="doccomment">/// Run the solver on the given model.
+    <span class="kw">fn </span>new() -&gt; <span class="self">Self</span>;
+
+    <span class="doccomment">/// Runs the solver on the given model.
     ///
-    /// Implementations of this function MUST call the user provided callback whenever a solution
+    /// Implementations of this function **must** call the user provided callback whenever a solution
     /// is found. If the user callback returns `true`, search should continue, if the user callback
     /// returns `false`, search should terminate.
+    ///
+    /// # Returns
+    ///
+    /// If the solver terminates without crashing a [SolveSuccess] struct **must** returned. The
+    /// value of [SearchStatus] can be used to denote whether the underlying solver completed its
+    /// search or not. The latter case covers most non-crashing "failure" cases including user
+    /// termination, timeouts, etc.
+    ///
+    /// To help populate [SearchStatus], it may be helpful to implement counters that track if the
+    /// user callback has been called yet, and its return value. This information makes it is
+    /// possible to distinguish between the most common search statuses:
+    /// [SearchComplete::HasSolutions], [SearchComplete::NoSolutions], and
+    /// [SearchIncomplete::UserTerminated].
     </span><span class="kw">fn </span>solve(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         model: <span class="self">Self</span>::Model,
-        callback: <span class="kw">fn</span>(HashMap&lt;String, String&gt;) -&gt; bool,
+        callback: SolverCallback,
         <span class="kw">_</span>: private::Internal,
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;ExecutionSuccess, ExecutionFailure&gt;;
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;SolveSuccess, SolverError&gt;;
 
-    <span class="doccomment">/// Run the solver on the given model, allowing modification of the model through a
+    <span class="doccomment">/// Runs the solver on the given model, allowing modification of the model through a
     /// [`ModelModifier`].
     ///
-    /// Implementations of this function MUST return [`OpNotSupported`](`ModificationFailure::OpNotSupported`)
-    /// if modifying the model mid-search is not supported. These implementations may also find the
-    /// [`NotModifiable`] modifier useful.
+    /// Implementations of this function **must** return [`OpNotSupported`](`ModificationFailure::OpNotSupported`)
+    /// if modifying the model mid-search is not supported.
     ///
-    /// As with [`solve`](SolverAdaptor::solve), this function MUST call the user provided callback
-    /// function whenever a solution is found.
+    /// Otherwise, this should work in the same way as [`solve`](SolverAdaptor::solve).
     </span><span class="kw">fn </span>solve_mut(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         model: <span class="self">Self</span>::Model,
-        callback: <span class="kw">fn</span>(HashMap&lt;String, String&gt;, <span class="self">Self</span>::Modifier) -&gt; bool,
+        callback: SolverMutCallback&lt;<span class="self">Self</span>&gt;,
         <span class="kw">_</span>: private::Internal,
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;ExecutionSuccess, ExecutionFailure&gt;;
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;SolveSuccess, SolverError&gt;;
     <span class="kw">fn </span>load_model(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         model: Model,
         <span class="kw">_</span>: private::Internal,
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>::Model, anyhow::Error&gt;;
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>::Model, SolverError&gt;;
     <span class="kw">fn </span>init_solver(<span class="kw-2">&amp;mut </span><span class="self">self</span>, <span class="kw">_</span>: private::Internal) {}
 }
 
-<span class="doccomment">/// A Solver executes of a Conjure-Oxide model usign a specified solver.
+<span class="doccomment">/// An abstract representation of a constraints solver.
+///
+/// [Solver] provides a common interface for interacting with a constraint solver. It also
+/// abstracts over solver-specific datatypes, handling the translation to/from [conjure_core::ast]
+/// types for a model and its solutions.
+///
+/// Details of how a model is solved is specified by the [SolverAdaptor]. This includes: the
+/// underlying solver used, the translation of the model to a solver compatible form, how solutions
+/// are translated back to [conjure_core::ast] types, and how incremental solving is implemented.
+/// As such, there may be multiple [SolverAdaptor] implementations for a single underlying solver:
+/// eg. one adaptor may give solutions in a representation close to the solvers, while another may
+/// attempt to rewrite it back into Essence.
+///
+</span><span class="attr">#[derive(Clone)]
 </span><span class="kw">pub struct </span>Solver&lt;A: SolverAdaptor, State: SolverState = Init&gt; {
-    state: std::marker::PhantomData&lt;State&gt;,
+    state: State,
     adaptor: A,
     model: <span class="prelude-ty">Option</span>&lt;A::Model&gt;,
 }
 
-<span class="kw">impl</span>&lt;A: SolverAdaptor&gt; Solver&lt;A, Init&gt; {
-    <span class="comment">// TODO: decent error handling
-    </span><span class="kw">pub fn </span>load_model(<span class="kw-2">mut </span><span class="self">self</span>, model: Model) -&gt; <span class="prelude-ty">Result</span>&lt;Solver&lt;A, ModelLoaded&gt;, ()&gt; {
-        <span class="kw">let </span>solver_model = <span class="kw-2">&amp;mut </span><span class="self">self
-            </span>.adaptor
-            .load_model(model, private::Internal)
-            .map_err(|<span class="kw">_</span>| ())<span class="question-mark">?</span>;
-        <span class="prelude-val">Ok</span>(Solver {
-            state: std::marker::PhantomData::&lt;ModelLoaded&gt;,
-            adaptor: <span class="self">self</span>.adaptor,
-            model: <span class="prelude-val">Some</span>(solver_model.clone()),
-        })
-    }
-}
-
-<span class="kw">impl</span>&lt;A: SolverAdaptor&gt; Solver&lt;A, ModelLoaded&gt; {
-    <span class="kw">pub fn </span>solve(
-        <span class="kw-2">mut </span><span class="self">self</span>,
-        callback: <span class="kw">fn</span>(HashMap&lt;String, String&gt;) -&gt; bool,
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;ExecutionSuccess, ExecutionFailure&gt; {
-        <span class="attr">#[allow(clippy::unwrap_used)]
-        </span><span class="self">self</span>.adaptor
-            .solve(<span class="self">self</span>.model.unwrap(), callback, private::Internal)
-    }
-
-    <span class="kw">pub fn </span>solve_mut(
-        <span class="kw-2">mut </span><span class="self">self</span>,
-        callback: <span class="kw">fn</span>(HashMap&lt;String, String&gt;, A::Modifier) -&gt; bool,
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;ExecutionSuccess, ExecutionFailure&gt; {
-        <span class="attr">#[allow(clippy::unwrap_used)]
-        </span><span class="self">self</span>.adaptor
-            .solve_mut(<span class="self">self</span>.model.unwrap(), callback, private::Internal)
-    }
-}
-
-<span class="kw">impl</span>&lt;T: SolverAdaptor&gt; Solver&lt;T&gt; {
-    <span class="kw">pub fn </span>new(solver_adaptor: T) -&gt; Solver&lt;T&gt; {
+<span class="kw">impl</span>&lt;Adaptor: SolverAdaptor&gt; Solver&lt;Adaptor&gt; {
+    <span class="kw">pub fn </span>new(solver_adaptor: Adaptor) -&gt; Solver&lt;Adaptor&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>solver = Solver {
-            state: std::marker::PhantomData::&lt;Init&gt;,
+            state: Init,
             adaptor: solver_adaptor,
             model: <span class="prelude-val">None</span>,
         };
@@ -391,99 +622,142 @@
     }
 }
 
-<span class="kw">pub mod </span>solver_states {
-    <span class="doccomment">//! States of a [`Solver`].
-
-    </span><span class="kw">use </span><span class="kw">super</span>::private::Sealed;
-    <span class="kw">use </span><span class="kw">super</span>::Solver;
-
-    <span class="kw">pub trait </span>SolverState: Sealed {}
-
-    <span class="kw">impl </span>Sealed <span class="kw">for </span>Init {}
-    <span class="kw">impl </span>Sealed <span class="kw">for </span>ModelLoaded {}
-    <span class="kw">impl </span>Sealed <span class="kw">for </span>ExecutionSuccess {}
-    <span class="kw">impl </span>Sealed <span class="kw">for </span>ExecutionFailure {}
-
-    <span class="kw">impl </span>SolverState <span class="kw">for </span>Init {}
-    <span class="kw">impl </span>SolverState <span class="kw">for </span>ModelLoaded {}
-    <span class="kw">impl </span>SolverState <span class="kw">for </span>ExecutionSuccess {}
-    <span class="kw">impl </span>SolverState <span class="kw">for </span>ExecutionFailure {}
-
-    <span class="kw">pub struct </span>Init;
-    <span class="kw">pub struct </span>ModelLoaded;
-
-    <span class="doccomment">/// The state returned by [`Solver`] if solving has been successful.
-    </span><span class="kw">pub struct </span>ExecutionSuccess;
-
-    <span class="doccomment">/// The state returned by [`Solver`] if solving has not been successful.
-    </span><span class="attr">#[non_exhaustive]
-    </span><span class="kw">pub enum </span>ExecutionFailure {
-        <span class="doccomment">/// The desired function or solver is not implemented yet.
-        </span>OpNotImplemented,
-
-        <span class="doccomment">/// The solver does not support this operation.
-        </span>OpNotSupported,
-
-        <span class="doccomment">/// Solving timed-out.
-        </span>TimedOut,
-
-        <span class="doccomment">/// An unspecified error has occurred.
-        </span>Error(anyhow::Error),
+<span class="kw">impl</span>&lt;A: SolverAdaptor&gt; Solver&lt;A, Init&gt; {
+    <span class="kw">pub fn </span>load_model(<span class="kw-2">mut </span><span class="self">self</span>, model: Model) -&gt; <span class="prelude-ty">Result</span>&lt;Solver&lt;A, ModelLoaded&gt;, SolverError&gt; {
+        <span class="kw">let </span>solver_model = <span class="kw-2">&amp;mut </span><span class="self">self</span>.adaptor.load_model(model, private::Internal)<span class="question-mark">?</span>;
+        <span class="prelude-val">Ok</span>(Solver {
+            state: ModelLoaded,
+            adaptor: <span class="self">self</span>.adaptor,
+            model: <span class="prelude-val">Some</span>(solver_model.clone()),
+        })
     }
 }
 
-<span class="kw">pub mod </span>incremental {
-    <span class="doccomment">//! Incremental / mutable solving (changing the model during search).
-    //!
-    //! Incremental solving can be triggered for a solverthrough the
-    //! [`Solver::solve_mut`] method.
-    //!
-    //! This gives access to a [`ModelModifier`] in the solution retrieval callback.
-    </span><span class="kw">use </span><span class="kw">super</span>::private;
-    <span class="kw">use </span><span class="kw">super</span>::Solver;
-    <span class="kw">use </span>conjure_core::ast::{Domain, Expression, Model, Name};
+<span class="kw">impl</span>&lt;A: SolverAdaptor&gt; Solver&lt;A, ModelLoaded&gt; {
+    <span class="kw">pub fn </span>solve(
+        <span class="kw-2">mut </span><span class="self">self</span>,
+        callback: SolverCallback,
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;Solver&lt;A, ExecutionSuccess&gt;, SolverError&gt; {
+        <span class="attr">#[allow(clippy::unwrap_used)]
+        </span><span class="kw">let </span>start_time = Instant::now();
 
-    <span class="doccomment">/// A ModelModifier provides an interface to modify a model during solving.
-    ///
-    /// Modifications are defined in terms of Conjure AST nodes, so must be translated to a solver
-    /// specfic form before use.
-    ///
-    /// It is implementation defined whether these constraints can be given at high level and passed
-    /// through the rewriter, or only low-level solver constraints are supported.
-    ///
-    /// See also: [`Solver::solve_mut`].
-    </span><span class="kw">pub trait </span>ModelModifier: private::Sealed {
-        <span class="kw">fn </span>add_constraint(constraint: Expression) -&gt; <span class="prelude-ty">Result</span>&lt;(), ModificationFailure&gt; {
-            <span class="prelude-val">Err</span>(ModificationFailure::OpNotSupported)
-        }
+        <span class="attr">#[allow(clippy::unwrap_used)]
+        </span><span class="kw">let </span>result = <span class="self">self
+            </span>.adaptor
+            .solve(<span class="self">self</span>.model.clone().unwrap(), callback, private::Internal);
 
-        <span class="kw">fn </span>add_variable(name: Name, domain: Domain) -&gt; <span class="prelude-ty">Result</span>&lt;(), ModificationFailure&gt; {
-            <span class="prelude-val">Err</span>(ModificationFailure::OpNotSupported)
+        <span class="kw">let </span>duration = start_time.elapsed();
+
+        <span class="kw">match </span>result {
+            <span class="prelude-val">Ok</span>(x) =&gt; <span class="prelude-val">Ok</span>(Solver {
+                adaptor: <span class="self">self</span>.adaptor,
+                model: <span class="self">self</span>.model,
+                state: ExecutionSuccess {
+                    stats: x.stats,
+                    status: x.status,
+                    _sealed: private::Internal,
+                    wall_time_s: duration.as_secs_f64(),
+                },
+            }),
+            <span class="prelude-val">Err</span>(x) =&gt; <span class="prelude-val">Err</span>(x),
         }
     }
 
-    <span class="doccomment">/// A [`ModelModifier`] for a solver that does not support incremental solving. Returns
-    /// [`OperationNotSupported`](`ModificationFailure::OperationNotSupported`) for all operations.
-    </span><span class="kw">pub struct </span>NotModifiable;
+    <span class="kw">pub fn </span>solve_mut(
+        <span class="kw-2">mut </span><span class="self">self</span>,
+        callback: SolverMutCallback&lt;A&gt;,
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;Solver&lt;A, ExecutionSuccess&gt;, SolverError&gt; {
+        <span class="attr">#[allow(clippy::unwrap_used)]
+        </span><span class="kw">let </span>start_time = Instant::now();
 
-    <span class="kw">impl </span>private::Sealed <span class="kw">for </span>NotModifiable {}
-    <span class="kw">impl </span>ModelModifier <span class="kw">for </span>NotModifiable {}
+        <span class="attr">#[allow(clippy::unwrap_used)]
+        </span><span class="kw">let </span>result =
+            <span class="self">self</span>.adaptor
+                .solve_mut(<span class="self">self</span>.model.clone().unwrap(), callback, private::Internal);
 
-    <span class="doccomment">/// The requested modification to the model has failed.
-    </span><span class="attr">#[non_exhaustive]
-    </span><span class="kw">pub enum </span>ModificationFailure {
-        <span class="doccomment">/// The desired operation is not supported for this solver adaptor.
-        </span>OpNotSupported,
+        <span class="kw">let </span>duration = start_time.elapsed();
 
-        <span class="doccomment">/// The desired operation is supported by this solver adaptor, but has not been
-        /// implemented yet.
-        </span>OpNotImplemented,
-
-        <span class="comment">// The arguments given to the operation are invalid.
-        </span>ArgsInvalid(anyhow::Error),
-
-        <span class="doccomment">/// An unspecified error has occurred.
-        </span>Error(anyhow::Error),
+        <span class="kw">match </span>result {
+            <span class="prelude-val">Ok</span>(x) =&gt; <span class="prelude-val">Ok</span>(Solver {
+                adaptor: <span class="self">self</span>.adaptor,
+                model: <span class="self">self</span>.model,
+                state: ExecutionSuccess {
+                    stats: x.stats,
+                    status: x.status,
+                    _sealed: private::Internal,
+                    wall_time_s: duration.as_secs_f64(),
+                },
+            }),
+            <span class="prelude-val">Err</span>(x) =&gt; <span class="prelude-val">Err</span>(x),
+        }
     }
+}
+
+<span class="kw">impl</span>&lt;A: SolverAdaptor&gt; Solver&lt;A, ExecutionSuccess&gt; {
+    <span class="kw">pub fn </span>stats(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">dyn </span>Stats&gt;&gt; {
+        <span class="self">self</span>.state.stats
+    }
+
+    <span class="kw">pub fn </span>wall_time_s(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
+        <span class="self">self</span>.state.wall_time_s
+    }
+}
+
+<span class="doccomment">/// Errors returned by [Solver] on failure.
+</span><span class="attr">#[non_exhaustive]
+#[derive(Debug, Error, Clone)]
+</span><span class="kw">pub enum </span>SolverError {
+    <span class="attr">#[error(<span class="string">"operation not implemented yet: {0}"</span>)]
+    </span>OpNotImplemented(String),
+
+    <span class="attr">#[error(<span class="string">"operation not supported: {0}"</span>)]
+    </span>OpNotSupported(String),
+
+    <span class="attr">#[error(<span class="string">"model feature not supported: {0}"</span>)]
+    </span>ModelFeatureNotSupported(String),
+
+    <span class="attr">#[error(<span class="string">"model feature not implemented yet: {0}"</span>)]
+    </span>ModelFeatureNotImplemented(String),
+
+    <span class="comment">// use for semantics / type errors, use the above for syntax
+    </span><span class="attr">#[error(<span class="string">"model invalid: {0}"</span>)]
+    </span>ModelInvalid(String),
+
+    <span class="attr">#[error(<span class="string">"error during solver execution: not implemented: {0}"</span>)]
+    </span>RuntimeNotImplemented(String),
+
+    <span class="attr">#[error(<span class="string">"error during solver execution: {0}"</span>)]
+    </span>Runtime(String),
+}
+
+<span class="doccomment">/// Returned from [SolverAdaptor] when solving is successful.
+</span><span class="kw">pub struct </span>SolveSuccess {
+    stats: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">dyn </span>Stats&gt;&gt;,
+    status: SearchStatus,
+}
+
+<span class="kw">pub enum </span>SearchStatus {
+    <span class="doccomment">/// The search was complete (i.e. the solver found all possible solutions)
+    </span>Complete(SearchComplete),
+    <span class="doccomment">/// The search was incomplete (i.e. it was terminated before all solutions were found)
+    </span>Incomplete(SearchIncomplete),
+}
+
+<span class="attr">#[non_exhaustive]
+</span><span class="kw">pub enum </span>SearchIncomplete {
+    Timeout,
+    UserTerminated,
+    <span class="attr">#[doc(hidden)]
+    </span><span class="doccomment">/// This variant should not be matched - it exists to simulate non-exhaustiveness of this enum.
+    </span>__NonExhaustive,
+}
+
+<span class="attr">#[non_exhaustive]
+</span><span class="kw">pub enum </span>SearchComplete {
+    HasSolutions,
+    NoSolutions,
+    <span class="attr">#[doc(hidden)]
+    </span><span class="doccomment">/// This variant should not be matched - it exists to simulate non-exhaustiveness of this enum.
+    </span>__NonExhaustive,
 }
 </code></pre></div></section></main></body></html>

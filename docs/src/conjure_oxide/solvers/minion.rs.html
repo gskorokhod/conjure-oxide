@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/solvers/minion.rs`."><title>minion.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (b6d2d841b 2024-03-05)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `conjure_oxide/src/solvers/minion.rs`."><title>minion.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_oxide" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (3b1717c05 2024-03-10)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
             <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
     <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../conjure_oxide/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
@@ -310,6 +310,15 @@
 <a href="#308" id="308">308</a>
 <a href="#309" id="309">309</a>
 <a href="#310" id="310">310</a>
+<a href="#311" id="311">311</a>
+<a href="#312" id="312">312</a>
+<a href="#313" id="313">313</a>
+<a href="#314" id="314">314</a>
+<a href="#315" id="315">315</a>
+<a href="#316" id="316">316</a>
+<a href="#317" id="317">317</a>
+<a href="#318" id="318">318</a>
+<a href="#319" id="319">319</a>
 </pre></div><pre class="rust"><code><span class="doccomment">//! Solver interface to minion_rs.
 
 </span><span class="attr">#![allow(unreachable_patterns)]
@@ -323,6 +332,7 @@
     Range <span class="kw">as </span>ConjureRange,
 };
 
+<span class="kw">use </span>anyhow::Result;
 <span class="kw">pub use </span>minion_rs::ast::Model <span class="kw">as </span>MinionModel;
 <span class="kw">use </span>minion_rs::ast::{
     Constant <span class="kw">as </span>MinionConstant, Constraint <span class="kw">as </span>MinionConstraint, Var <span class="kw">as </span>MinionVar,
@@ -439,33 +449,43 @@
 }
 
 <span class="kw">fn </span>parse_expr(expr: ConjureExpression, minion_model: <span class="kw-2">&amp;mut </span>MinionModel) -&gt; <span class="prelude-ty">Result</span>&lt;(), SolverError&gt; {
+    minion_model.constraints.push(read_expr(expr)<span class="question-mark">?</span>);
+    <span class="prelude-val">Ok</span>(())
+}
+
+<span class="kw">fn </span>read_expr(expr: ConjureExpression) -&gt; <span class="prelude-ty">Result</span>&lt;MinionConstraint, SolverError&gt; {
     <span class="kw">match </span>expr {
         ConjureExpression::SumLeq(_metadata, lhs, rhs) =&gt; {
-            minion_model
-                .constraints
-                .push(MinionConstraint::SumLeq(read_vars(lhs)<span class="question-mark">?</span>, read_var(<span class="kw-2">*</span>rhs)<span class="question-mark">?</span>));
-            <span class="prelude-val">Ok</span>(())
+            <span class="prelude-val">Ok</span>(MinionConstraint::SumLeq(read_vars(lhs)<span class="question-mark">?</span>, read_var(<span class="kw-2">*</span>rhs)<span class="question-mark">?</span>))
         }
         ConjureExpression::SumGeq(_metadata, lhs, rhs) =&gt; {
-            minion_model
-                .constraints
-                .push(MinionConstraint::SumGeq(read_vars(lhs)<span class="question-mark">?</span>, read_var(<span class="kw-2">*</span>rhs)<span class="question-mark">?</span>));
-            <span class="prelude-val">Ok</span>(())
+            <span class="prelude-val">Ok</span>(MinionConstraint::SumGeq(read_vars(lhs)<span class="question-mark">?</span>, read_var(<span class="kw-2">*</span>rhs)<span class="question-mark">?</span>))
         }
-        ConjureExpression::Ineq(_metadata, a, b, c) =&gt; {
-            minion_model.constraints.push(MinionConstraint::Ineq(
-                read_var(<span class="kw-2">*</span>a)<span class="question-mark">?</span>,
-                read_var(<span class="kw-2">*</span>b)<span class="question-mark">?</span>,
-                MinionConstant::Integer(read_const(<span class="kw-2">*</span>c)<span class="question-mark">?</span>),
-            ));
-            <span class="prelude-val">Ok</span>(())
+        ConjureExpression::Ineq(_metadata, a, b, c) =&gt; <span class="prelude-val">Ok</span>(MinionConstraint::Ineq(
+            read_var(<span class="kw-2">*</span>a)<span class="question-mark">?</span>,
+            read_var(<span class="kw-2">*</span>b)<span class="question-mark">?</span>,
+            MinionConstant::Integer(read_const(<span class="kw-2">*</span>c)<span class="question-mark">?</span>),
+        )),
+        ConjureExpression::Neq(_metadata, a, b) =&gt; <span class="prelude-val">Ok</span>(MinionConstraint::AllDiff(<span class="macro">vec!</span>[
+            read_var(<span class="kw-2">*</span>a)<span class="question-mark">?</span>,
+            read_var(<span class="kw-2">*</span>b)<span class="question-mark">?</span>,
+        ])),
+        <span class="comment">// ConjureExpression::DivEq(_metadata, a, b, c) =&gt; {
+        //     minion_model.constraints.push(MinionConstraint::Div(
+        //         (read_var(*a)?, read_var(*b)?),
+        //         read_var(*c)?,
+        //     ));
+        //     Ok(())
+        // }
+        </span>ConjureExpression::AllDiff(_metadata, vars) =&gt; {
+            <span class="prelude-val">Ok</span>(MinionConstraint::AllDiff(read_vars(vars)<span class="question-mark">?</span>))
         }
-        ConjureExpression::Neq(_metadata, a, b) =&gt; {
-            minion_model
-                .constraints
-                .push(MinionConstraint::WatchNeq(read_var(<span class="kw-2">*</span>a)<span class="question-mark">?</span>, read_var(<span class="kw-2">*</span>b)<span class="question-mark">?</span>));
-            <span class="prelude-val">Ok</span>(())
-        }
+        ConjureExpression::Or(_metadata, exprs) =&gt; <span class="prelude-val">Ok</span>(MinionConstraint::WatchedOr(
+            exprs
+                .iter()
+                .map(|x| read_expr(x.to_owned()))
+                .collect::&lt;<span class="prelude-ty">Result</span>&lt;Vec&lt;MinionConstraint&gt;, SolverError&gt;&gt;()<span class="question-mark">?</span>,
+        )),
         x =&gt; <span class="prelude-val">Err</span>(SolverError::NotSupported(SOLVER, <span class="macro">format!</span>(<span class="string">"{:?}"</span>, x))),
     }
 }
@@ -534,10 +554,8 @@
     <span class="attr">#[test]
     </span><span class="kw">fn </span>flat_xyz_model() -&gt; <span class="prelude-ty">Result</span>&lt;(), anyhow::Error&gt; {
         <span class="comment">// TODO: convert to use public interfaces when these exist.
-        </span><span class="kw">let </span><span class="kw-2">mut </span>model = ConjureModel {
-            variables: HashMap::new(),
-            constraints: Expression::And(Metadata::new(), Vec::new()),
-        };
+        </span><span class="kw">let </span><span class="kw-2">mut </span>model =
+            ConjureModel::new(HashMap::new(), Expression::And(Metadata::new(), Vec::new()));
 
         add_int_with_range(<span class="kw-2">&amp;mut </span>model, <span class="string">"x"</span>, <span class="number">1</span>, <span class="number">3</span>)<span class="question-mark">?</span>;
         add_int_with_range(<span class="kw-2">&amp;mut </span>model, <span class="string">"y"</span>, <span class="number">2</span>, <span class="number">4</span>)<span class="question-mark">?</span>;
