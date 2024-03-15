@@ -15,7 +15,7 @@
         <div>
             <p class="heading">Lines</p>
             <p class="title has-text-warning">
-                <abbr title="67 / 82">81.71 %</abbr></p>
+                <abbr title="73 / 89">82.02 %</abbr></p>
         </div>
     </div>
 
@@ -23,7 +23,7 @@
         <div>
             <p class="heading">Functions</p>
             <p class="title has-text-danger">
-                <abbr title="17 / 72">23.61 %</abbr></p>
+                <abbr title="18 / 111">16.22 %</abbr></p>
         </div>
     </div>
 
@@ -988,7 +988,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            vec_op::&lt;i32, i32&gt;(|e| *e.iter().min().unwrap(), exprs).map(Const::Int)</pre>
+                <pre class="has-background-success-light py-0 px-2">            opt_vec_op::&lt;i32, i32&gt;(|e| e.iter().min().copied(), exprs).map(Const::Int)</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1559,8 +1559,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1575,8 +1575,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1591,8 +1591,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1607,8 +1607,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1623,8 +1623,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1655,8 +1655,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2135">
-                2135
+                role="cell" aria-label="2030">
+                2030
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1687,12 +1687,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">fn flat_op&lt;T, A&gt;(f: fn(Vec&lt;T&gt;, T) -&gt; A, a: &amp;[Expr], b: &amp;Expr) -&gt; Option&lt;A&gt;</pre>
+                <pre class="has-background-success-light py-0 px-2">fn opt_vec_op&lt;T, A&gt;(f: fn(Vec&lt;T&gt;) -&gt; Option&lt;A&gt;, a: &amp;[Expr]) -&gt; Option&lt;A&gt;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1703,8 +1703,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1719,8 +1719,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1735,8 +1735,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1751,8 +1751,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1772,7 +1772,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">    let b = unwrap_expr::&lt;T&gt;(b)?;</pre>
+                <pre class="has-background-danger-light py-0 px-2">    f(a)</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1782,25 +1782,9 @@
                 <a href="#110">110</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
-            </div>
-            <div class="column has-background-danger-light p-0"
-                 role="cell">
-                <pre class="has-background-danger-light py-0 px-2">    Some(f(a, b))</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="111"
-                role="cell">
-                <a href="#111">111</a>
-            </div>
-            <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="119">
-                119
+                role="cell" aria-label="105">
+                105
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1809,9 +1793,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="112"
+                id="111"
                 role="cell">
-                <a href="#112">112</a>
+                <a href="#111">111</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -1825,9 +1809,153 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="112"
+                role="cell">
+                <a href="#112">112</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">fn flat_op&lt;T, A&gt;(f: fn(Vec&lt;T&gt;, T) -&gt; A, a: &amp;[Expr], b: &amp;Expr) -&gt; Option&lt;A&gt;</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="113"
                 role="cell">
                 <a href="#113">113</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">where</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="114"
+                role="cell">
+                <a href="#114">114</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">    T: TryFrom&lt;Const&gt;,</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="115"
+                role="cell">
+                <a href="#115">115</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">{</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="116"
+                role="cell">
+                <a href="#116">116</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">    let a = a.iter().map(unwrap_expr).collect::&lt;Option&lt;Vec&lt;T&gt;&gt;&gt;()?;</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="117"
+                role="cell">
+                <a href="#117">117</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">    let b = unwrap_expr::&lt;T&gt;(b)?;</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="118"
+                role="cell">
+                <a href="#118">118</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">    Some(f(a, b))</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="119"
+                role="cell">
+                <a href="#119">119</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="119">
+                119
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">}</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="120"
+                role="cell">
+                <a href="#120">120</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
+            </div>
+            <div class="column has-background-white p-0"
+                 role="cell">
+                <pre class="has-background-white py-0 px-2"></pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="121"
+                role="cell">
+                <a href="#121">121</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
@@ -1841,9 +1969,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="114"
+                id="122"
                 role="cell">
-                <a href="#114">114</a>
+                <a href="#122">122</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
@@ -1857,9 +1985,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="115"
+                id="123"
                 role="cell">
-                <a href="#115">115</a>
+                <a href="#123">123</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
@@ -1873,9 +2001,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="116"
+                id="124"
                 role="cell">
-                <a href="#116">116</a>
+                <a href="#124">124</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
@@ -1890,7 +2018,7 @@
 </div>
         <footer class="footer">
             <div class="content has-text-centered">
-                <p class="heading">Date: 2024-03-11 18:05</p>
+                <p class="heading">Date: 2024-03-15 11:20</p>
             </div>
         </footer>
     </body>
