@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SolverStats","Stats"]};
+window.SIDEBAR_ITEMS = {"struct":["RewriterStats","SolverStats","Stats"]};

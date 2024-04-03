@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/rule_engine/rewrite.rs`."><title>rewrite.rs - source</title><script> if (window.location.protocol !== "file:") document.write(`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2">`)</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (1684a753d 2024-04-01)" data-channel="nightly" data-search-js="search-42d8da7a6b9792c2.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/rule_engine/rewrite.rs`."><title>rewrite.rs - source</title><script> if (window.location.protocol !== "file:") document.write(`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2">`)</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (88c2f4f5f 2024-04-02)" data-channel="nightly" data-search-js="search-ffac13a0df2b1870.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-c97aec732c613ca4.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title">
             <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
     <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../conjure_core/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
@@ -123,10 +123,73 @@
 <a href="#121" id="121">121</a>
 <a href="#122" id="122">122</a>
 <a href="#123" id="123">123</a>
-</pre></div><pre class="rust"><code><span class="kw">use </span>std::fmt::Display;
+<a href="#124" id="124">124</a>
+<a href="#125" id="125">125</a>
+<a href="#126" id="126">126</a>
+<a href="#127" id="127">127</a>
+<a href="#128" id="128">128</a>
+<a href="#129" id="129">129</a>
+<a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
+<a href="#132" id="132">132</a>
+<a href="#133" id="133">133</a>
+<a href="#134" id="134">134</a>
+<a href="#135" id="135">135</a>
+<a href="#136" id="136">136</a>
+<a href="#137" id="137">137</a>
+<a href="#138" id="138">138</a>
+<a href="#139" id="139">139</a>
+<a href="#140" id="140">140</a>
+<a href="#141" id="141">141</a>
+<a href="#142" id="142">142</a>
+<a href="#143" id="143">143</a>
+<a href="#144" id="144">144</a>
+<a href="#145" id="145">145</a>
+<a href="#146" id="146">146</a>
+<a href="#147" id="147">147</a>
+<a href="#148" id="148">148</a>
+<a href="#149" id="149">149</a>
+<a href="#150" id="150">150</a>
+<a href="#151" id="151">151</a>
+<a href="#152" id="152">152</a>
+<a href="#153" id="153">153</a>
+<a href="#154" id="154">154</a>
+<a href="#155" id="155">155</a>
+<a href="#156" id="156">156</a>
+<a href="#157" id="157">157</a>
+<a href="#158" id="158">158</a>
+<a href="#159" id="159">159</a>
+<a href="#160" id="160">160</a>
+<a href="#161" id="161">161</a>
+<a href="#162" id="162">162</a>
+<a href="#163" id="163">163</a>
+<a href="#164" id="164">164</a>
+<a href="#165" id="165">165</a>
+<a href="#166" id="166">166</a>
+<a href="#167" id="167">167</a>
+<a href="#168" id="168">168</a>
+<a href="#169" id="169">169</a>
+<a href="#170" id="170">170</a>
+<a href="#171" id="171">171</a>
+<a href="#172" id="172">172</a>
+<a href="#173" id="173">173</a>
+<a href="#174" id="174">174</a>
+<a href="#175" id="175">175</a>
+<a href="#176" id="176">176</a>
+<a href="#177" id="177">177</a>
+<a href="#178" id="178">178</a>
+<a href="#179" id="179">179</a>
+<a href="#180" id="180">180</a>
+<a href="#181" id="181">181</a>
+<a href="#182" id="182">182</a>
+<a href="#183" id="183">183</a>
+<a href="#184" id="184">184</a>
+</pre></div><pre class="rust"><code><span class="kw">use </span>std::env;
+<span class="kw">use </span>std::fmt::Display;
 
 <span class="kw">use </span>thiserror::Error;
 
+<span class="kw">use </span><span class="kw">crate</span>::stats::RewriterStats;
 <span class="kw">use </span>uniplate::uniplate::Uniplate;
 
 <span class="kw">use </span><span class="kw">crate</span>::rule_engine::{Reduction, Rule, RuleSet};
@@ -163,6 +226,18 @@
     }
 }
 
+<span class="doccomment">/// Checks if the OPTIMIZATIONS environment variable is set to "0".
+///
+/// # Returns
+/// - true if the environment variable is set to "0".
+/// - false if the environment variable is not set or set to any other value.
+</span><span class="kw">fn </span>optimizations_disabled() -&gt; bool {
+    <span class="kw">match </span>env::var(<span class="string">"OPTIMIZATIONS"</span>) {
+        <span class="prelude-val">Ok</span>(val) =&gt; val == <span class="string">"0"</span>,
+        <span class="prelude-val">Err</span>(<span class="kw">_</span>) =&gt; <span class="bool-val">false</span>, <span class="comment">// Assume optimizations are enabled if the variable is not set
+    </span>}
+}
+
 <span class="doccomment">/// Rewrites the model by applying the rules to all constraints.
 ///
 /// Any side-effects such as symbol table updates and top-level constraints are applied to the returned model.
@@ -176,10 +251,29 @@
     <span class="kw">let </span>rule_priorities = get_rule_priorities(rule_sets)<span class="question-mark">?</span>;
     <span class="kw">let </span>rules = get_rules_vec(<span class="kw-2">&amp;</span>rule_priorities);
     <span class="kw">let </span><span class="kw-2">mut </span>new_model = model.clone();
+    <span class="kw">let </span><span class="kw-2">mut </span>stats = RewriterStats {
+        is_optimization_enabled: <span class="prelude-val">Some</span>(!optimizations_disabled()),
+        rewriter_run_time: <span class="prelude-val">None</span>,
+        rewriter_rule_application_attempts: <span class="prelude-val">Some</span>(<span class="number">0</span>),
+        rewriter_rule_applications: <span class="prelude-val">Some</span>(<span class="number">0</span>),
+    };
 
-    <span class="kw">while let </span><span class="prelude-val">Some</span>(step) = rewrite_iteration(<span class="kw-2">&amp;</span>new_model.constraints, <span class="kw-2">&amp;</span>new_model, <span class="kw-2">&amp;</span>rules) {
+    <span class="comment">// Check if optimizations are disabled
+    </span><span class="kw">let </span>apply_optimizations = !optimizations_disabled();
+
+    <span class="kw">let </span>start = std::time::Instant::now();
+
+    <span class="kw">while let </span><span class="prelude-val">Some</span>(step) = rewrite_iteration(
+        <span class="kw-2">&amp;</span>new_model.constraints,
+        <span class="kw-2">&amp;</span>new_model,
+        <span class="kw-2">&amp;</span>rules,
+        apply_optimizations,
+        <span class="kw-2">&amp;mut </span>stats,
+    ) {
         step.apply(<span class="kw-2">&amp;mut </span>new_model); <span class="comment">// Apply side-effects (e.g. symbol table updates)
     </span>}
+    stats.rewriter_run_time = <span class="prelude-val">Some</span>(start.elapsed());
+    model.context.write().unwrap().stats.add_rewriter_run(stats);
     <span class="prelude-val">Ok</span>(new_model)
 }
 
@@ -190,19 +284,40 @@
     expression: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Expression,
     model: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Model,
     rules: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Vec&lt;<span class="kw-2">&amp;</span><span class="lifetime">'a </span>Rule&lt;<span class="lifetime">'a</span>&gt;&gt;,
+    apply_optimizations: bool,
+    stats: <span class="kw-2">&amp;mut </span>RewriterStats,
 ) -&gt; <span class="prelude-ty">Option</span>&lt;Reduction&gt; {
-    <span class="kw">let </span>rule_results = apply_all_rules(expression, model, rules);
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(new) = choose_rewrite(<span class="kw-2">&amp;</span>rule_results) {
-        <span class="kw">return </span><span class="prelude-val">Some</span>(new);
-    } <span class="kw">else </span>{
-        <span class="kw">let </span><span class="kw-2">mut </span>sub = expression.children();
+    <span class="kw">if </span>apply_optimizations &amp;&amp; expression.is_clean() {
+        <span class="comment">// Skip processing this expression if it's clean
+        </span><span class="kw">return </span><span class="prelude-val">None</span>;
+    }
 
-        <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..sub.len() {
-            <span class="kw">if let </span><span class="prelude-val">Some</span>(red) = rewrite_iteration(<span class="kw-2">&amp;</span>sub[i], model, rules) {
-                sub[i] = red.new_expression;
-                <span class="kw">if let </span><span class="prelude-val">Ok</span>(res) = expression.with_children(sub.clone()) {
-                    <span class="kw">return </span><span class="prelude-val">Some</span>(Reduction::new(res, red.new_top, red.symbols));
-                }
+    <span class="comment">// Mark the expression as clean - will be marked dirty if any rule is applied
+    </span><span class="kw">let </span><span class="kw-2">mut </span>expression = expression.clone();
+    <span class="kw">if </span>apply_optimizations {
+        expression.set_clean(<span class="bool-val">true</span>);
+    }
+
+    <span class="kw">let </span>rule_results = apply_all_rules(<span class="kw-2">&amp;</span>expression, model, rules, stats);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">mut </span>new) = choose_rewrite(<span class="kw-2">&amp;</span>rule_results) {
+        <span class="comment">// If a rule is applied, mark the expression as dirty
+        </span><span class="kw">if </span>apply_optimizations {
+            new.new_expression.set_clean(<span class="bool-val">false</span>);
+        }
+        <span class="kw">return </span><span class="prelude-val">Some</span>(new);
+    }
+
+    <span class="kw">let </span><span class="kw-2">mut </span>sub = expression.children();
+    <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..sub.len() {
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(red) = rewrite_iteration(<span class="kw-2">&amp;</span>sub[i], model, rules, apply_optimizations, stats) {
+            sub[i] = red.new_expression;
+            <span class="comment">// If child is dirty, make this expression dirty
+
+            </span><span class="kw">if </span>apply_optimizations &amp;&amp; !sub[i].is_clean() {
+                expression.set_clean(<span class="bool-val">false</span>);
+            }
+            <span class="kw">if let </span><span class="prelude-val">Ok</span>(res) = expression.with_children(sub.clone()) {
+                <span class="kw">return </span><span class="prelude-val">Some</span>(Reduction::new(res, red.new_top, red.symbols));
             }
         }
     }
@@ -216,19 +331,26 @@
     expression: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Expression,
     model: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Model,
     rules: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>Vec&lt;<span class="kw-2">&amp;</span><span class="lifetime">'a </span>Rule&lt;<span class="lifetime">'a</span>&gt;&gt;,
+    stats: <span class="kw-2">&amp;mut </span>RewriterStats,
 ) -&gt; Vec&lt;RuleResult&lt;<span class="lifetime">'a</span>&gt;&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>results = Vec::new();
     <span class="kw">for </span>rule <span class="kw">in </span>rules {
         <span class="kw">match </span>rule.apply(expression, model) {
             <span class="prelude-val">Ok</span>(red) =&gt; {
+                <span class="macro">log::trace!</span>(target: <span class="string">"file"</span>, <span class="string">"Rule applied: {:?}, to Expression: {:?}, resulting in: {:?}"</span>, rule, expression, red.new_expression);
+                stats.rewriter_rule_application_attempts =
+                    <span class="prelude-val">Some</span>(stats.rewriter_rule_application_attempts.unwrap() + <span class="number">1</span>);
+                stats.rewriter_rule_applications =
+                    <span class="prelude-val">Some</span>(stats.rewriter_rule_applications.unwrap() + <span class="number">1</span>);
                 results.push(RuleResult {
                     rule,
                     reduction: red,
                 });
-                <span class="macro">log::trace!</span>(target: <span class="string">"file"</span>, <span class="string">"Rule applied: {:?}"</span>, rule);
             }
             <span class="prelude-val">Err</span>(<span class="kw">_</span>) =&gt; {
-                <span class="macro">log::trace!</span>(target: <span class="string">"file"</span>, <span class="string">"Rule attempted but not applied: {:?}"</span>, rule);
+                <span class="macro">log::trace!</span>(target: <span class="string">"file"</span>, <span class="string">"Rule attempted but not applied: {:?}, to Expression: {:?}"</span>, rule, expression);
+                stats.rewriter_rule_application_attempts =
+                    <span class="prelude-val">Some</span>(stats.rewriter_rule_application_attempts.unwrap() + <span class="number">1</span>);
                 <span class="kw">continue</span>;
             }
         }
