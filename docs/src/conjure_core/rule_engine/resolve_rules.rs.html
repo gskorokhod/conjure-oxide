@@ -151,10 +151,10 @@
 <a href="#150" id="150">150</a>
 <a href="#151" id="151">151</a>
 <a href="#152" id="152">152</a>
-<a href="#153" id="153">153</a>
-<a href="#154" id="154">154</a></pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::{HashMap, HashSet};
+<a href="#153" id="153">153</a></pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::{HashMap, HashSet};
 <span class="kw">use </span>std::fmt::Display;
 
+<span class="kw">use </span>log::warn;
 <span class="kw">use </span>thiserror::Error;
 
 <span class="kw">use </span><span class="kw">crate</span>::rule_engine::{get_rule_set_by_name, get_rule_sets_for_solver_family, Rule, RuleSet};
@@ -248,10 +248,8 @@
 
     <span class="kw">for </span>rs <span class="kw">in </span>rule_sets {
         <span class="kw">for </span>(rule, priority) <span class="kw">in </span>rs.get_rules() {
-            <span class="kw">if let </span><span class="prelude-val">Some</span>((old_rs, <span class="kw">_</span>)) = rule_priorities.get(rule) {
-                <span class="kw">if </span>rs.order &gt;= old_rs.order {
-                    rule_priorities.insert(rule, (rs, <span class="kw-2">*</span>priority));
-                }
+            <span class="kw">if </span>rule_priorities.contains_key(rule) {
+                <span class="macro">warn!</span>(<span class="string">"Rule {} is defined in multiple rule sets."</span>, rule.name);
             } <span class="kw">else </span>{
                 rule_priorities.insert(rule, (rs, <span class="kw-2">*</span>priority));
             }

@@ -1017,7 +1017,7 @@
 
 <span class="kw">use </span><span class="kw">super</span>::utils::{is_flat, to_aux_var};
 
-<span class="macro">register_rule_set!</span>(<span class="string">"Minion"</span>, <span class="number">100</span>, (<span class="string">"Base"</span>), (SolverFamily::Minion));
+<span class="macro">register_rule_set!</span>(<span class="string">"Minion"</span>, (<span class="string">"Base"</span>), (SolverFamily::Minion));
 
 <span class="attr">#[register_rule((<span class="string">"Minion"</span>, <span class="number">4200</span>))]
 </span><span class="kw">fn </span>introduce_producteq(expr: <span class="kw-2">&amp;</span>Expr, model: <span class="kw-2">&amp;</span>Model) -&gt; ApplicationResult {

@@ -281,7 +281,7 @@
 /// This macro uses the following syntax:
 ///
 /// ```text
-/// register_rule_set!(&lt;RuleSet name&gt;, &lt;RuleSet order&gt;, (&lt;DependencyRuleSet1&gt;, &lt;DependencyRuleSet2&gt;, ...));
+/// register_rule_set!(&lt;RuleSet name&gt;, (&lt;DependencyRuleSet1&gt;, &lt;DependencyRuleSet2&gt;, ...));
 /// ```
 ///
 /// # Example
@@ -289,7 +289,7 @@
 /// ```rust
 /// use conjure_core::rule_engine::register_rule_set;
 ///
-/// register_rule_set!("MyRuleSet", 10, ("DependencyRuleSet", "AnotherRuleSet"));
+/// register_rule_set!("MyRuleSet", ("DependencyRuleSet", "AnotherRuleSet"));
 /// ```
 </span><span class="attr">#[doc(inline)]
 </span><span class="kw">pub use </span>conjure_macros::register_rule_set;
@@ -389,8 +389,8 @@
 /// use conjure_core::rule_engine::register_rule_set;
 /// use conjure_core::rule_engine::get_rule_sets;
 ///
-/// register_rule_set!("MyRuleSet", 10, ("AnotherRuleSet"));
-/// register_rule_set!("AnotherRuleSet", 5, ());
+/// register_rule_set!("MyRuleSet", ("AnotherRuleSet"));
+/// register_rule_set!("AnotherRuleSet", ());
 ///
 /// println!("Rule sets: {:?}", get_rule_sets());
 /// ```
@@ -398,8 +398,8 @@
 /// This will print (if no other rule sets are registered):
 /// ```text
 /// Rule sets: [
-///   RuleSet { name: "MyRuleSet", order: 10, rules: OnceLock { state: Uninitialized }, dependencies: ["AnotherRuleSet"] },
-///   RuleSet { name: "AnotherRuleSet", order: 5, rules: OnceLock { state: Uninitialized }, dependencies: [] }
+///   RuleSet { name: "MyRuleSet", rules: OnceLock { state: Uninitialized }, dependencies: ["AnotherRuleSet"] },
+///   RuleSet { name: "AnotherRuleSet", rules: OnceLock { state: Uninitialized }, dependencies: [] }
 /// ]
 /// ```
 ///
@@ -415,14 +415,14 @@
 /// use conjure_core::rule_engine::register_rule_set;
 /// use conjure_core::rule_engine::get_rule_set_by_name;
 ///
-/// register_rule_set!("MyRuleSet", 10, ("DependencyRuleSet", "AnotherRuleSet"));
+/// register_rule_set!("MyRuleSet", ("DependencyRuleSet", "AnotherRuleSet"));
 ///
 /// println!("Rule set: {:?}", get_rule_set_by_name("MyRuleSet"));
 /// ```
 ///
 /// This will print:
 /// ```text
-/// Rule set: Some(RuleSet { name: "MyRuleSet", order: 10, rules: OnceLock { state: Uninitialized }, dependencies: ["DependencyRuleSet", "AnotherRuleSet"] })
+/// Rule set: Some(RuleSet { name: "MyRuleSet", rules: OnceLock { state: Uninitialized }, dependencies: ["DependencyRuleSet", "AnotherRuleSet"] })
 /// ```
 </span><span class="kw">pub fn </span>get_rule_set_by_name(name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">'static </span>RuleSet&lt;<span class="lifetime">'static</span>&gt;&gt; {
     get_rule_sets()

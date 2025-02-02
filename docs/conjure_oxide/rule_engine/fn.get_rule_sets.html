@@ -5,12 +5,12 @@ Rule sets are not guaranteed to be in any particular order.</p>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>conjure_core::rule_engine::register_rule_set;
 <span class="kw">use </span>conjure_core::rule_engine::get_rule_sets;
 
-<span class="macro">register_rule_set!</span>(<span class="string">"MyRuleSet"</span>, <span class="number">10</span>, (<span class="string">"AnotherRuleSet"</span>));
-<span class="macro">register_rule_set!</span>(<span class="string">"AnotherRuleSet"</span>, <span class="number">5</span>, ());
+<span class="macro">register_rule_set!</span>(<span class="string">"MyRuleSet"</span>, (<span class="string">"AnotherRuleSet"</span>));
+<span class="macro">register_rule_set!</span>(<span class="string">"AnotherRuleSet"</span>, ());
 
 <span class="macro">println!</span>(<span class="string">"Rule sets: {:?}"</span>, get_rule_sets());</code></pre></div>
 <p>This will print (if no other rule sets are registered):</p>
 <div class="example-wrap"><pre class="language-text"><code>Rule sets: [
-  RuleSet { name: &quot;MyRuleSet&quot;, order: 10, rules: OnceLock { state: Uninitialized }, dependencies: [&quot;AnotherRuleSet&quot;] },
-  RuleSet { name: &quot;AnotherRuleSet&quot;, order: 5, rules: OnceLock { state: Uninitialized }, dependencies: [] }
+  RuleSet { name: &quot;MyRuleSet&quot;, rules: OnceLock { state: Uninitialized }, dependencies: [&quot;AnotherRuleSet&quot;] },
+  RuleSet { name: &quot;AnotherRuleSet&quot;, rules: OnceLock { state: Uninitialized }, dependencies: [] }
 ]</code></pre></div></div></details></section></div></main></body></html>

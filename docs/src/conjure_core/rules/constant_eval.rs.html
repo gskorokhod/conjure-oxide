@@ -387,7 +387,7 @@
 <span class="kw">use </span>conjure_core::Model;
 <span class="kw">use </span>itertools::izip;
 
-<span class="macro">register_rule_set!</span>(<span class="string">"Constant"</span>, <span class="number">100</span>, ());
+<span class="macro">register_rule_set!</span>(<span class="string">"Constant"</span>, ());
 
 <span class="attr">#[register_rule((<span class="string">"Constant"</span>, <span class="number">9001</span>))]
 </span><span class="kw">fn </span>apply_eval_constant(expr: <span class="kw-2">&amp;</span>Expr, <span class="kw">_</span>: <span class="kw-2">&amp;</span>Model) -&gt; ApplicationResult {

@@ -4,8 +4,8 @@ Returns the rule set with the given name or None if it doesn’t exist.</p>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>conjure_core::rule_engine::register_rule_set;
 <span class="kw">use </span>conjure_core::rule_engine::get_rule_set_by_name;
 
-<span class="macro">register_rule_set!</span>(<span class="string">"MyRuleSet"</span>, <span class="number">10</span>, (<span class="string">"DependencyRuleSet"</span>, <span class="string">"AnotherRuleSet"</span>));
+<span class="macro">register_rule_set!</span>(<span class="string">"MyRuleSet"</span>, (<span class="string">"DependencyRuleSet"</span>, <span class="string">"AnotherRuleSet"</span>));
 
 <span class="macro">println!</span>(<span class="string">"Rule set: {:?}"</span>, get_rule_set_by_name(<span class="string">"MyRuleSet"</span>));</code></pre></div>
 <p>This will print:</p>
-<div class="example-wrap"><pre class="language-text"><code>Rule set: Some(RuleSet { name: &quot;MyRuleSet&quot;, order: 10, rules: OnceLock { state: Uninitialized }, dependencies: [&quot;DependencyRuleSet&quot;, &quot;AnotherRuleSet&quot;] })</code></pre></div></div></details></section></div></main></body></html>
+<div class="example-wrap"><pre class="language-text"><code>Rule set: Some(RuleSet { name: &quot;MyRuleSet&quot;, rules: OnceLock { state: Uninitialized }, dependencies: [&quot;DependencyRuleSet&quot;, &quot;AnotherRuleSet&quot;] })</code></pre></div></div></details></section></div></main></body></html>
