@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/symbol_table.rs`."><title>symbol_table.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-cf3c48c1.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0-nightly (8239a37f9 2025-02-01)" data-channel="nightly" data-search-js="search-2d513d54.js" data-settings-js="settings-6dad6058.js" ><script src="../../../static.files/storage-302de22f.js"></script><script defer src="../../../static.files/src-script-8fee9dc5.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-9b5d7e41.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>symbol_table.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/symbol_table.rs`."><title>symbol_table.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-cf3c48c1.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0-nightly (4a4309466 2025-02-02)" data-channel="nightly" data-search-js="search-2d513d54.js" data-settings-js="settings-6dad6058.js" ><script src="../../../static.files/storage-302de22f.js"></script><script defer src="../../../static.files/src-script-8fee9dc5.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-9b5d7e41.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>symbol_table.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers">
 <a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
@@ -395,15 +395,65 @@
 <a href="#394" id="394">394</a>
 <a href="#395" id="395">395</a>
 <a href="#396" id="396">396</a>
-<a href="#397" id="397">397</a></pre></div><pre class="rust"><code><span class="doccomment">//! The symbol table.
+<a href="#397" id="397">397</a>
+<a href="#398" id="398">398</a>
+<a href="#399" id="399">399</a>
+<a href="#400" id="400">400</a>
+<a href="#401" id="401">401</a>
+<a href="#402" id="402">402</a>
+<a href="#403" id="403">403</a>
+<a href="#404" id="404">404</a>
+<a href="#405" id="405">405</a>
+<a href="#406" id="406">406</a>
+<a href="#407" id="407">407</a>
+<a href="#408" id="408">408</a>
+<a href="#409" id="409">409</a>
+<a href="#410" id="410">410</a>
+<a href="#411" id="411">411</a>
+<a href="#412" id="412">412</a>
+<a href="#413" id="413">413</a>
+<a href="#414" id="414">414</a>
+<a href="#415" id="415">415</a>
+<a href="#416" id="416">416</a>
+<a href="#417" id="417">417</a>
+<a href="#418" id="418">418</a>
+<a href="#419" id="419">419</a>
+<a href="#420" id="420">420</a>
+<a href="#421" id="421">421</a>
+<a href="#422" id="422">422</a>
+<a href="#423" id="423">423</a>
+<a href="#424" id="424">424</a>
+<a href="#425" id="425">425</a>
+<a href="#426" id="426">426</a>
+<a href="#427" id="427">427</a>
+<a href="#428" id="428">428</a>
+<a href="#429" id="429">429</a>
+<a href="#430" id="430">430</a>
+<a href="#431" id="431">431</a>
+<a href="#432" id="432">432</a>
+<a href="#433" id="433">433</a>
+<a href="#434" id="434">434</a>
+<a href="#435" id="435">435</a>
+<a href="#436" id="436">436</a>
+<a href="#437" id="437">437</a>
+<a href="#438" id="438">438</a>
+<a href="#439" id="439">439</a>
+<a href="#440" id="440">440</a>
+<a href="#441" id="441">441</a>
+<a href="#442" id="442">442</a>
+<a href="#443" id="443">443</a></pre></div><pre class="rust"><code><span class="doccomment">//! The symbol table.
 //!
 //! See the item documentation for [`SymbolTable`] for more details.
 </span><span class="kw">use </span>std::collections::BTreeSet;
 <span class="kw">use </span>std::fmt::Display;
 <span class="kw">use </span>std::{cell::RefCell, collections::BTreeMap};
 
+<span class="kw">use </span>itertools::izip;
 <span class="kw">use </span>serde::{Deserialize, Serialize};
 <span class="kw">use </span>serde_with::serde_as;
+<span class="kw">use </span>uniplate::derive::Uniplate;
+<span class="kw">use </span>uniplate::Tree;
+<span class="kw">use </span>uniplate::{Biplate, Uniplate};
 
 <span class="kw">use </span><span class="kw">crate</span>::ast::variables::DecisionVariable;
 
@@ -478,7 +528,7 @@
 }
 
 <span class="attr">#[non_exhaustive]
-#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Uniplate)]
 </span><span class="kw">enum </span>SymbolKind {
     DecisionVariable(DecisionVariable),
     ValueLetting(Expression),
@@ -785,6 +835,48 @@
         <span class="kw-2">*</span>(<span class="self">self</span>.next_machine_name.borrow_mut()) += <span class="number">1</span>;
         Name::MachineName(num) <span class="comment">// incremented when inserted
     </span>}
+}
+
+<span class="comment">// At time of writing (03/02/2025), the derive macro doesn't like maps or the RefCell.
+//
+// Eventually, we will be able to ignore the refcell field, and derive instances for the map, but
+// for now, here we use a manual implementation.
+</span><span class="kw">impl </span>Uniplate <span class="kw">for </span>SymbolTable {
+    <span class="kw">fn </span>uniplate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Tree&lt;<span class="self">Self</span>&gt;, Box&lt;<span class="kw">dyn </span>Fn(Tree&lt;<span class="self">Self</span>&gt;) -&gt; <span class="self">Self</span>&gt;) {
+        <span class="comment">// no recursion
+        </span><span class="kw">let </span>self2 = <span class="self">self</span>.clone();
+        (Tree::Zero, Box::new(<span class="kw">move </span>|<span class="kw">_</span>| self2.clone()))
+    }
+}
+
+<span class="kw">impl </span>Biplate&lt;Expression&gt; <span class="kw">for </span>SymbolTable {
+    <span class="kw">fn </span>biplate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Tree&lt;Expression&gt;, Box&lt;<span class="kw">dyn </span>Fn(Tree&lt;Expression&gt;) -&gt; <span class="self">Self</span>&gt;) {
+        <span class="kw">let </span>tree = Tree::Many(
+            <span class="self">self</span>.iter_value_letting()
+                .map(|(<span class="kw">_</span>, expr)| Tree::One(expr.clone()))
+                .collect(),
+        );
+
+        <span class="kw">let </span>self2 = <span class="self">self</span>.clone();
+        <span class="kw">let </span>ctx = Box::new(<span class="kw">move </span>|tree| {
+            <span class="kw">let </span>Tree::Many(exprs) = tree <span class="kw">else </span>{
+                <span class="macro">panic!</span>(<span class="string">"unexpected children structure"</span>);
+            };
+
+            <span class="kw">let </span><span class="kw-2">mut </span>self3 = self2.clone();
+            <span class="kw">for </span>((<span class="kw">_</span>, expr), new_expr) <span class="kw">in </span><span class="macro">izip!</span>(self3.iter_value_letting_mut(), exprs.into_iter()) {
+                <span class="kw">let </span>Tree::One(new_expr) = new_expr <span class="kw">else </span>{
+                    <span class="macro">panic!</span>(<span class="string">"unexpected children structure"</span>);
+                };
+
+                <span class="kw-2">*</span>expr = new_expr;
+            }
+
+            self3
+        });
+
+        (tree, ctx)
+    }
 }
 
 <span class="kw">impl </span>Default <span class="kw">for </span>SymbolTable {
