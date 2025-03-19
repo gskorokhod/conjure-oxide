@@ -22,8 +22,8 @@
         <div class="level-item has-text-centered">
         <div>
             <p class="heading">Functions</p>
-            <p class="title has-text-success">
-                <abbr title="61 / 66">92.42 %</abbr></p>
+            <p class="title has-text-warning">
+                <abbr title="61 / 71">85.92 %</abbr></p>
         </div>
     </div>
 
@@ -780,7 +780,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">&#x2F;&#x2F;&#x2F;     cmds.mut_meta(|m| *m += 1);</pre>
+                <pre class="has-background-success-light py-0 px-2">&#x2F;&#x2F;&#x2F;     cmds.mut_meta(Box::new(|m: &amp;mut i32| *m += 1));</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1004,7 +1004,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">&#x2F;&#x2F;&#x2F;     cmds.mut_meta(|m| *m += 1);</pre>
+                <pre class="has-background-success-light py-0 px-2">&#x2F;&#x2F;&#x2F;     cmds.mut_meta(Box::new(|m: &amp;mut i32| *m += 1));</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1884,7 +1884,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    let new_tree = rule.apply(&amp;mut commands, &amp;subtree, &amp;meta)?;</pre>
+                <pre class="has-background-success-light py-0 px-2">                    let new_tree = rule.apply(&amp;mut commands, subtree, meta)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2610,7 +2610,7 @@
 </div>
         <footer class="footer">
             <div class="content has-text-centered">
-                <p class="heading">Date: 2025-03-10 11:41</p>
+                <p class="heading">Date: 2025-03-19 22:18</p>
             </div>
         </footer>
     </body>
