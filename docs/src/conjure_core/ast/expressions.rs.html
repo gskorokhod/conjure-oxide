@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/expressions.rs`."><title>expressions.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-916cea96.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.87.0-nightly (b48576b4d 2025-03-22)" data-channel="nightly" data-search-js="search-e7298875.js" data-settings-js="settings-d72f25bb.js" ><script src="../../../static.files/storage-d8ac8691.js"></script><script defer src="../../../static.files/src-script-b8d3f215.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-fb8c74a8.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>expressions.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-4"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>std::collections::VecDeque;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/expressions.rs`."><title>expressions.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-de575e9a.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0-nightly (5e17a2a91 2025-04-05)" data-channel="nightly" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../../../static.files/storage-4e99c027.js"></script><script defer src="../../../static.files/src-script-63605ae7.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>expressions.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-4"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>std::collections::VecDeque;
 <a href=#2 id=2 data-nosnippet>2</a><span class="kw">use </span>std::fmt::{Display, Formatter};
 <a href=#3 id=3 data-nosnippet>3</a><span class="kw">use </span>std::sync::Arc;
 <a href=#4 id=4 data-nosnippet>4</a>
@@ -100,9 +100,9 @@
 <a href=#100 id=100 data-nosnippet>100</a>    </span><span class="attr">#[compatible(JsonInput)]
 <a href=#101 id=101 data-nosnippet>101</a>    </span>Abs(Metadata, Box&lt;Expression&gt;),
 <a href=#102 id=102 data-nosnippet>102</a>
-<a href=#103 id=103 data-nosnippet>103</a>    <span class="doccomment">/// `a + b + c + ...`
+<a href=#103 id=103 data-nosnippet>103</a>    <span class="doccomment">/// `sum(&lt;vec_expr&gt;)`
 <a href=#104 id=104 data-nosnippet>104</a>    </span><span class="attr">#[compatible(JsonInput)]
-<a href=#105 id=105 data-nosnippet>105</a>    </span>Sum(Metadata, Vec&lt;Expression&gt;),
+<a href=#105 id=105 data-nosnippet>105</a>    </span>Sum(Metadata, Box&lt;Expression&gt;),
 <a href=#106 id=106 data-nosnippet>106</a>
 <a href=#107 id=107 data-nosnippet>107</a>    <span class="doccomment">/// `a * b * c * ...`
 <a href=#108 id=108 data-nosnippet>108</a>    </span><span class="attr">#[compatible(JsonInput)]
@@ -475,7 +475,7 @@
 <a href=#475 id=475 data-nosnippet>475</a>            Expression::Atomic(<span class="kw">_</span>, Atom::Literal(Literal::Bool(<span class="kw">_</span>))) =&gt; <span class="prelude-val">Some</span>(Domain::BoolDomain),
 <a href=#476 id=476 data-nosnippet>476</a>            Expression::Atomic(<span class="kw">_</span>, Atom::Literal(Literal::AbstractLiteral(<span class="kw">_</span>))) =&gt; <span class="prelude-val">None</span>,
 <a href=#477 id=477 data-nosnippet>477</a>            Expression::Scope(<span class="kw">_</span>, <span class="kw">_</span>) =&gt; <span class="prelude-val">Some</span>(Domain::BoolDomain),
-<a href=#478 id=478 data-nosnippet>478</a>            Expression::Sum(<span class="kw">_</span>, exprs) =&gt; expr_vec_to_domain_i32(exprs, |x, y| <span class="prelude-val">Some</span>(x + y), syms),
+<a href=#478 id=478 data-nosnippet>478</a>            Expression::Sum(<span class="kw">_</span>, e) =&gt; expr_vec_lit_to_domain_i32(e, |x, y| <span class="prelude-val">Some</span>(x + y), syms),
 <a href=#479 id=479 data-nosnippet>479</a>            Expression::Product(<span class="kw">_</span>, exprs) =&gt; {
 <a href=#480 id=480 data-nosnippet>480</a>                expr_vec_to_domain_i32(exprs, |x, y| <span class="prelude-val">Some</span>(x * y), syms)
 <a href=#481 id=481 data-nosnippet>481</a>            }
@@ -547,7 +547,7 @@
 <a href=#547 id=547 data-nosnippet>547</a>                a.domain_of(syms)<span class="question-mark">?</span>.apply_i32(
 <a href=#548 id=548 data-nosnippet>548</a>                    |x, y| {
 <a href=#549 id=549 data-nosnippet>549</a>                        <span class="kw">if </span>(x != <span class="number">0 </span>|| y != <span class="number">0</span>) &amp;&amp; y &gt;= <span class="number">0 </span>{
-<a href=#550 id=550 data-nosnippet>550</a>                            <span class="prelude-val">Some</span>(x ^ y)
+<a href=#550 id=550 data-nosnippet>550</a>                            <span class="prelude-val">Some</span>(x.pow(y <span class="kw">as </span>u32))
 <a href=#551 id=551 data-nosnippet>551</a>                        } <span class="kw">else </span>{
 <a href=#552 id=552 data-nosnippet>552</a>                            <span class="prelude-val">None
 <a href=#553 id=553 data-nosnippet>553</a>                        </span>}
@@ -889,8 +889,8 @@
 <a href=#889 id=889 data-nosnippet>889</a>            Expression::Atomic(<span class="kw">_</span>, atom) =&gt; atom.fmt(f),
 <a href=#890 id=890 data-nosnippet>890</a>            Expression::Scope(<span class="kw">_</span>, submodel) =&gt; <span class="macro">write!</span>(f, <span class="string">"{{\n{submodel}\n}}"</span>),
 <a href=#891 id=891 data-nosnippet>891</a>            Expression::Abs(<span class="kw">_</span>, a) =&gt; <span class="macro">write!</span>(f, <span class="string">"|{}|"</span>, a),
-<a href=#892 id=892 data-nosnippet>892</a>            Expression::Sum(<span class="kw">_</span>, expressions) =&gt; {
-<a href=#893 id=893 data-nosnippet>893</a>                <span class="macro">write!</span>(f, <span class="string">"Sum({})"</span>, pretty_vec(expressions))
+<a href=#892 id=892 data-nosnippet>892</a>            Expression::Sum(<span class="kw">_</span>, e) =&gt; {
+<a href=#893 id=893 data-nosnippet>893</a>                <span class="macro">write!</span>(f, <span class="string">"Sum({e})"</span>)
 <a href=#894 id=894 data-nosnippet>894</a>            }
 <a href=#895 id=895 data-nosnippet>895</a>            Expression::Product(<span class="kw">_</span>, expressions) =&gt; {
 <a href=#896 id=896 data-nosnippet>896</a>                <span class="macro">write!</span>(f, <span class="string">"Product({})"</span>, pretty_vec(expressions))
@@ -1059,7 +1059,7 @@
 <a href=#1059 id=1059 data-nosnippet>1059</a></span><span class="kw">mod </span>tests {
 <a href=#1060 id=1060 data-nosnippet>1060</a>    <span class="kw">use </span>std::rc::Rc;
 <a href=#1061 id=1061 data-nosnippet>1061</a>
-<a href=#1062 id=1062 data-nosnippet>1062</a>    <span class="kw">use </span><span class="kw">crate</span>::ast::declaration::Declaration;
+<a href=#1062 id=1062 data-nosnippet>1062</a>    <span class="kw">use crate</span>::{ast::declaration::Declaration, matrix_expr};
 <a href=#1063 id=1063 data-nosnippet>1063</a>
 <a href=#1064 id=1064 data-nosnippet>1064</a>    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 <a href=#1065 id=1065 data-nosnippet>1065</a>
@@ -1067,76 +1067,88 @@
 <a href=#1067 id=1067 data-nosnippet>1067</a>    </span><span class="kw">fn </span>test_domain_of_constant_sum() {
 <a href=#1068 id=1068 data-nosnippet>1068</a>        <span class="kw">let </span>c1 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Int(<span class="number">1</span>)));
 <a href=#1069 id=1069 data-nosnippet>1069</a>        <span class="kw">let </span>c2 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Int(<span class="number">2</span>)));
-<a href=#1070 id=1070 data-nosnippet>1070</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), <span class="macro">vec!</span>[c1.clone(), c2.clone()]);
-<a href=#1071 id=1071 data-nosnippet>1071</a>        <span class="macro">assert_eq!</span>(
-<a href=#1072 id=1072 data-nosnippet>1072</a>            sum.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()),
-<a href=#1073 id=1073 data-nosnippet>1073</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">3</span>)]))
-<a href=#1074 id=1074 data-nosnippet>1074</a>        );
-<a href=#1075 id=1075 data-nosnippet>1075</a>    }
-<a href=#1076 id=1076 data-nosnippet>1076</a>
-<a href=#1077 id=1077 data-nosnippet>1077</a>    <span class="attr">#[test]
-<a href=#1078 id=1078 data-nosnippet>1078</a>    </span><span class="kw">fn </span>test_domain_of_constant_invalid_type() {
-<a href=#1079 id=1079 data-nosnippet>1079</a>        <span class="kw">let </span>c1 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Int(<span class="number">1</span>)));
-<a href=#1080 id=1080 data-nosnippet>1080</a>        <span class="kw">let </span>c2 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Bool(<span class="bool-val">true</span>)));
-<a href=#1081 id=1081 data-nosnippet>1081</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), <span class="macro">vec!</span>[c1.clone(), c2.clone()]);
-<a href=#1082 id=1082 data-nosnippet>1082</a>        <span class="macro">assert_eq!</span>(sum.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()), <span class="prelude-val">None</span>);
-<a href=#1083 id=1083 data-nosnippet>1083</a>    }
-<a href=#1084 id=1084 data-nosnippet>1084</a>
-<a href=#1085 id=1085 data-nosnippet>1085</a>    <span class="attr">#[test]
-<a href=#1086 id=1086 data-nosnippet>1086</a>    </span><span class="kw">fn </span>test_domain_of_empty_sum() {
-<a href=#1087 id=1087 data-nosnippet>1087</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), <span class="macro">vec!</span>[]);
+<a href=#1070 id=1070 data-nosnippet>1070</a>        <span class="kw">let </span>sum = Expression::Sum(
+<a href=#1071 id=1071 data-nosnippet>1071</a>            Metadata::new(),
+<a href=#1072 id=1072 data-nosnippet>1072</a>            Box::new(<span class="macro">matrix_expr!</span>[c1.clone(), c2.clone()]),
+<a href=#1073 id=1073 data-nosnippet>1073</a>        );
+<a href=#1074 id=1074 data-nosnippet>1074</a>        <span class="macro">assert_eq!</span>(
+<a href=#1075 id=1075 data-nosnippet>1075</a>            sum.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()),
+<a href=#1076 id=1076 data-nosnippet>1076</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">3</span>)]))
+<a href=#1077 id=1077 data-nosnippet>1077</a>        );
+<a href=#1078 id=1078 data-nosnippet>1078</a>    }
+<a href=#1079 id=1079 data-nosnippet>1079</a>
+<a href=#1080 id=1080 data-nosnippet>1080</a>    <span class="attr">#[test]
+<a href=#1081 id=1081 data-nosnippet>1081</a>    </span><span class="kw">fn </span>test_domain_of_constant_invalid_type() {
+<a href=#1082 id=1082 data-nosnippet>1082</a>        <span class="kw">let </span>c1 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Int(<span class="number">1</span>)));
+<a href=#1083 id=1083 data-nosnippet>1083</a>        <span class="kw">let </span>c2 = Expression::Atomic(Metadata::new(), Atom::Literal(Literal::Bool(<span class="bool-val">true</span>)));
+<a href=#1084 id=1084 data-nosnippet>1084</a>        <span class="kw">let </span>sum = Expression::Sum(
+<a href=#1085 id=1085 data-nosnippet>1085</a>            Metadata::new(),
+<a href=#1086 id=1086 data-nosnippet>1086</a>            Box::new(<span class="macro">matrix_expr!</span>[c1.clone(), c2.clone()]),
+<a href=#1087 id=1087 data-nosnippet>1087</a>        );
 <a href=#1088 id=1088 data-nosnippet>1088</a>        <span class="macro">assert_eq!</span>(sum.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()), <span class="prelude-val">None</span>);
 <a href=#1089 id=1089 data-nosnippet>1089</a>    }
 <a href=#1090 id=1090 data-nosnippet>1090</a>
 <a href=#1091 id=1091 data-nosnippet>1091</a>    <span class="attr">#[test]
-<a href=#1092 id=1092 data-nosnippet>1092</a>    </span><span class="kw">fn </span>test_domain_of_reference() {
-<a href=#1093 id=1093 data-nosnippet>1093</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
-<a href=#1094 id=1094 data-nosnippet>1094</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
-<a href=#1095 id=1095 data-nosnippet>1095</a>        vars.insert(Rc::new(Declaration::new_var(
-<a href=#1096 id=1096 data-nosnippet>1096</a>            Name::MachineName(<span class="number">0</span>),
-<a href=#1097 id=1097 data-nosnippet>1097</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]),
-<a href=#1098 id=1098 data-nosnippet>1098</a>        )))
-<a href=#1099 id=1099 data-nosnippet>1099</a>        .unwrap();
-<a href=#1100 id=1100 data-nosnippet>1100</a>        <span class="macro">assert_eq!</span>(
-<a href=#1101 id=1101 data-nosnippet>1101</a>            reference.domain_of(<span class="kw-2">&amp;</span>vars),
-<a href=#1102 id=1102 data-nosnippet>1102</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]))
-<a href=#1103 id=1103 data-nosnippet>1103</a>        );
-<a href=#1104 id=1104 data-nosnippet>1104</a>    }
-<a href=#1105 id=1105 data-nosnippet>1105</a>
-<a href=#1106 id=1106 data-nosnippet>1106</a>    <span class="attr">#[test]
-<a href=#1107 id=1107 data-nosnippet>1107</a>    </span><span class="kw">fn </span>test_domain_of_reference_not_found() {
-<a href=#1108 id=1108 data-nosnippet>1108</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
-<a href=#1109 id=1109 data-nosnippet>1109</a>        <span class="macro">assert_eq!</span>(reference.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()), <span class="prelude-val">None</span>);
+<a href=#1092 id=1092 data-nosnippet>1092</a>    </span><span class="kw">fn </span>test_domain_of_empty_sum() {
+<a href=#1093 id=1093 data-nosnippet>1093</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), Box::new(<span class="macro">matrix_expr!</span>[]));
+<a href=#1094 id=1094 data-nosnippet>1094</a>        <span class="macro">assert_eq!</span>(sum.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()), <span class="prelude-val">None</span>);
+<a href=#1095 id=1095 data-nosnippet>1095</a>    }
+<a href=#1096 id=1096 data-nosnippet>1096</a>
+<a href=#1097 id=1097 data-nosnippet>1097</a>    <span class="attr">#[test]
+<a href=#1098 id=1098 data-nosnippet>1098</a>    </span><span class="kw">fn </span>test_domain_of_reference() {
+<a href=#1099 id=1099 data-nosnippet>1099</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
+<a href=#1100 id=1100 data-nosnippet>1100</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
+<a href=#1101 id=1101 data-nosnippet>1101</a>        vars.insert(Rc::new(Declaration::new_var(
+<a href=#1102 id=1102 data-nosnippet>1102</a>            Name::MachineName(<span class="number">0</span>),
+<a href=#1103 id=1103 data-nosnippet>1103</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]),
+<a href=#1104 id=1104 data-nosnippet>1104</a>        )))
+<a href=#1105 id=1105 data-nosnippet>1105</a>        .unwrap();
+<a href=#1106 id=1106 data-nosnippet>1106</a>        <span class="macro">assert_eq!</span>(
+<a href=#1107 id=1107 data-nosnippet>1107</a>            reference.domain_of(<span class="kw-2">&amp;</span>vars),
+<a href=#1108 id=1108 data-nosnippet>1108</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]))
+<a href=#1109 id=1109 data-nosnippet>1109</a>        );
 <a href=#1110 id=1110 data-nosnippet>1110</a>    }
 <a href=#1111 id=1111 data-nosnippet>1111</a>
 <a href=#1112 id=1112 data-nosnippet>1112</a>    <span class="attr">#[test]
-<a href=#1113 id=1113 data-nosnippet>1113</a>    </span><span class="kw">fn </span>test_domain_of_reference_sum_single() {
+<a href=#1113 id=1113 data-nosnippet>1113</a>    </span><span class="kw">fn </span>test_domain_of_reference_not_found() {
 <a href=#1114 id=1114 data-nosnippet>1114</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
-<a href=#1115 id=1115 data-nosnippet>1115</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
-<a href=#1116 id=1116 data-nosnippet>1116</a>        vars.insert(Rc::new(Declaration::new_var(
-<a href=#1117 id=1117 data-nosnippet>1117</a>            Name::MachineName(<span class="number">0</span>),
-<a href=#1118 id=1118 data-nosnippet>1118</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]),
-<a href=#1119 id=1119 data-nosnippet>1119</a>        )))
-<a href=#1120 id=1120 data-nosnippet>1120</a>        .unwrap();
-<a href=#1121 id=1121 data-nosnippet>1121</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), <span class="macro">vec!</span>[reference.clone(), reference.clone()]);
-<a href=#1122 id=1122 data-nosnippet>1122</a>        <span class="macro">assert_eq!</span>(
-<a href=#1123 id=1123 data-nosnippet>1123</a>            sum.domain_of(<span class="kw-2">&amp;</span>vars),
-<a href=#1124 id=1124 data-nosnippet>1124</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">2</span>)]))
-<a href=#1125 id=1125 data-nosnippet>1125</a>        );
-<a href=#1126 id=1126 data-nosnippet>1126</a>    }
-<a href=#1127 id=1127 data-nosnippet>1127</a>
-<a href=#1128 id=1128 data-nosnippet>1128</a>    <span class="attr">#[test]
-<a href=#1129 id=1129 data-nosnippet>1129</a>    </span><span class="kw">fn </span>test_domain_of_reference_sum_bounded() {
-<a href=#1130 id=1130 data-nosnippet>1130</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
-<a href=#1131 id=1131 data-nosnippet>1131</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
-<a href=#1132 id=1132 data-nosnippet>1132</a>        vars.insert(Rc::new(Declaration::new_var(
-<a href=#1133 id=1133 data-nosnippet>1133</a>            Name::MachineName(<span class="number">0</span>),
-<a href=#1134 id=1134 data-nosnippet>1134</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Bounded(<span class="number">1</span>, <span class="number">2</span>)]),
-<a href=#1135 id=1135 data-nosnippet>1135</a>        )));
-<a href=#1136 id=1136 data-nosnippet>1136</a>        <span class="kw">let </span>sum = Expression::Sum(Metadata::new(), <span class="macro">vec!</span>[reference.clone(), reference.clone()]);
-<a href=#1137 id=1137 data-nosnippet>1137</a>        <span class="macro">assert_eq!</span>(
-<a href=#1138 id=1138 data-nosnippet>1138</a>            sum.domain_of(<span class="kw-2">&amp;</span>vars),
-<a href=#1139 id=1139 data-nosnippet>1139</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Bounded(<span class="number">2</span>, <span class="number">4</span>)]))
-<a href=#1140 id=1140 data-nosnippet>1140</a>        );
-<a href=#1141 id=1141 data-nosnippet>1141</a>    }
-<a href=#1142 id=1142 data-nosnippet>1142</a>}</code></pre></div></section></main></body></html>
+<a href=#1115 id=1115 data-nosnippet>1115</a>        <span class="macro">assert_eq!</span>(reference.domain_of(<span class="kw-2">&amp;</span>SymbolTable::new()), <span class="prelude-val">None</span>);
+<a href=#1116 id=1116 data-nosnippet>1116</a>    }
+<a href=#1117 id=1117 data-nosnippet>1117</a>
+<a href=#1118 id=1118 data-nosnippet>1118</a>    <span class="attr">#[test]
+<a href=#1119 id=1119 data-nosnippet>1119</a>    </span><span class="kw">fn </span>test_domain_of_reference_sum_single() {
+<a href=#1120 id=1120 data-nosnippet>1120</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
+<a href=#1121 id=1121 data-nosnippet>1121</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
+<a href=#1122 id=1122 data-nosnippet>1122</a>        vars.insert(Rc::new(Declaration::new_var(
+<a href=#1123 id=1123 data-nosnippet>1123</a>            Name::MachineName(<span class="number">0</span>),
+<a href=#1124 id=1124 data-nosnippet>1124</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">1</span>)]),
+<a href=#1125 id=1125 data-nosnippet>1125</a>        )))
+<a href=#1126 id=1126 data-nosnippet>1126</a>        .unwrap();
+<a href=#1127 id=1127 data-nosnippet>1127</a>        <span class="kw">let </span>sum = Expression::Sum(
+<a href=#1128 id=1128 data-nosnippet>1128</a>            Metadata::new(),
+<a href=#1129 id=1129 data-nosnippet>1129</a>            Box::new(<span class="macro">matrix_expr!</span>[reference.clone(), reference.clone()]),
+<a href=#1130 id=1130 data-nosnippet>1130</a>        );
+<a href=#1131 id=1131 data-nosnippet>1131</a>        <span class="macro">assert_eq!</span>(
+<a href=#1132 id=1132 data-nosnippet>1132</a>            sum.domain_of(<span class="kw-2">&amp;</span>vars),
+<a href=#1133 id=1133 data-nosnippet>1133</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Single(<span class="number">2</span>)]))
+<a href=#1134 id=1134 data-nosnippet>1134</a>        );
+<a href=#1135 id=1135 data-nosnippet>1135</a>    }
+<a href=#1136 id=1136 data-nosnippet>1136</a>
+<a href=#1137 id=1137 data-nosnippet>1137</a>    <span class="attr">#[test]
+<a href=#1138 id=1138 data-nosnippet>1138</a>    </span><span class="kw">fn </span>test_domain_of_reference_sum_bounded() {
+<a href=#1139 id=1139 data-nosnippet>1139</a>        <span class="kw">let </span>reference = Expression::Atomic(Metadata::new(), Atom::Reference(Name::MachineName(<span class="number">0</span>)));
+<a href=#1140 id=1140 data-nosnippet>1140</a>        <span class="kw">let </span><span class="kw-2">mut </span>vars = SymbolTable::new();
+<a href=#1141 id=1141 data-nosnippet>1141</a>        vars.insert(Rc::new(Declaration::new_var(
+<a href=#1142 id=1142 data-nosnippet>1142</a>            Name::MachineName(<span class="number">0</span>),
+<a href=#1143 id=1143 data-nosnippet>1143</a>            Domain::IntDomain(<span class="macro">vec!</span>[Range::Bounded(<span class="number">1</span>, <span class="number">2</span>)]),
+<a href=#1144 id=1144 data-nosnippet>1144</a>        )));
+<a href=#1145 id=1145 data-nosnippet>1145</a>        <span class="kw">let </span>sum = Expression::Sum(
+<a href=#1146 id=1146 data-nosnippet>1146</a>            Metadata::new(),
+<a href=#1147 id=1147 data-nosnippet>1147</a>            Box::new(<span class="macro">matrix_expr!</span>[reference.clone(), reference.clone()]),
+<a href=#1148 id=1148 data-nosnippet>1148</a>        );
+<a href=#1149 id=1149 data-nosnippet>1149</a>        <span class="macro">assert_eq!</span>(
+<a href=#1150 id=1150 data-nosnippet>1150</a>            sum.domain_of(<span class="kw-2">&amp;</span>vars),
+<a href=#1151 id=1151 data-nosnippet>1151</a>            <span class="prelude-val">Some</span>(Domain::IntDomain(<span class="macro">vec!</span>[Range::Bounded(<span class="number">2</span>, <span class="number">4</span>)]))
+<a href=#1152 id=1152 data-nosnippet>1152</a>        );
+<a href=#1153 id=1153 data-nosnippet>1153</a>    }
+<a href=#1154 id=1154 data-nosnippet>1154</a>}</code></pre></div></section></main></body></html>

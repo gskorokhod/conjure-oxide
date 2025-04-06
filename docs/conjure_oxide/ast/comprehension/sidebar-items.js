@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Comprehension","ComprehensionBuilder"]};
+window.SIDEBAR_ITEMS = {"enum":["ComprehensionKind"],"struct":["Comprehension","ComprehensionBuilder"]};
