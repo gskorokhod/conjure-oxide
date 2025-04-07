@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["EssenceParseError"],"fn":["get_minion_solutions","get_sat_solutions","get_solutions_from_conjure","parse_essence_file","solutions_to_json"]};
+window.SIDEBAR_ITEMS = {"fn":["get_minion_solutions","get_sat_solutions","get_solutions_from_conjure","solutions_to_json"]};
