@@ -15,7 +15,7 @@
         <div>
             <p class="heading">Lines</p>
             <p class="title has-text-warning">
-                <abbr title="73 / 95">76.84 %</abbr></p>
+                <abbr title="74 / 96">77.08 %</abbr></p>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use conjure_core::ast::records::RecordValue;</pre>
+                <pre class="has-background-white py-0 px-2">use conjure_core::ast::{DeclarationPtr, Domain, records::RecordValue};</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -556,7 +556,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            self.repr_name().to_string(),</pre>
+                <pre class="has-background-success-light py-0 px-2">            self.repr_name().into(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -572,7 +572,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            indices.iter().join(&quot;_&quot;),</pre>
+                <pre class="has-background-success-light py-0 px-2">            indices.iter().join(&quot;_&quot;).into(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1340,7 +1340,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">            result.insert(Name::from(name), elem);</pre>
+                <pre class="has-background-danger-light py-0 px-2">            result.insert(Name::user(&amp;name), elem);</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1980,7 +1980,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        _: &amp;SymbolTable,</pre>
+                <pre class="has-background-success-light py-0 px-2">        st: &amp;SymbolTable,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2060,7 +2060,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                (</pre>
+                <pre class="has-background-success-light py-0 px-2">                let decl = st.lookup(&amp;name).unwrap();</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2076,7 +2076,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    name.clone(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                (</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2092,7 +2092,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Expression::Atomic(Metadata::new(), Atom::Reference(name)),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    name.clone(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2108,7 +2108,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Expression::Atomic(Metadata::new(), Atom::Reference(decl)),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2124,7 +2124,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            })</pre>
+                <pre class="has-background-success-light py-0 px-2">                )</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2135,12 +2135,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="88">
-                88
+                role="cell" aria-label="176">
+                176
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            .collect())</pre>
+                <pre class="has-background-success-light py-0 px-2">            })</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2156,7 +2156,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    }</pre>
+                <pre class="has-background-success-light py-0 px-2">            .collect())</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2166,13 +2166,13 @@
                 <a href="#134">134</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="88">
+                88
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2"></pre>
+                <pre class="has-background-success-light py-0 px-2">    }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2182,13 +2182,13 @@
                 <a href="#135">135</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    fn declaration_down(&amp;self) -&gt; Result&lt;Vec&lt;Declaration&gt;, ApplicationError&gt; {</pre>
+                <pre class="has-background-white py-0 px-2"></pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2204,7 +2204,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        Ok(self</pre>
+                <pre class="has-background-success-light py-0 px-2">    fn declaration_down(&amp;self) -&gt; Result&lt;Vec&lt;DeclarationPtr&gt;, ApplicationError&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2220,7 +2220,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            .names()</pre>
+                <pre class="has-background-success-light py-0 px-2">        Ok(self</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2236,7 +2236,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            .zip(self.elem_domain.iter().cloned())</pre>
+                <pre class="has-background-success-light py-0 px-2">            .names()</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2247,12 +2247,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="66">
-                66
+                role="cell" aria-label="33">
+                33
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            .map(|(name, domain)| Declaration::new_var(name, domain))</pre>
+                <pre class="has-background-success-light py-0 px-2">            .zip(self.elem_domain.iter().cloned())</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2263,12 +2263,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                role="cell" aria-label="66">
+                66
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            .collect())</pre>
+                <pre class="has-background-success-light py-0 px-2">            .map(|(name, domain)| DeclarationPtr::new_var(name, domain))</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2284,7 +2284,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    }</pre>
+                <pre class="has-background-success-light py-0 px-2">            .collect())</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2294,13 +2294,13 @@
                 <a href="#142">142</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="33">
+                33
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2"></pre>
+                <pre class="has-background-success-light py-0 px-2">    }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2310,13 +2310,13 @@
                 <a href="#143">143</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="473">
-                473
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    fn repr_name(&amp;self) -&gt; &amp;str {</pre>
+                <pre class="has-background-white py-0 px-2"></pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2332,7 +2332,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;record_to_atom&quot;</pre>
+                <pre class="has-background-success-light py-0 px-2">    fn repr_name(&amp;self) -&gt; &amp;str {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2348,7 +2348,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;record_to_atom&quot;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2356,6 +2356,22 @@
                 id="146"
                 role="cell">
                 <a href="#146">146</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="473">
+                473
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">    }</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="147"
+                role="cell">
+                <a href="#147">147</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -2369,34 +2385,18 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="147"
-                role="cell">
-                <a href="#147">147</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2123">
-                2123
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">    fn box_clone(&amp;self) -&gt; Box&lt;dyn Representation&gt; {</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
                 id="148"
                 role="cell">
                 <a href="#148">148</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2123">
-                2123
+                role="cell" aria-label="53944">
+                53944
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        Box::new(self.clone()) as _</pre>
+                <pre class="has-background-success-light py-0 px-2">    fn box_clone(&amp;self) -&gt; Box&lt;dyn Representation&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2407,8 +2407,24 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2123">
-                2123
+                role="cell" aria-label="53944">
+                53944
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">        Box::new(self.clone()) as _</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="150"
+                role="cell">
+                <a href="#150">150</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="53944">
+                53944
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -2417,9 +2433,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="150"
+                id="151"
                 role="cell">
-                <a href="#150">150</a>
+                <a href="#151">151</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -2435,7 +2451,7 @@
         <footer class="footer">
             
                 <div class="content has-text-centered">
-                    <p class="heading">Date: 2025-06-27 23:03</p>
+                    <p class="heading">Date: 2025-08-13 21:24</p>
                 </div>
             
         </footer>

@@ -14,8 +14,8 @@
         <div class="level-item has-text-centered">
         <div>
             <p class="heading">Lines</p>
-            <p class="title has-text-warning">
-                <abbr title="155 / 197">78.68 %</abbr></p>
+            <p class="title has-text-danger">
+                <abbr title="125 / 190">65.79 %</abbr></p>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use conjure_essence_parser::expression::child_expr;</pre>
+                <pre class="has-background-white py-0 px-2">use conjure_essence_parser::util::named_children;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -76,7 +76,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use conjure_essence_parser::util::named_children;</pre>
+                <pre class="has-background-white py-0 px-2">use proc_macro2::{Span, TokenStream};</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -92,7 +92,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use proc_macro2::{Span, TokenStream};</pre>
+                <pre class="has-background-white py-0 px-2">use quote::quote;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -108,7 +108,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use quote::quote;</pre>
+                <pre class="has-background-white py-0 px-2">use syn::Ident;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -124,7 +124,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use syn::Ident;</pre>
+                <pre class="has-background-white py-0 px-2">use tree_sitter::Node;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -140,7 +140,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">use tree_sitter::Node;</pre>
+                <pre class="has-background-white py-0 px-2"></pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -156,7 +156,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2"></pre>
+                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F; TODO (gskorokhod) - This is a lot of code duplication, but I don&#x27;t see an easy way to avoid it short of a ~visitor pattern~ of some sort.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -172,7 +172,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F; TODO (gskorokhod) - This is a lot of code duplication, but I don&#x27;t see an easy way to avoid it short of a ~visitor pattern~ of some sort.</pre>
+                <pre class="has-background-white py-0 px-2"></pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -188,7 +188,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2"></pre>
+                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; &quot;Sister function&quot; to conjure_essence_parser::::conjure_core::ast::Expression::parse_::conjure_core::ast::Expression.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -204,7 +204,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; &quot;Sister function&quot; to conjure_essence_parser::::conjure_core::ast::Expression::parse_::conjure_core::ast::Expression.</pre>
+                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; Instead of actually constructing the AST, this returns its constructor as a TokenStream.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -220,7 +220,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; Instead of actually constructing the AST, this returns its constructor as a TokenStream.</pre>
+                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; Intended for compile-time parsing inside macros.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -230,13 +230,13 @@
                 <a href="#13">13</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="1326">
+                1326
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">&#x2F;&#x2F;&#x2F; Intended for compile-time parsing inside macros.</pre>
+                <pre class="has-background-success-light py-0 px-2">pub fn parse_expr_to_ts(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -247,12 +247,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">pub fn parse_expr_to_ts(</pre>
+                <pre class="has-background-success-light py-0 px-2">    constraint: Node,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -263,12 +263,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    constraint: Node,</pre>
+                <pre class="has-background-success-light py-0 px-2">    source_code: &amp;str,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -279,12 +279,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    source_code: &amp;str,</pre>
+                <pre class="has-background-success-light py-0 px-2">    root: &amp;Node,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -295,12 +295,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    root: &amp;Node,</pre>
+                <pre class="has-background-success-light py-0 px-2">) -&gt; Result&lt;TokenStream, EssenceParseError&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -311,12 +311,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">) -&gt; Result&lt;TokenStream, EssenceParseError&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">    match constraint.kind() {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -327,12 +327,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    match constraint.kind() {</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;constraint&quot; | &quot;expression&quot; | &quot;boolean_expr&quot; | &quot;comparison_expr&quot; | &quot;arithmetic_expr&quot;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -343,12 +343,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="691">
+                691
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;constraint&quot; | &quot;expression&quot; | &quot;boolean_expr&quot; | &quot;comparison_expr&quot; | &quot;arithmetic_expr&quot;</pre>
+                <pre class="has-background-success-light py-0 px-2">        | &quot;primary_expr&quot; | &quot;sub_expr&quot; =&gt; child_expr_to_ts(constraint, source_code, root),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -359,12 +359,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="716">
-                716
+                role="cell" aria-label="635">
+                635
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        | &quot;primary_expr&quot; | &quot;sub_expr&quot; =&gt; child_expr_to_ts(constraint, source_code, root),</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;not_expr&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -375,12 +375,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="659">
-                659
+                role="cell" aria-label="40">
+                40
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;not_expr&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -396,7 +396,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
+                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Not(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -412,7 +412,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Not(</pre>
+                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -428,7 +428,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                Box::new(#child),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -444,7 +444,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                Box::new(#child),</pre>
+                <pre class="has-background-success-light py-0 px-2">            )})</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -454,13 +454,13 @@
                 <a href="#27">27</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="40">
-                40
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            )})</pre>
+                <pre class="has-background-white py-0 px-2">        }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -470,13 +470,13 @@
                 <a href="#28">28</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="595">
+                595
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">        }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;abs_value&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -486,13 +486,13 @@
                 <a href="#29">29</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="619">
-                619
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;abs_value&quot; =&gt; {</pre>
+                <pre class="has-background-danger-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -502,13 +502,13 @@
                 <a href="#30">30</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
+                <pre class="has-background-danger-light py-0 px-2">            Ok(quote! {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -518,13 +518,13 @@
                 <a href="#31">31</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {</pre>
+                <pre class="has-background-danger-light py-0 px-2">                ::conjure_core::ast::Expression::Abs(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -534,13 +534,13 @@
                 <a href="#32">32</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::ast::Expression::Abs(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -550,13 +550,13 @@
                 <a href="#33">33</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                Box::new(#child),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -566,13 +566,13 @@
                 <a href="#34">34</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                Box::new(#child),</pre>
+                <pre class="has-background-danger-light py-0 px-2">            )})</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -582,13 +582,13 @@
                 <a href="#35">35</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            )})</pre>
+                <pre class="has-background-white py-0 px-2">        }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -598,13 +598,13 @@
                 <a href="#36">36</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="595">
+                595
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">        }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;negative_expr&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -615,12 +615,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="617">
-                617
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;negative_expr&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -636,7 +636,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let child = child_expr_to_ts(constraint, source_code, root)?;</pre>
+                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Neg(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -652,7 +652,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Neg(</pre>
+                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -668,7 +668,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                Box::new(#child),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -684,7 +684,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                Box::new(#child),</pre>
+                <pre class="has-background-success-light py-0 px-2">            )})</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -692,22 +692,6 @@
                 id="42"
                 role="cell">
                 <a href="#42">42</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="16">
-                16
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">            )})</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="43"
-                role="cell">
-                <a href="#43">43</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -721,18 +705,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="43"
+                role="cell">
+                <a href="#43">43</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="579">
+                579
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">        &quot;exponent&quot; | &quot;product_expr&quot; | &quot;sum_expr&quot; | &quot;comparison&quot; | &quot;and_expr&quot; | &quot;or_expr&quot;</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="44"
                 role="cell">
                 <a href="#44">44</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="601">
-                601
+                role="cell" aria-label="440">
+                440
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;exponent&quot; | &quot;product_expr&quot; | &quot;sum_expr&quot; | &quot;comparison&quot; | &quot;and_expr&quot; | &quot;or_expr&quot;</pre>
+                <pre class="has-background-success-light py-0 px-2">        | &quot;implication&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -743,12 +743,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="456">
-                456
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        | &quot;implication&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">            let expr1 = child_expr_to_ts(constraint, source_code, root)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -759,12 +759,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let expr1 = child_expr_to_ts(constraint, source_code, root)?;</pre>
+                <pre class="has-background-success-light py-0 px-2">            let op = constraint.child(1).ok_or(format!(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -775,12 +775,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let op = constraint.child(1).ok_or(format!(</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;Missing operator in expression {}&quot;,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -791,12 +791,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;Missing operator in expression {}&quot;,</pre>
+                <pre class="has-background-success-light py-0 px-2">                constraint.kind()</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -806,13 +806,13 @@
                 <a href="#49">49</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                constraint.kind()</pre>
+                <pre class="has-background-danger-light py-0 px-2">            ))?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -822,13 +822,13 @@
                 <a href="#50">50</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="171">
+                171
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">            ))?;</pre>
+                <pre class="has-background-success-light py-0 px-2">            let op_type = &amp;source_code[op.start_byte()..op.end_byte()];</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -839,12 +839,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let op_type = &amp;source_code[op.start_byte()..op.end_byte()];</pre>
+                <pre class="has-background-success-light py-0 px-2">            let expr2_node = constraint.child(2).ok_or(format!(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -855,12 +855,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let expr2_node = constraint.child(2).ok_or(format!(</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;Missing second operand in expression {}&quot;,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -871,24 +871,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;Missing second operand in expression {}&quot;,</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="54"
-                role="cell">
-                <a href="#54">54</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -897,9 +881,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="55"
+                id="54"
                 role="cell">
-                <a href="#55">55</a>
+                <a href="#54">54</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -913,14 +897,14 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="56"
+                id="55"
                 role="cell">
-                <a href="#56">56</a>
+                <a href="#55">55</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -929,9 +913,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="57"
+                id="56"
                 role="cell">
-                <a href="#57">57</a>
+                <a href="#56">56</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -945,18 +929,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="57"
+                role="cell">
+                <a href="#57">57</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="171">
+                171
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">            match op_type {</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="58"
                 role="cell">
                 <a href="#58">58</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="171">
+                171
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            match op_type {</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;**&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::UnsafePow(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -966,13 +966,13 @@
                 <a href="#59">59</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;**&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::UnsafePow(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -988,7 +988,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1004,7 +1004,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1020,7 +1020,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1030,13 +1030,13 @@
                 <a href="#63">63</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="171">
+                171
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;+&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Sum(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1047,12 +1047,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="178">
-                178
+                role="cell" aria-label="26">
+                26
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;+&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Sum(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1063,12 +1063,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="31">
-                31
+                role="cell" aria-label="26">
+                26
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1079,12 +1079,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="31">
-                31
+                role="cell" aria-label="26">
+                26
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1095,12 +1095,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="31">
-                31
+                role="cell" aria-label="145">
+                145
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;-&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Minus(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1111,12 +1111,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="147">
-                147
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;-&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Minus(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1127,12 +1127,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="8">
-                8
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1143,12 +1143,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="8">
-                8
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1159,12 +1159,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="8">
-                8
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1175,12 +1175,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="8">
-                8
+                role="cell" aria-label="129">
+                129
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;*&quot; =&gt; Ok(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1191,12 +1191,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="139">
-                139
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;*&quot; =&gt; Ok(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    quote! {::conjure_core::ast::Expression::Product(::conjure_core::metadata::Metadata::new(), Box::new(::conjure_core::matrix_expr![#expr1, #expr2]))},</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1212,7 +1212,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    quote! {::conjure_core::ast::Expression::Product(::conjure_core::metadata::Metadata::new(), Box::new(::conjure_core::matrix_expr![#expr1, #expr2]))},</pre>
+                <pre class="has-background-success-light py-0 px-2">                ),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1223,24 +1223,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="16">
-                16
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="76"
-                role="cell">
-                <a href="#76">76</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="123">
-                123
+                role="cell" aria-label="113">
+                113
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1249,9 +1233,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="77"
+                id="76"
                 role="cell">
-                <a href="#77">77</a>
+                <a href="#76">76</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -1265,18 +1249,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="77"
+                role="cell">
+                <a href="#77">77</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="1">
+                1
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::UnsafeDiv(</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="78"
                 role="cell">
                 <a href="#78">78</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                role="cell" aria-label="1">
+                1
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::UnsafeDiv(</pre>
+                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1287,12 +1287,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                role="cell" aria-label="1">
+                1
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                        Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1303,12 +1303,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                role="cell" aria-label="1">
+                1
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                        Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1319,24 +1319,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        Box::new(#expr2),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="82"
-                role="cell">
-                <a href="#82">82</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="2">
-                2
+                role="cell" aria-label="1">
+                1
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1345,9 +1329,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="83"
+                id="82"
                 role="cell">
-                <a href="#83">83</a>
+                <a href="#82">82</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -1361,14 +1345,14 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="84"
+                id="83"
                 role="cell">
-                <a href="#84">84</a>
+                <a href="#83">83</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="121">
-                121
+                role="cell" aria-label="112">
+                112
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -1377,9 +1361,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="85"
+                id="84"
                 role="cell">
-                <a href="#85">85</a>
+                <a href="#84">84</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -1389,6 +1373,22 @@
             <div class="column has-background-white p-0"
                  role="cell">
                 <pre class="has-background-white py-0 px-2">                    &#x2F;&#x2F;TODO: add checks for if mod is safe or not</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="85"
+                role="cell">
+                <a href="#85">85</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::UnsafeMod(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1404,7 +1404,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::UnsafeMod(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1420,7 +1420,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                        Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1436,7 +1436,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                        Box::new(#expr1),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                        Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1452,7 +1452,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                        Box::new(#expr2),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    )})</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1460,22 +1460,6 @@
                 id="90"
                 role="cell">
                 <a href="#90">90</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
-            </div>
-            <div class="column has-background-danger-light p-0"
-                 role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    )})</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="91"
-                role="cell">
-                <a href="#91">91</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -1489,18 +1473,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="91"
+                role="cell">
+                <a href="#91">91</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="112">
+                112
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">                &quot;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Eq(</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="92"
                 role="cell">
                 <a href="#92">92</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="121">
-                121
+                role="cell" aria-label="24">
+                24
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Eq(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1511,12 +1511,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="27">
-                27
+                role="cell" aria-label="24">
+                24
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1527,12 +1527,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="27">
-                27
+                role="cell" aria-label="24">
+                24
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1543,12 +1543,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="27">
-                27
+                role="cell" aria-label="24">
+                24
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1559,12 +1559,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="27">
-                27
+                role="cell" aria-label="88">
+                88
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;!=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Neq(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1575,12 +1575,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="94">
-                94
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;!=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Neq(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1591,12 +1591,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="9">
-                9
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1607,12 +1607,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="9">
-                9
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1623,12 +1623,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="9">
-                9
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1639,12 +1639,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="9">
-                9
+                role="cell" aria-label="80">
+                80
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;&lt;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Leq(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1655,12 +1655,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="85">
-                85
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;&lt;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Leq(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1671,12 +1671,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="17">
-                17
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1687,12 +1687,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="17">
-                17
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1703,12 +1703,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="17">
-                17
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1719,12 +1719,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="17">
-                17
+                role="cell" aria-label="64">
+                64
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;&gt;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Geq(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1735,12 +1735,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="68">
-                68
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;&gt;=&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Geq(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1756,7 +1756,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1772,7 +1772,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1788,7 +1788,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1799,12 +1799,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="16">
-                16
+                role="cell" aria-label="48">
+                48
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;&lt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Lt(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1814,13 +1814,13 @@
                 <a href="#112">112</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="52">
-                52
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;&lt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Lt(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1836,7 +1836,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1852,7 +1852,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1868,7 +1868,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1876,6 +1876,70 @@
                 id="116"
                 role="cell">
                 <a href="#116">116</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="48">
+                48
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">                &quot;&gt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Gt(</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="117"
+                role="cell">
+                <a href="#117">117</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="118"
+                role="cell">
+                <a href="#118">118</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr1),</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="119"
+                role="cell">
+                <a href="#119">119</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(#expr2),</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="120"
+                role="cell">
+                <a href="#120">120</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -1889,82 +1953,18 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="117"
-                role="cell">
-                <a href="#117">117</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="52">
-                52
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;&gt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Gt(</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="118"
-                role="cell">
-                <a href="#118">118</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="119"
-                role="cell">
-                <a href="#119">119</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="120"
-                role="cell">
-                <a href="#120">120</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
                 id="121"
                 role="cell">
                 <a href="#121">121</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                role="cell" aria-label="48">
+                48
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;&#x2F;\\&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::And(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1975,12 +1975,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="51">
-                51
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;&#x2F;\\&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::And(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -1991,12 +1991,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="18">
-                18
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2007,12 +2007,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="18">
-                18
+                role="cell" aria-label="16">
+                16
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2023,12 +2023,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="18">
-                18
+                role="cell" aria-label="32">
+                32
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;\\&#x2F;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Or(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2038,13 +2038,13 @@
                 <a href="#126">126</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;\\&#x2F;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Or(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2060,7 +2060,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2076,7 +2076,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#expr1, #expr2]),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2086,13 +2086,13 @@
                 <a href="#129">129</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="32">
+                32
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;-&gt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Imply(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2103,12 +2103,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                role="cell" aria-label="32">
+                32
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;-&gt;&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Imply(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2119,12 +2119,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                role="cell" aria-label="32">
+                32
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2135,12 +2135,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                role="cell" aria-label="32">
+                32
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr1),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2151,12 +2151,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                role="cell" aria-label="32">
+                32
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Box::new(#expr2),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2166,13 +2166,13 @@
                 <a href="#134">134</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="33">
-                33
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported operator &#x27;{op_type}&#x27;&quot;).into()),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2182,13 +2182,13 @@
                 <a href="#135">135</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported operator &#x27;{}&#x27;&quot;, op_type).into()),</pre>
+                <pre class="has-background-white py-0 px-2">            }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2204,7 +2204,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">            }</pre>
+                <pre class="has-background-white py-0 px-2">        }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2214,13 +2214,13 @@
                 <a href="#137">137</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="408">
+                408
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">        }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;quantifier_expr&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2230,13 +2230,13 @@
                 <a href="#138">138</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="423">
-                423
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;quantifier_expr&quot; =&gt; {</pre>
+                <pre class="has-background-danger-light py-0 px-2">            let mut expr_list = Vec::new();</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2246,13 +2246,13 @@
                 <a href="#139">139</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let mut expr_list = Vec::new();</pre>
+                <pre class="has-background-danger-light py-0 px-2">            for expr in named_children(&amp;constraint) {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2262,13 +2262,13 @@
                 <a href="#140">140</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="3">
-                3
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            for expr in named_children(&amp;constraint) {</pre>
+                <pre class="has-background-danger-light py-0 px-2">                expr_list.push(parse_expr_to_ts(expr, source_code, root)?);</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2278,13 +2278,13 @@
                 <a href="#141">141</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="3">
-                3
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                expr_list.push(parse_expr_to_ts(expr, source_code, root)?);</pre>
+                <pre class="has-background-white py-0 px-2">            }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2300,7 +2300,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">            }</pre>
+                <pre class="has-background-white py-0 px-2"></pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2310,13 +2310,13 @@
                 <a href="#143">143</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2"></pre>
+                <pre class="has-background-danger-light py-0 px-2">            let quantifier = constraint.child(0).ok_or(format!(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2326,13 +2326,13 @@
                 <a href="#144">144</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let quantifier = constraint.child(0).ok_or(format!(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;Missing quantifier in expression {}&quot;,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2342,13 +2342,13 @@
                 <a href="#145">145</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;Missing quantifier in expression {}&quot;,</pre>
+                <pre class="has-background-danger-light py-0 px-2">                constraint.kind()</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2358,13 +2358,13 @@
                 <a href="#146">146</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                constraint.kind()</pre>
+                <pre class="has-background-danger-light py-0 px-2">            ))?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2380,7 +2380,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">            ))?;</pre>
+                <pre class="has-background-danger-light py-0 px-2">            let quantifier_type = &amp;source_code[quantifier.start_byte()..quantifier.end_byte()];</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2388,22 +2388,6 @@
                 id="148"
                 role="cell">
                 <a href="#148">148</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let quantifier_type = &amp;source_code[quantifier.start_byte()..quantifier.end_byte()];</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="149"
-                role="cell">
-                <a href="#149">149</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -2417,18 +2401,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="149"
+                role="cell">
+                <a href="#149">149</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
+            </div>
+            <div class="column has-background-danger-light p-0"
+                 role="cell">
+                <pre class="has-background-danger-light py-0 px-2">            match quantifier_type {</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="150"
                 role="cell">
                 <a href="#150">150</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            match quantifier_type {</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;and&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::And(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2438,13 +2438,13 @@
                 <a href="#151">151</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;and&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::And(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2460,7 +2460,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2476,7 +2476,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2486,13 +2486,13 @@
                 <a href="#154">154</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;or&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Or(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2502,13 +2502,13 @@
                 <a href="#155">155</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;or&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Or(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2524,7 +2524,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2540,7 +2540,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2550,13 +2550,13 @@
                 <a href="#158">158</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;min&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Min(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2566,13 +2566,13 @@
                 <a href="#159">159</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;min&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Min(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2588,7 +2588,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2604,7 +2604,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2614,13 +2614,13 @@
                 <a href="#162">162</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;max&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Max(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2630,13 +2630,13 @@
                 <a href="#163">163</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;max&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Max(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2652,7 +2652,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2668,7 +2668,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2678,13 +2678,13 @@
                 <a href="#166">166</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;sum&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Sum(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2694,13 +2694,13 @@
                 <a href="#167">167</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;sum&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Sum(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2716,7 +2716,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2732,7 +2732,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2742,13 +2742,13 @@
                 <a href="#170">170</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;allDiff&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::AllDiff(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2758,13 +2758,13 @@
                 <a href="#171">171</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1">
-                1
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;allDiff&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::AllDiff(</pre>
+                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2780,7 +2780,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2796,7 +2796,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                    Box::new(::conjure_core::matrix_expr![#(#expr_list),*]),</pre>
+                <pre class="has-background-white py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2806,13 +2806,13 @@
                 <a href="#174">174</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported quantifier {}&quot;, constraint.kind()).into()),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2822,13 +2822,13 @@
                 <a href="#175">175</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported quantifier {}&quot;, constraint.kind()).into()),</pre>
+                <pre class="has-background-white py-0 px-2">            }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2844,7 +2844,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">            }</pre>
+                <pre class="has-background-white py-0 px-2">        }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2854,13 +2854,13 @@
                 <a href="#177">177</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="408">
+                408
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">        }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;constant&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2871,12 +2871,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="422">
-                422
+                role="cell" aria-label="55">
+                55
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;constant&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">            let child = constraint.child(0).ok_or(format!(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2887,12 +2887,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="64">
-                64
+                role="cell" aria-label="55">
+                55
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let child = constraint.child(0).ok_or(format!(</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;Missing value for constant expression {}&quot;,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2903,24 +2903,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="64">
-                64
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;Missing value for constant expression {}&quot;,</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="181"
-                role="cell">
-                <a href="#181">181</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="64">
-                64
+                role="cell" aria-label="55">
+                55
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -2929,9 +2913,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="182"
+                id="181"
                 role="cell">
-                <a href="#182">182</a>
+                <a href="#181">181</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -2945,18 +2929,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="182"
+                role="cell">
+                <a href="#182">182</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="55">
+                55
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">            match child.kind() {</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="183"
                 role="cell">
                 <a href="#183">183</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="64">
-                64
+                role="cell" aria-label="55">
+                55
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            match child.kind() {</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;integer&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2967,12 +2967,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="64">
-                64
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;integer&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">                    let constant_value = &amp;source_code[child.start_byte()..child.end_byte()]</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2983,12 +2983,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    let constant_value = &amp;source_code[child.start_byte()..child.end_byte()]</pre>
+                <pre class="has-background-success-light py-0 px-2">                        .parse::&lt;i32&gt;()</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -2999,12 +2999,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        .parse::&lt;i32&gt;()</pre>
+                <pre class="has-background-success-light py-0 px-2">                        .unwrap();</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3015,12 +3015,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        .unwrap();</pre>
+                <pre class="has-background-success-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3031,12 +3031,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
+                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3047,12 +3047,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Int(#constant_value)),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3063,24 +3063,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">                        ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Int(#constant_value)),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="191"
-                role="cell">
-                <a href="#191">191</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="45">
-                45
+                role="cell" aria-label="39">
+                39
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -3089,9 +3073,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="192"
+                id="191"
                 role="cell">
-                <a href="#192">192</a>
+                <a href="#191">191</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3105,18 +3089,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="192"
+                role="cell">
+                <a href="#192">192</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="16">
+                16
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">                &quot;TRUE&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="193"
                 role="cell">
                 <a href="#193">193</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;TRUE&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3127,12 +3127,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="11">
-                11
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Bool(true)),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3143,12 +3143,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="11">
-                11
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Bool(true)),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3159,12 +3159,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="11">
-                11
+                role="cell" aria-label="8">
+                8
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-success-light py-0 px-2">                &quot;FALSE&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3180,7 +3180,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                &quot;FALSE&quot; =&gt; Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3196,7 +3196,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Bool(false)),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3212,7 +3212,7 @@
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                    ::conjure_core::ast::Atom::Literal(::conjure_core::ast::Literal::Bool(false)),</pre>
+                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3222,13 +3222,13 @@
                 <a href="#200">200</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="8">
-                8
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                )}),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported constant kind: {}&quot;, child.kind()).into()),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3238,13 +3238,13 @@
                 <a href="#201">201</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                _ =&gt; Err(format!(&quot;Unsupported constant kind: {}&quot;, child.kind()).into()),</pre>
+                <pre class="has-background-white py-0 px-2">            }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3260,7 +3260,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">            }</pre>
+                <pre class="has-background-white py-0 px-2">        }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3270,13 +3270,13 @@
                 <a href="#203">203</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
-                
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="353">
+                353
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">        }</pre>
+                <pre class="has-background-success-light py-0 px-2">        &quot;variable&quot; =&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3286,13 +3286,13 @@
                 <a href="#204">204</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="358">
-                358
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;variable&quot; =&gt; {</pre>
+                <pre class="has-background-danger-light py-0 px-2">            let variable_name =</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3302,13 +3302,13 @@
                 <a href="#205">205</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let variable_name =</pre>
+                <pre class="has-background-danger-light py-0 px-2">                String::from(&amp;source_code[constraint.start_byte()..constraint.end_byte()]);</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3318,13 +3318,13 @@
                 <a href="#206">206</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                String::from(&amp;source_code[constraint.start_byte()..constraint.end_byte()]);</pre>
+                <pre class="has-background-danger-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3334,13 +3334,13 @@
                 <a href="#207">207</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            Ok(quote! {::conjure_core::ast::Expression::Atomic(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3350,13 +3350,13 @@
                 <a href="#208">208</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::metadata::Metadata::new(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                ::conjure_core::ast::Atom::new_ref(#variable_name),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3366,13 +3366,13 @@
                 <a href="#209">209</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
+                
             </div>
-            <div class="column has-background-success-light p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                ::conjure_core::ast::Atom::Reference(::conjure_core::ast::Name::User(#variable_name.into())),</pre>
+                <pre class="has-background-danger-light py-0 px-2">            )})</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3380,22 +3380,6 @@
                 id="210"
                 role="cell">
                 <a href="#210">210</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="19">
-                19
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">            )})</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="211"
-                role="cell">
-                <a href="#211">211</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3409,14 +3393,14 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="212"
+                id="211"
                 role="cell">
-                <a href="#212">212</a>
+                <a href="#211">211</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -3425,9 +3409,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="213"
+                id="212"
                 role="cell">
-                <a href="#213">213</a>
+                <a href="#212">212</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -3437,6 +3421,22 @@
             <div class="column has-background-danger-light p-0"
                  role="cell">
                 <pre class="has-background-danger-light py-0 px-2">            &quot;dominance_relation&quot; =&gt; {</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
+                id="213"
+                role="cell">
+                <a href="#213">213</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
+                
+            </div>
+            <div class="column has-background-white p-0"
+                 role="cell">
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; Generate the code for the inner expression using the macro&#x27;s own parser</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3462,13 +3462,13 @@
                 <a href="#215">215</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                let inner = child_expr(constraint, source_code, root)?;</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; Remove the runtime check:</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3478,13 +3478,13 @@
                 <a href="#216">216</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                match inner {</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; let inner = child_expr(constraint, source_code, root)?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3494,13 +3494,13 @@
                 <a href="#217">217</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::ast::Expression::Atomic(_, _) =&gt; Ok(quote! {</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; match inner { ... }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3510,13 +3510,13 @@
                 <a href="#218">218</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                        ::conjure_core::ast::Expression::FromSolution(::conjure_core::metadata::Metadata::new(), Box::new(#inner_ts))</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; Just generate the FromSolution structure. Runtime validation must happen later.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3532,7 +3532,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    }),</pre>
+                <pre class="has-background-danger-light py-0 px-2">                Ok(quote! {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3548,7 +3548,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    _ =&gt; Err(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    ::conjure_core::ast::Expression::FromSolution(::conjure_core::metadata::Metadata::new(), Box::new(#inner_ts))</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3564,7 +3564,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                        &quot;Expression inside a `fromSolution()` must be a variable name&quot;</pre>
+                <pre class="has-background-danger-light py-0 px-2">                })</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3574,13 +3574,13 @@
                 <a href="#222">222</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                            .to_string()</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; The original code had a check here to ensure inner was Atomic.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3590,13 +3590,13 @@
                 <a href="#223">223</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                            .into(),</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; This check cannot be performed at compile time by the macro.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3606,13 +3606,13 @@
                 <a href="#224">224</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
+                role="cell" aria-label="no coverage">
                 
             </div>
-            <div class="column has-background-danger-light p-0"
+            <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    ),</pre>
+                <pre class="has-background-white py-0 px-2">                &#x2F;&#x2F; It must be deferred to a runtime semantic analysis pass after the AST is built.</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3628,7 +3628,7 @@
             </div>
             <div class="column has-background-white p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">                }</pre>
+                <pre class="has-background-white py-0 px-2">            }</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3638,13 +3638,13 @@
                 <a href="#226">226</a>
             </div>
             <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
-                role="cell" aria-label="no coverage">
+                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
+                role="cell" aria-label="0">
                 
             </div>
-            <div class="column has-background-white p-0"
+            <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-white py-0 px-2">            }</pre>
+                <pre class="has-background-danger-light py-0 px-2">            _ =&gt; Err(</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3660,7 +3660,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">            _ =&gt; Err(</pre>
+                <pre class="has-background-danger-light py-0 px-2">                &quot;`fromSolution()` is only allowed inside dominance relation definitions&quot;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3676,7 +3676,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                &quot;`fromSolution()` is only allowed inside dominance relation definitions&quot;</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    .to_string()</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3692,7 +3692,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    .to_string()</pre>
+                <pre class="has-background-danger-light py-0 px-2">                    .into(),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3708,7 +3708,7 @@
             </div>
             <div class="column has-background-danger-light p-0"
                  role="cell">
-                <pre class="has-background-danger-light py-0 px-2">                    .into(),</pre>
+                <pre class="has-background-danger-light py-0 px-2">            ),</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3716,22 +3716,6 @@
                 id="231"
                 role="cell">
                 <a href="#231">231</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
-                role="cell" aria-label="0">
-                
-            </div>
-            <div class="column has-background-danger-light p-0"
-                 role="cell">
-                <pre class="has-background-danger-light py-0 px-2">            ),</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="232"
-                role="cell">
-                <a href="#232">232</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3745,18 +3729,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="232"
+                role="cell">
+                <a href="#232">232</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="353">
+                353
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">        &quot;metavar&quot; =&gt; {</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="233"
                 role="cell">
                 <a href="#233">233</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">        &quot;metavar&quot; =&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">            let inner = constraint</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3767,12 +3767,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let inner = constraint</pre>
+                <pre class="has-background-success-light py-0 px-2">                .named_child(0)</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3783,12 +3783,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                .named_child(0)</pre>
+                <pre class="has-background-success-light py-0 px-2">                .ok_or(&quot;Expected name for meta-variable&quot;.to_string())?;</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3799,12 +3799,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">                .ok_or(&quot;Expected name for meta-variable&quot;.to_string())?;</pre>
+                <pre class="has-background-success-light py-0 px-2">            let name = &amp;source_code[inner.start_byte()..inner.end_byte()];</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3815,12 +3815,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let name = &amp;source_code[inner.start_byte()..inner.end_byte()];</pre>
+                <pre class="has-background-success-light py-0 px-2">            let ident = Ident::new(name, Span::call_site());</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3831,24 +3831,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">            let ident = Ident::new(name, Span::call_site());</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="239"
-                role="cell">
-                <a href="#239">239</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="339">
-                339
+                role="cell" aria-label="353">
+                353
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -3857,9 +3841,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="240"
+                id="239"
                 role="cell">
-                <a href="#240">240</a>
+                <a href="#239">239</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3873,9 +3857,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="241"
+                id="240"
                 role="cell">
-                <a href="#241">241</a>
+                <a href="#240">240</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -3889,9 +3873,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="242"
+                id="241"
                 role="cell">
-                <a href="#242">242</a>
+                <a href="#241">241</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3905,14 +3889,14 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="243"
+                id="242"
                 role="cell">
-                <a href="#243">243</a>
+                <a href="#242">242</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="1375">
-                1375
+                role="cell" aria-label="1326">
+                1326
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -3921,9 +3905,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="244"
+                id="243"
                 role="cell">
-                <a href="#244">244</a>
+                <a href="#243">243</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -3937,18 +3921,34 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
+                id="244"
+                role="cell">
+                <a href="#244">244</a>
+            </div>
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
+                role="cell" aria-label="918">
+                918
+            </div>
+            <div class="column has-background-success-light p-0"
+                 role="cell">
+                <pre class="has-background-success-light py-0 px-2">fn child_expr_to_ts(</pre>
+            </div>
+        </div><div class="columns p-0 m-0" role="row">
+            <div
+                class="column is-1 is-narrow p-0 has-text-centered"
                 id="245"
                 role="cell">
                 <a href="#245">245</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">fn child_expr_to_ts(</pre>
+                <pre class="has-background-success-light py-0 px-2">    node: Node,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3959,12 +3959,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    node: Node,</pre>
+                <pre class="has-background-success-light py-0 px-2">    source_code: &amp;str,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3975,12 +3975,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    source_code: &amp;str,</pre>
+                <pre class="has-background-success-light py-0 px-2">    root: &amp;Node,</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -3991,12 +3991,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">    root: &amp;Node,</pre>
+                <pre class="has-background-success-light py-0 px-2">) -&gt; Result&lt;TokenStream, EssenceParseError&gt; {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -4007,12 +4007,12 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
-                <pre class="has-background-success-light py-0 px-2">) -&gt; Result&lt;TokenStream, EssenceParseError&gt; {</pre>
+                <pre class="has-background-success-light py-0 px-2">    match node.named_child(0) {</pre>
             </div>
         </div><div class="columns p-0 m-0" role="row">
             <div
@@ -4023,24 +4023,8 @@
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
-            </div>
-            <div class="column has-background-success-light p-0"
-                 role="cell">
-                <pre class="has-background-success-light py-0 px-2">    match node.named_child(0) {</pre>
-            </div>
-        </div><div class="columns p-0 m-0" role="row">
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered"
-                id="251"
-                role="cell">
-                <a href="#251">251</a>
-            </div>
-            <div
-                class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -4049,9 +4033,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="252"
+                id="251"
                 role="cell">
-                <a href="#252">252</a>
+                <a href="#251">251</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-danger-light has-background-danger"
@@ -4065,9 +4049,9 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="253"
+                id="252"
                 role="cell">
-                <a href="#253">253</a>
+                <a href="#252">252</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-white has-background-white"
@@ -4081,14 +4065,14 @@
         </div><div class="columns p-0 m-0" role="row">
             <div
                 class="column is-1 is-narrow p-0 has-text-centered"
-                id="254"
+                id="253"
                 role="cell">
-                <a href="#254">254</a>
+                <a href="#253">253</a>
             </div>
             <div
                 class="column is-1 is-narrow p-0 has-text-centered has-text-success-light has-background-success"
-                role="cell" aria-label="952">
-                952
+                role="cell" aria-label="918">
+                918
             </div>
             <div class="column has-background-success-light p-0"
                  role="cell">
@@ -4099,7 +4083,7 @@
         <footer class="footer">
             
                 <div class="content has-text-centered">
-                    <p class="heading">Date: 2025-06-27 23:03</p>
+                    <p class="heading">Date: 2025-08-13 21:24</p>
                 </div>
             
         </footer>
