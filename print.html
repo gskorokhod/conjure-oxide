@@ -3,7 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - Conjure Oxide</title>
+        <title>Conjure Oxide</title>
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
@@ -195,15 +196,79 @@ St Andrews, but we also welcome outside contributors; for more information see
 <a href="https://github.com/conjure-cp/conjure-oxide/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
 <h2 id="licence"><a class="header" href="#licence">Licence</a></h2>
 <p>The Conjure Oxide source and documentation are released under the <a href="https://github.com/conjure-cp/conjure-oxide/blob/main/LICENCE">Mozilla Public Licence v2.0</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="useful-links"><a class="header" href="#useful-links">Useful Links</a></h1>
+<h2 id="api-documentation"><a class="header" href="#api-documentation">API Documentation</a></h2>
+<p>As well as Conjure Oxide, this repository contains various dependent crates
+(such as solver bindings), and related projects. Below are links to the API
+documentation for each crate for developer reference:</p>
+<ul>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/conjure_oxide/index.html">conjure-oxide</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/conjure_core/index.html">conjure_core</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/conjure_essence_macros/">conjure_essence_macros</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/conjure_essence_parser">conjure_essence_parser</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/conjure_rule_macros">conjure_rule_macros</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/enum_compatability_macro">enum_compatability_macro</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/docs/minion-sys/index.html">minion-sys</a></li>
+</ul>
+<h2 id="code-coverage"><a class="header" href="#code-coverage">Code Coverage</a></h2>
+<p>Code coverage reports can be found <a href="https://conjure-cp.github.io/conjure-oxide/coverage/main/">here</a>.</p>
+<h2 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h2>
+<ul>
+<li><a href="https://conjure-cp.github.io/conjure-oxide/tools/essence-feature-usage-stats/">Essence feature usage stats</a></li>
+<li><a href="https://conjure-cp.github.io/conjure-blocks/">Conjure blocks</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>To install Conjure Oxide, either <a href="installation/">build it from source</a>, or use a <a href="installation/">nightly release</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logging"><a class="header" href="#logging">Logging</a></h1>
+<p><strong>This document is a work in progress - for a full list of logging options,
+see Conjure Oxide's <code>--help</code> output.</strong></p>
+<h2 id="to-stderr"><a class="header" href="#to-stderr">To <code>stderr</code></a></h2>
+<p>Using <code>--verbose</code>, and the <code>RUST_LOG</code> environment variable, you can control the
+contents, and formatting of, Conjure Oxide's <code>stderr</code> output:</p>
+<ul>
+<li>
+<p><strong><code>--verbose</code></strong> changes the formatting of the logs for improved readability,
+including printing source locations and line numbers for log events. It also
+enables the printing of the log levels <code>INFO</code> and above.</p>
+</li>
+<li>
+<p>The <strong><code>RUST_LOG</code></strong> environment variable can be used to customise the
+log levels that are printed depending on the module . For more
+information, see:
+<a href="https://docs.rs/env_logger/latest/env_logger/#enabling-logging">https://docs.rs/env_logger/latest/env_logger/#enabling-logging</a>.</p>
+</li>
+</ul>
+<h3 id="example-logging-rule-applications"><a class="header" href="#example-logging-rule-applications">Example: Logging Rule Applications</a></h3>
+<p>Different log levels provide different information about the rules applied to
+the model:</p>
+<ul>
+<li>
+<p><code>INFO</code> provides information on the rules that were applied to the model.</p>
+</li>
+<li>
+<p><code>TRACE</code> additionally prints the rules that were attempted and why they were
+not applicable.</p>
+</li>
+</ul>
+<p>To see TRACE logs in a pretty format (mainly useful for
+debugging):</p>
+<pre><code class="language-sh">$ RUST_LOG=trace conjure-oxide solve --verbose &lt;model&gt;
+</code></pre>
+<p>Or, using cargo:</p>
+<pre><code class="language-sh">$ RUST_LOG=trace cargo run -- solve --verbose &lt;model&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="developer-documentation"><a class="header" href="#developer-documentation">Developer Documentation</a></h1>
+<p>Developer documentation is hosted on the <a href="https://github.com/conjure-cp/conjure-oxide/wiki">Github Wiki</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-interested-students"><a class="header" href="#for-interested-students">For Interested Students</a></h1>
+<p>This project is developed as part of the "Artificial Intelligence for Decision
+Making" Vertically Integrated Project module. For more information on the VIP, <a href="https://ozgurakgun.github.io/vip">click here</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="links.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -212,9 +277,6 @@ St Andrews, but we also welcome outside contributors; for more information see
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="links.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
@@ -237,6 +299,13 @@ St Andrews, but we also welcome outside contributors; for more information see
 
         <!-- Custom JS scripts -->
 
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
 
 
     </div>
