@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/ac_operators.rs`."><title>ac_operators.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-069232aa.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (8e62bfd31 2025-08-12)" data-channel="nightly" data-search-js="search-6c528b5c.js" data-settings-js="settings-5514c975.js" ><script src="../../../static.files/storage-68b7e25d.js"></script><script defer src="../../../static.files/src-script-813739b1.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-eebb9057.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>ac_operators.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use crate</span>::{
-<a href=#2 id=2 data-nosnippet>2</a>    ast::{Domain, Range, ReturnType},
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/ac_operators.rs`."><title>ac_operators.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e56847b5.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (7aef4bec4 2025-09-01)" data-channel="nightly" data-search-js="search-449aa9bf.js" data-stringdex-js="stringdex-0e748618.js" data-settings-js="settings-c38705f0.js" ><script src="../../../static.files/storage-e2aeef58.js"></script><script defer src="../../../static.files/src-script-813739b1.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-6dc2a7f3.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>ac_operators.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use crate</span>::{
+<a href=#2 id=2 data-nosnippet>2</a>    ast::{Domain, Moo, Range, ReturnType},
 <a href=#3 id=3 data-nosnippet>3</a>    matrix_expr,
 <a href=#4 id=4 data-nosnippet>4</a>    metadata::Metadata,
 <a href=#5 id=5 data-nosnippet>5</a>};
@@ -26,7 +26,7 @@
 <a href=#26 id=26 data-nosnippet>26</a>            <span class="macro">matches!</span>(child_expr.return_type(), <span class="prelude-val">Some</span>(ReturnType::Matrix(<span class="kw">_</span>))),
 <a href=#27 id=27 data-nosnippet>27</a>            <span class="string">"The child expression given to ACOperatorKind::to_expression should be of type matrix."
 <a href=#28 id=28 data-nosnippet>28</a>        </span>);
-<a href=#29 id=29 data-nosnippet>29</a>        <span class="kw">let </span>box_expr = Box::new(child_expr);
+<a href=#29 id=29 data-nosnippet>29</a>        <span class="kw">let </span>box_expr = Moo::new(child_expr);
 <a href=#30 id=30 data-nosnippet>30</a>        <span class="kw">match </span><span class="self">self </span>{
 <a href=#31 id=31 data-nosnippet>31</a>            ACOperatorKind::And =&gt; Expression::And(Metadata::new(), box_expr),
 <a href=#32 id=32 data-nosnippet>32</a>            ACOperatorKind::Or =&gt; Expression::Or(Metadata::new(), box_expr),
@@ -92,8 +92,8 @@
 <a href=#92 id=92 data-nosnippet>92</a>                    <span class="macro">matches!</span>(tail_expr.return_type(), <span class="prelude-val">Some</span>(ReturnType::Bool)),
 <a href=#93 id=93 data-nosnippet>93</a>                    <span class="string">"The tail expression in an and skipping operation should be type boolean."
 <a href=#94 id=94 data-nosnippet>94</a>                </span>);
-<a href=#95 id=95 data-nosnippet>95</a>                <span class="kw">let </span>tail_expr_boxed = Box::new(tail_expr);
-<a href=#96 id=96 data-nosnippet>96</a>                <span class="kw">let </span>guard_expr_boxed = Box::new(guard_expr);
+<a href=#95 id=95 data-nosnippet>95</a>                <span class="kw">let </span>tail_expr_boxed = Moo::new(tail_expr);
+<a href=#96 id=96 data-nosnippet>96</a>                <span class="kw">let </span>guard_expr_boxed = Moo::new(guard_expr);
 <a href=#97 id=97 data-nosnippet>97</a>                Expression::Imply(Metadata::new(), guard_expr_boxed, tail_expr_boxed)
 <a href=#98 id=98 data-nosnippet>98</a>            }
 <a href=#99 id=99 data-nosnippet>99</a>            ACOperatorKind::Or =&gt; {
@@ -103,7 +103,7 @@
 <a href=#103 id=103 data-nosnippet>103</a>                </span>);
 <a href=#104 id=104 data-nosnippet>104</a>                Expression::And(
 <a href=#105 id=105 data-nosnippet>105</a>                    Metadata::new(),
-<a href=#106 id=106 data-nosnippet>106</a>                    Box::new(<span class="macro">matrix_expr!</span>[guard_expr, tail_expr]),
+<a href=#106 id=106 data-nosnippet>106</a>                    Moo::new(<span class="macro">matrix_expr!</span>[guard_expr, tail_expr]),
 <a href=#107 id=107 data-nosnippet>107</a>                )
 <a href=#108 id=108 data-nosnippet>108</a>            }
 <a href=#109 id=109 data-nosnippet>109</a>            ACOperatorKind::Product =&gt; {
@@ -111,24 +111,24 @@
 <a href=#111 id=111 data-nosnippet>111</a>                    <span class="macro">matches!</span>(tail_expr.return_type(), <span class="prelude-val">Some</span>(ReturnType::Int)),
 <a href=#112 id=112 data-nosnippet>112</a>                    <span class="string">"The tail expression in a product skipping operation should be type int."
 <a href=#113 id=113 data-nosnippet>113</a>                </span>);
-<a href=#114 id=114 data-nosnippet>114</a>                <span class="kw">let </span>guard_expr_boxed = Box::new(guard_expr);
+<a href=#114 id=114 data-nosnippet>114</a>                <span class="kw">let </span>guard_expr_boxed = Moo::new(guard_expr);
 <a href=#115 id=115 data-nosnippet>115</a>                Expression::UnsafeIndex(
 <a href=#116 id=116 data-nosnippet>116</a>                    Metadata::new(),
-<a href=#117 id=117 data-nosnippet>117</a>                    Box::new(
+<a href=#117 id=117 data-nosnippet>117</a>                    Moo::new(
 <a href=#118 id=118 data-nosnippet>118</a>                        <span class="macro">matrix_expr!</span>[Expression::Atomic(Metadata::new(),<span class="number">1</span>.into()),tail_expr;Domain::Int(<span class="macro">vec!</span>[Range::Bounded(<span class="number">0</span>,<span class="number">1</span>)])],
 <a href=#119 id=119 data-nosnippet>119</a>                    ),
 <a href=#120 id=120 data-nosnippet>120</a>                    <span class="macro">vec!</span>[Expression::ToInt(Metadata::new(), guard_expr_boxed)],
 <a href=#121 id=121 data-nosnippet>121</a>                )
 <a href=#122 id=122 data-nosnippet>122</a>            }
 <a href=#123 id=123 data-nosnippet>123</a>            ACOperatorKind::Sum =&gt; {
-<a href=#124 id=124 data-nosnippet>124</a>                <span class="kw">let </span>guard_expr_boxed = Box::new(guard_expr);
+<a href=#124 id=124 data-nosnippet>124</a>                <span class="kw">let </span>guard_expr_boxed = Moo::new(guard_expr);
 <a href=#125 id=125 data-nosnippet>125</a>                <span class="macro">assert!</span>(
 <a href=#126 id=126 data-nosnippet>126</a>                    <span class="macro">matches!</span>(tail_expr.return_type(), <span class="prelude-val">Some</span>(ReturnType::Int)),
 <a href=#127 id=127 data-nosnippet>127</a>                    <span class="string">"The tail expression in a sum skipping operation should be type int."
 <a href=#128 id=128 data-nosnippet>128</a>                </span>);
 <a href=#129 id=129 data-nosnippet>129</a>                Expression::Product(
 <a href=#130 id=130 data-nosnippet>130</a>                    Metadata::new(),
-<a href=#131 id=131 data-nosnippet>131</a>                    Box::new(<span class="macro">matrix_expr!</span>[
+<a href=#131 id=131 data-nosnippet>131</a>                    Moo::new(<span class="macro">matrix_expr!</span>[
 <a href=#132 id=132 data-nosnippet>132</a>                        Expression::ToInt(Metadata::new(), guard_expr_boxed),
 <a href=#133 id=133 data-nosnippet>133</a>                        tail_expr
 <a href=#134 id=134 data-nosnippet>134</a>                    ]),

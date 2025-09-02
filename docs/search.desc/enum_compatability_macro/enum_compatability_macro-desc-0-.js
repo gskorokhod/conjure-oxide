@@ -1,1 +1,0 @@
-searchState.loadedDescShard("enum_compatability_macro", 0, "A macro to document enum variants with the things that …\nA macro to document enum variants by the things that they …")

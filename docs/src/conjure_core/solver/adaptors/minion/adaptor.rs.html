@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/solver/adaptors/minion/adaptor.rs`."><title>adaptor.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../../static.files/rustdoc-069232aa.css"><meta name="rustdoc-vars" data-root-path="../../../../../" data-static-root-path="../../../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (8e62bfd31 2025-08-12)" data-channel="nightly" data-search-js="search-6c528b5c.js" data-settings-js="settings-5514c975.js" ><script src="../../../../../static.files/storage-68b7e25d.js"></script><script defer src="../../../../../static.files/src-script-813739b1.js"></script><script defer src="../../../../../src-files.js"></script><script defer src="../../../../../static.files/main-eebb9057.js"></script><noscript><link rel="stylesheet" href="../../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/solver/adaptors/minion/</div>adaptor.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>regex::Regex;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/solver/adaptors/minion/adaptor.rs`."><title>adaptor.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../../static.files/rustdoc-e56847b5.css"><meta name="rustdoc-vars" data-root-path="../../../../../" data-static-root-path="../../../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (7aef4bec4 2025-09-01)" data-channel="nightly" data-search-js="search-449aa9bf.js" data-stringdex-js="stringdex-0e748618.js" data-settings-js="settings-c38705f0.js" ><script src="../../../../../static.files/storage-e2aeef58.js"></script><script defer src="../../../../../static.files/src-script-813739b1.js"></script><script defer src="../../../../../src-files.js"></script><script defer src="../../../../../static.files/main-6dc2a7f3.js"></script><noscript><link rel="stylesheet" href="../../../../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/solver/adaptors/minion/</div>adaptor.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>regex::Regex;
 <a href=#2 id=2 data-nosnippet>2</a><span class="kw">use </span>std::collections::HashMap;
 <a href=#3 id=3 data-nosnippet>3</a><span class="kw">use </span>std::sync::{LazyLock, Mutex, OnceLock};
 <a href=#4 id=4 data-nosnippet>4</a><span class="kw">use </span>ustr::Ustr;
 <a href=#5 id=5 data-nosnippet>5</a>
 <a href=#6 id=6 data-nosnippet>6</a><span class="kw">use </span>minion_ast::Model <span class="kw">as </span>MinionModel;
-<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>minion_rs::ast <span class="kw">as </span>minion_ast;
-<a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span>minion_rs::error::MinionError;
-<a href=#9 id=9 data-nosnippet>9</a><span class="kw">use </span>minion_rs::{get_from_table, run_minion};
+<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>minion_sys::ast <span class="kw">as </span>minion_ast;
+<a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span>minion_sys::error::MinionError;
+<a href=#9 id=9 data-nosnippet>9</a><span class="kw">use </span>minion_sys::{get_from_table, run_minion};
 <a href=#10 id=10 data-nosnippet>10</a>
 <a href=#11 id=11 data-nosnippet>11</a><span class="kw">use </span><span class="kw">crate</span>::Model <span class="kw">as </span>ConjureModel;
 <a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span><span class="kw">crate</span>::ast::{<span class="self">self </span><span class="kw">as </span>conjure_ast, Name};
@@ -29,7 +29,7 @@
 <a href=#29 id=29 data-nosnippet>29</a>
 <a href=#30 id=30 data-nosnippet>30</a><span class="doccomment">/// A [SolverAdaptor] for interacting with Minion.
 <a href=#31 id=31 data-nosnippet>31</a>///
-<a href=#32 id=32 data-nosnippet>32</a>/// This adaptor uses the `minion_rs` crate to talk to Minion over FFI.
+<a href=#32 id=32 data-nosnippet>32</a>/// This adaptor uses the `minion_sys` crate to talk to Minion over FFI.
 <a href=#33 id=33 data-nosnippet>33</a></span><span class="kw">pub struct </span>Minion {
 <a href=#34 id=34 data-nosnippet>34</a>    __non_constructable: private::Internal,
 <a href=#35 id=35 data-nosnippet>35</a>    model: <span class="prelude-ty">Option</span>&lt;MinionModel&gt;,
@@ -60,7 +60,7 @@
 <a href=#60 id=60 data-nosnippet>60</a>}
 <a href=#61 id=61 data-nosnippet>61</a>
 <a href=#62 id=62 data-nosnippet>62</a><span class="attr">#[allow(clippy::unwrap_used)]
-<a href=#63 id=63 data-nosnippet>63</a></span><span class="kw">fn </span>minion_rs_callback(solutions: HashMap&lt;minion_ast::VarName, minion_ast::Constant&gt;) -&gt; bool {
+<a href=#63 id=63 data-nosnippet>63</a></span><span class="kw">fn </span>minion_sys_callback(solutions: HashMap&lt;minion_ast::VarName, minion_ast::Constant&gt;) -&gt; bool {
 <a href=#64 id=64 data-nosnippet>64</a>    <span class="kw-2">*</span>(ANY_SOLUTIONS.lock().unwrap()) = <span class="bool-val">true</span>;
 <a href=#65 id=65 data-nosnippet>65</a>    <span class="kw">let </span>callback = USER_CALLBACK
 <a href=#66 id=66 data-nosnippet>66</a>        .get_or_init(|| Mutex::new(Box::new(|x| <span class="bool-val">true</span>)))
@@ -127,13 +127,13 @@
 <a href=#127 id=127 data-nosnippet>127</a>
 <a href=#128 id=128 data-nosnippet>128</a>        </span>run_minion(
 <a href=#129 id=129 data-nosnippet>129</a>            <span class="self">self</span>.model.clone().expect(<span class="string">"STATE MACHINE ERR"</span>),
-<a href=#130 id=130 data-nosnippet>130</a>            minion_rs_callback,
+<a href=#130 id=130 data-nosnippet>130</a>            minion_sys_callback,
 <a href=#131 id=131 data-nosnippet>131</a>        )
 <a href=#132 id=132 data-nosnippet>132</a>        .map_err(|err| <span class="kw">match </span>err {
 <a href=#133 id=133 data-nosnippet>133</a>            MinionError::RuntimeError(x) =&gt; Runtime(<span class="macro">format!</span>(<span class="string">"{x:#?}"</span>)),
 <a href=#134 id=134 data-nosnippet>134</a>            MinionError::Other(x) =&gt; Runtime(<span class="macro">format!</span>(<span class="string">"{x:#?}"</span>)),
 <a href=#135 id=135 data-nosnippet>135</a>            MinionError::NotImplemented(x) =&gt; RuntimeNotImplemented(x),
-<a href=#136 id=136 data-nosnippet>136</a>            x =&gt; Runtime(<span class="macro">format!</span>(<span class="string">"unknown minion_rs error: {x:#?}"</span>)),
+<a href=#136 id=136 data-nosnippet>136</a>            x =&gt; Runtime(<span class="macro">format!</span>(<span class="string">"unknown minion_sys error: {x:#?}"</span>)),
 <a href=#137 id=137 data-nosnippet>137</a>        })<span class="question-mark">?</span>;
 <a href=#138 id=138 data-nosnippet>138</a>
 <a href=#139 id=139 data-nosnippet>139</a>        <span class="kw">let </span><span class="kw-2">mut </span>status = Complete(HasSolutions);
@@ -174,7 +174,7 @@
 <a href=#174 id=174 data-nosnippet>174</a>        writer: <span class="kw-2">&amp;mut </span><span class="kw">impl </span>std::io::Write,
 <a href=#175 id=175 data-nosnippet>175</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;(), std::io::Error&gt; {
 <a href=#176 id=176 data-nosnippet>176</a>        <span class="kw">let </span>model = <span class="self">self</span>.model.as_ref().expect(<span class="string">"Minion solver adaptor should have a model as write_solver_input_file should only be called in the LoadedModel state."</span>);
-<a href=#177 id=177 data-nosnippet>177</a>        minion_rs::print::write_minion_file(writer, model)
+<a href=#177 id=177 data-nosnippet>177</a>        minion_sys::print::write_minion_file(writer, model)
 <a href=#178 id=178 data-nosnippet>178</a>    }
 <a href=#179 id=179 data-nosnippet>179</a>}
 <a href=#180 id=180 data-nosnippet>180</a>

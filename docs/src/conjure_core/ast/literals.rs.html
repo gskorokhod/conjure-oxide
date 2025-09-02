@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/literals.rs`."><title>literals.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-069232aa.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (8e62bfd31 2025-08-12)" data-channel="nightly" data-search-js="search-6c528b5c.js" data-settings-js="settings-5514c975.js" ><script src="../../../static.files/storage-68b7e25d.js"></script><script defer src="../../../static.files/src-script-813739b1.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-eebb9057.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>literals.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>itertools::Itertools;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/conjure_core/src/ast/literals.rs`."><title>literals.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e56847b5.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="conjure_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (7aef4bec4 2025-09-01)" data-channel="nightly" data-search-js="search-449aa9bf.js" data-stringdex-js="stringdex-0e748618.js" data-settings-js="settings-c38705f0.js" ><script src="../../../static.files/storage-e2aeef58.js"></script><script defer src="../../../static.files/src-script-813739b1.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-6dc2a7f3.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">conjure_core/ast/</div>literals.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span>itertools::Itertools;
 <a href=#2 id=2 data-nosnippet>2</a><span class="kw">use </span>serde::{Deserialize, Serialize};
 <a href=#3 id=3 data-nosnippet>3</a><span class="kw">use </span>std::fmt::{Display, Formatter};
 <a href=#4 id=4 data-nosnippet>4</a><span class="kw">use </span>std::hash::Hash;
@@ -12,7 +12,7 @@
 <a href=#12 id=12 data-nosnippet>12</a>
 <a href=#13 id=13 data-nosnippet>13</a><span class="kw">use </span><span class="kw">super</span>::domains::HasDomain;
 <a href=#14 id=14 data-nosnippet>14</a><span class="kw">use super</span>::{Atom, Domain, Expression, Range, records::RecordValue};
-<a href=#15 id=15 data-nosnippet>15</a><span class="kw">use super</span>::{ReturnType, SetAttr, Typeable};
+<a href=#15 id=15 data-nosnippet>15</a><span class="kw">use super</span>::{Moo, ReturnType, SetAttr, Typeable};
 <a href=#16 id=16 data-nosnippet>16</a>
 <a href=#17 id=17 data-nosnippet>17</a><span class="attr">#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Uniplate, Hash)]
 <a href=#18 id=18 data-nosnippet>18</a>#[uniplate(walk_into=[AbstractLiteral&lt;Literal&gt;]</span>)]
@@ -329,7 +329,7 @@
 <a href=#329 id=329 data-nosnippet>329</a>            </span><span class="kw">unsafe </span>{
 <a href=#330 id=330 data-nosnippet>330</a>                <span class="comment">// SAFETY: asserted the type equality above
 <a href=#331 id=331 data-nosnippet>331</a>                </span><span class="kw">let </span>self_to = std::mem::transmute::&lt;<span class="kw-2">&amp;</span>AbstractLiteral&lt;U&gt;, <span class="kw-2">&amp;</span>To&gt;(<span class="self">self</span>).clone();
-<a href=#332 id=332 data-nosnippet>332</a>                <span class="kw">let </span>tree = Tree::One(self_to.clone());
+<a href=#332 id=332 data-nosnippet>332</a>                <span class="kw">let </span>tree = Tree::One(self_to);
 <a href=#333 id=333 data-nosnippet>333</a>                <span class="kw">let </span>ctx = Box::new(<span class="kw">move </span>|x| {
 <a href=#334 id=334 data-nosnippet>334</a>                    <span class="kw">let </span>Tree::One(x) = x <span class="kw">else </span>{
 <a href=#335 id=335 data-nosnippet>335</a>                        <span class="macro">panic!</span>();
@@ -401,158 +401,166 @@
 <a href=#401 id=401 data-nosnippet>401</a>    }
 <a href=#402 id=402 data-nosnippet>402</a>}
 <a href=#403 id=403 data-nosnippet>403</a>
-<a href=#404 id=404 data-nosnippet>404</a><span class="kw">impl </span>TryFrom&lt;<span class="kw-2">&amp;</span>Literal&gt; <span class="kw">for </span>i32 {
+<a href=#404 id=404 data-nosnippet>404</a><span class="kw">impl </span>TryFrom&lt;<span class="kw-2">&amp;</span>Moo&lt;Literal&gt;&gt; <span class="kw">for </span>i32 {
 <a href=#405 id=405 data-nosnippet>405</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
 <a href=#406 id=406 data-nosnippet>406</a>
-<a href=#407 id=407 data-nosnippet>407</a>    <span class="kw">fn </span>try_from(value: <span class="kw-2">&amp;</span>Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
-<a href=#408 id=408 data-nosnippet>408</a>        <span class="kw">match </span>value {
-<a href=#409 id=409 data-nosnippet>409</a>            Literal::Int(i) =&gt; <span class="prelude-val">Ok</span>(<span class="kw-2">*</span>i),
-<a href=#410 id=410 data-nosnippet>410</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-i32 literal to i32"</span>),
-<a href=#411 id=411 data-nosnippet>411</a>        }
-<a href=#412 id=412 data-nosnippet>412</a>    }
-<a href=#413 id=413 data-nosnippet>413</a>}
+<a href=#407 id=407 data-nosnippet>407</a>    <span class="kw">fn </span>try_from(value: <span class="kw-2">&amp;</span>Moo&lt;Literal&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
+<a href=#408 id=408 data-nosnippet>408</a>        TryFrom::&lt;<span class="kw-2">&amp;</span>Literal&gt;::try_from(value.as_ref())
+<a href=#409 id=409 data-nosnippet>409</a>    }
+<a href=#410 id=410 data-nosnippet>410</a>}
+<a href=#411 id=411 data-nosnippet>411</a>
+<a href=#412 id=412 data-nosnippet>412</a><span class="kw">impl </span>TryFrom&lt;<span class="kw-2">&amp;</span>Literal&gt; <span class="kw">for </span>i32 {
+<a href=#413 id=413 data-nosnippet>413</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
 <a href=#414 id=414 data-nosnippet>414</a>
-<a href=#415 id=415 data-nosnippet>415</a><span class="kw">impl </span>TryFrom&lt;Literal&gt; <span class="kw">for </span>bool {
-<a href=#416 id=416 data-nosnippet>416</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
-<a href=#417 id=417 data-nosnippet>417</a>
-<a href=#418 id=418 data-nosnippet>418</a>    <span class="kw">fn </span>try_from(value: Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
-<a href=#419 id=419 data-nosnippet>419</a>        <span class="kw">match </span>value {
-<a href=#420 id=420 data-nosnippet>420</a>            Literal::Bool(b) =&gt; <span class="prelude-val">Ok</span>(b),
-<a href=#421 id=421 data-nosnippet>421</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-bool literal to bool"</span>),
-<a href=#422 id=422 data-nosnippet>422</a>        }
-<a href=#423 id=423 data-nosnippet>423</a>    }
-<a href=#424 id=424 data-nosnippet>424</a>}
+<a href=#415 id=415 data-nosnippet>415</a>    <span class="kw">fn </span>try_from(value: <span class="kw-2">&amp;</span>Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
+<a href=#416 id=416 data-nosnippet>416</a>        <span class="kw">match </span>value {
+<a href=#417 id=417 data-nosnippet>417</a>            Literal::Int(i) =&gt; <span class="prelude-val">Ok</span>(<span class="kw-2">*</span>i),
+<a href=#418 id=418 data-nosnippet>418</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-i32 literal to i32"</span>),
+<a href=#419 id=419 data-nosnippet>419</a>        }
+<a href=#420 id=420 data-nosnippet>420</a>    }
+<a href=#421 id=421 data-nosnippet>421</a>}
+<a href=#422 id=422 data-nosnippet>422</a>
+<a href=#423 id=423 data-nosnippet>423</a><span class="kw">impl </span>TryFrom&lt;Literal&gt; <span class="kw">for </span>bool {
+<a href=#424 id=424 data-nosnippet>424</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
 <a href=#425 id=425 data-nosnippet>425</a>
-<a href=#426 id=426 data-nosnippet>426</a><span class="kw">impl </span>TryFrom&lt;<span class="kw-2">&amp;</span>Literal&gt; <span class="kw">for </span>bool {
-<a href=#427 id=427 data-nosnippet>427</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
-<a href=#428 id=428 data-nosnippet>428</a>
-<a href=#429 id=429 data-nosnippet>429</a>    <span class="kw">fn </span>try_from(value: <span class="kw-2">&amp;</span>Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
-<a href=#430 id=430 data-nosnippet>430</a>        <span class="kw">match </span>value {
-<a href=#431 id=431 data-nosnippet>431</a>            Literal::Bool(b) =&gt; <span class="prelude-val">Ok</span>(<span class="kw-2">*</span>b),
-<a href=#432 id=432 data-nosnippet>432</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-bool literal to bool"</span>),
-<a href=#433 id=433 data-nosnippet>433</a>        }
-<a href=#434 id=434 data-nosnippet>434</a>    }
-<a href=#435 id=435 data-nosnippet>435</a>}
+<a href=#426 id=426 data-nosnippet>426</a>    <span class="kw">fn </span>try_from(value: Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
+<a href=#427 id=427 data-nosnippet>427</a>        <span class="kw">match </span>value {
+<a href=#428 id=428 data-nosnippet>428</a>            Literal::Bool(b) =&gt; <span class="prelude-val">Ok</span>(b),
+<a href=#429 id=429 data-nosnippet>429</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-bool literal to bool"</span>),
+<a href=#430 id=430 data-nosnippet>430</a>        }
+<a href=#431 id=431 data-nosnippet>431</a>    }
+<a href=#432 id=432 data-nosnippet>432</a>}
+<a href=#433 id=433 data-nosnippet>433</a>
+<a href=#434 id=434 data-nosnippet>434</a><span class="kw">impl </span>TryFrom&lt;<span class="kw-2">&amp;</span>Literal&gt; <span class="kw">for </span>bool {
+<a href=#435 id=435 data-nosnippet>435</a>    <span class="kw">type </span>Error = <span class="kw-2">&amp;</span><span class="lifetime">'static </span>str;
 <a href=#436 id=436 data-nosnippet>436</a>
-<a href=#437 id=437 data-nosnippet>437</a><span class="kw">impl </span>From&lt;i32&gt; <span class="kw">for </span>Literal {
-<a href=#438 id=438 data-nosnippet>438</a>    <span class="kw">fn </span>from(i: i32) -&gt; <span class="self">Self </span>{
-<a href=#439 id=439 data-nosnippet>439</a>        Literal::Int(i)
-<a href=#440 id=440 data-nosnippet>440</a>    }
-<a href=#441 id=441 data-nosnippet>441</a>}
-<a href=#442 id=442 data-nosnippet>442</a>
-<a href=#443 id=443 data-nosnippet>443</a><span class="kw">impl </span>From&lt;bool&gt; <span class="kw">for </span>Literal {
-<a href=#444 id=444 data-nosnippet>444</a>    <span class="kw">fn </span>from(b: bool) -&gt; <span class="self">Self </span>{
-<a href=#445 id=445 data-nosnippet>445</a>        Literal::Bool(b)
-<a href=#446 id=446 data-nosnippet>446</a>    }
-<a href=#447 id=447 data-nosnippet>447</a>}
-<a href=#448 id=448 data-nosnippet>448</a>
-<a href=#449 id=449 data-nosnippet>449</a><span class="kw">impl </span>From&lt;Literal&gt; <span class="kw">for </span>Ustr {
-<a href=#450 id=450 data-nosnippet>450</a>    <span class="kw">fn </span>from(value: Literal) -&gt; <span class="self">Self </span>{
-<a href=#451 id=451 data-nosnippet>451</a>        <span class="comment">// TODO: avoid the temporary-allocation of a string by format! here?
-<a href=#452 id=452 data-nosnippet>452</a>        </span>Ustr::from(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">"{value}"</span>))
-<a href=#453 id=453 data-nosnippet>453</a>    }
-<a href=#454 id=454 data-nosnippet>454</a>}
-<a href=#455 id=455 data-nosnippet>455</a>
-<a href=#456 id=456 data-nosnippet>456</a><span class="kw">impl </span>AbstractLiteral&lt;Expression&gt; {
-<a href=#457 id=457 data-nosnippet>457</a>    <span class="doccomment">/// If all the elements are literals, returns this as an AbstractLiteral&lt;Literal&gt;.
-<a href=#458 id=458 data-nosnippet>458</a>    /// Otherwise, returns `None`.
-<a href=#459 id=459 data-nosnippet>459</a>    </span><span class="kw">pub fn </span>into_literals(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;AbstractLiteral&lt;Literal&gt;&gt; {
-<a href=#460 id=460 data-nosnippet>460</a>        <span class="kw">match </span><span class="self">self </span>{
-<a href=#461 id=461 data-nosnippet>461</a>            AbstractLiteral::Set(<span class="kw">_</span>) =&gt; <span class="macro">todo!</span>(),
-<a href=#462 id=462 data-nosnippet>462</a>            AbstractLiteral::Matrix(items, domain) =&gt; {
-<a href=#463 id=463 data-nosnippet>463</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
-<a href=#464 id=464 data-nosnippet>464</a>                <span class="kw">for </span>item <span class="kw">in </span>items {
-<a href=#465 id=465 data-nosnippet>465</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>item {
-<a href=#466 id=466 data-nosnippet>466</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
-<a href=#467 id=467 data-nosnippet>467</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
-<a href=#468 id=468 data-nosnippet>468</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
-<a href=#469 id=469 data-nosnippet>469</a>                        }
-<a href=#470 id=470 data-nosnippet>470</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
-<a href=#471 id=471 data-nosnippet>471</a>                    }<span class="question-mark">?</span>;
-<a href=#472 id=472 data-nosnippet>472</a>                    literals.push(literal);
-<a href=#473 id=473 data-nosnippet>473</a>                }
-<a href=#474 id=474 data-nosnippet>474</a>
-<a href=#475 id=475 data-nosnippet>475</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Matrix(literals, domain))
-<a href=#476 id=476 data-nosnippet>476</a>            }
-<a href=#477 id=477 data-nosnippet>477</a>            AbstractLiteral::Tuple(items) =&gt; {
-<a href=#478 id=478 data-nosnippet>478</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
-<a href=#479 id=479 data-nosnippet>479</a>                <span class="kw">for </span>item <span class="kw">in </span>items {
-<a href=#480 id=480 data-nosnippet>480</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>item {
-<a href=#481 id=481 data-nosnippet>481</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
-<a href=#482 id=482 data-nosnippet>482</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
-<a href=#483 id=483 data-nosnippet>483</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
-<a href=#484 id=484 data-nosnippet>484</a>                        }
-<a href=#485 id=485 data-nosnippet>485</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
-<a href=#486 id=486 data-nosnippet>486</a>                    }<span class="question-mark">?</span>;
-<a href=#487 id=487 data-nosnippet>487</a>                    literals.push(literal);
-<a href=#488 id=488 data-nosnippet>488</a>                }
-<a href=#489 id=489 data-nosnippet>489</a>
-<a href=#490 id=490 data-nosnippet>490</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Tuple(literals))
-<a href=#491 id=491 data-nosnippet>491</a>            }
-<a href=#492 id=492 data-nosnippet>492</a>            AbstractLiteral::Record(entries) =&gt; {
-<a href=#493 id=493 data-nosnippet>493</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
-<a href=#494 id=494 data-nosnippet>494</a>                <span class="kw">for </span>entry <span class="kw">in </span>entries {
-<a href=#495 id=495 data-nosnippet>495</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>entry.value {
-<a href=#496 id=496 data-nosnippet>496</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
-<a href=#497 id=497 data-nosnippet>497</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
-<a href=#498 id=498 data-nosnippet>498</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
-<a href=#499 id=499 data-nosnippet>499</a>                        }
-<a href=#500 id=500 data-nosnippet>500</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
-<a href=#501 id=501 data-nosnippet>501</a>                    }<span class="question-mark">?</span>;
-<a href=#502 id=502 data-nosnippet>502</a>
-<a href=#503 id=503 data-nosnippet>503</a>                    literals.push((entry.name, literal));
-<a href=#504 id=504 data-nosnippet>504</a>                }
-<a href=#505 id=505 data-nosnippet>505</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Record(
-<a href=#506 id=506 data-nosnippet>506</a>                    literals
-<a href=#507 id=507 data-nosnippet>507</a>                        .into_iter()
-<a href=#508 id=508 data-nosnippet>508</a>                        .map(|(name, literal)| RecordValue {
-<a href=#509 id=509 data-nosnippet>509</a>                            name,
-<a href=#510 id=510 data-nosnippet>510</a>                            value: literal,
-<a href=#511 id=511 data-nosnippet>511</a>                        })
-<a href=#512 id=512 data-nosnippet>512</a>                        .collect(),
-<a href=#513 id=513 data-nosnippet>513</a>                ))
-<a href=#514 id=514 data-nosnippet>514</a>            }
-<a href=#515 id=515 data-nosnippet>515</a>        }
-<a href=#516 id=516 data-nosnippet>516</a>    }
-<a href=#517 id=517 data-nosnippet>517</a>}
-<a href=#518 id=518 data-nosnippet>518</a>
-<a href=#519 id=519 data-nosnippet>519</a><span class="comment">// need display implementations for other types as well
-<a href=#520 id=520 data-nosnippet>520</a></span><span class="kw">impl </span>Display <span class="kw">for </span>Literal {
-<a href=#521 id=521 data-nosnippet>521</a>    <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>Formatter&lt;<span class="lifetime">'_</span>&gt;) -&gt; std::fmt::Result {
-<a href=#522 id=522 data-nosnippet>522</a>        <span class="kw">match </span><span class="kw-2">&amp;</span><span class="self">self </span>{
-<a href=#523 id=523 data-nosnippet>523</a>            Literal::Int(i) =&gt; <span class="macro">write!</span>(f, <span class="string">"{i}"</span>),
-<a href=#524 id=524 data-nosnippet>524</a>            Literal::Bool(b) =&gt; <span class="macro">write!</span>(f, <span class="string">"{b}"</span>),
-<a href=#525 id=525 data-nosnippet>525</a>            Literal::AbstractLiteral(l) =&gt; <span class="macro">write!</span>(f, <span class="string">"{l:?}"</span>),
-<a href=#526 id=526 data-nosnippet>526</a>        }
-<a href=#527 id=527 data-nosnippet>527</a>    }
-<a href=#528 id=528 data-nosnippet>528</a>}
-<a href=#529 id=529 data-nosnippet>529</a>
-<a href=#530 id=530 data-nosnippet>530</a><span class="attr">#[cfg(test)]
-<a href=#531 id=531 data-nosnippet>531</a></span><span class="kw">mod </span>tests {
-<a href=#532 id=532 data-nosnippet>532</a>
-<a href=#533 id=533 data-nosnippet>533</a>    <span class="kw">use super</span>::<span class="kw-2">*</span>;
-<a href=#534 id=534 data-nosnippet>534</a>    <span class="kw">use crate</span>::{into_matrix, matrix};
-<a href=#535 id=535 data-nosnippet>535</a>    <span class="kw">use </span>uniplate::Uniplate;
-<a href=#536 id=536 data-nosnippet>536</a>
-<a href=#537 id=537 data-nosnippet>537</a>    <span class="attr">#[test]
-<a href=#538 id=538 data-nosnippet>538</a>    </span><span class="kw">fn </span>matrix_uniplate_universe() {
-<a href=#539 id=539 data-nosnippet>539</a>        <span class="comment">// Can we traverse through matrices with uniplate?
-<a href=#540 id=540 data-nosnippet>540</a>        </span><span class="kw">let </span>my_matrix: AbstractLiteral&lt;Literal&gt; = <span class="macro">into_matrix!</span>[
-<a href=#541 id=541 data-nosnippet>541</a>            <span class="macro">vec!</span>[Literal::AbstractLiteral(<span class="macro">matrix!</span>[Literal::Bool(<span class="bool-val">true</span>);Domain::Bool]); <span class="number">5</span>];
-<a href=#542 id=542 data-nosnippet>542</a>            Domain::Bool
-<a href=#543 id=543 data-nosnippet>543</a>        ];
+<a href=#437 id=437 data-nosnippet>437</a>    <span class="kw">fn </span>try_from(value: <span class="kw-2">&amp;</span>Literal) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
+<a href=#438 id=438 data-nosnippet>438</a>        <span class="kw">match </span>value {
+<a href=#439 id=439 data-nosnippet>439</a>            Literal::Bool(b) =&gt; <span class="prelude-val">Ok</span>(<span class="kw-2">*</span>b),
+<a href=#440 id=440 data-nosnippet>440</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">Err</span>(<span class="string">"Cannot convert non-bool literal to bool"</span>),
+<a href=#441 id=441 data-nosnippet>441</a>        }
+<a href=#442 id=442 data-nosnippet>442</a>    }
+<a href=#443 id=443 data-nosnippet>443</a>}
+<a href=#444 id=444 data-nosnippet>444</a>
+<a href=#445 id=445 data-nosnippet>445</a><span class="kw">impl </span>From&lt;i32&gt; <span class="kw">for </span>Literal {
+<a href=#446 id=446 data-nosnippet>446</a>    <span class="kw">fn </span>from(i: i32) -&gt; <span class="self">Self </span>{
+<a href=#447 id=447 data-nosnippet>447</a>        Literal::Int(i)
+<a href=#448 id=448 data-nosnippet>448</a>    }
+<a href=#449 id=449 data-nosnippet>449</a>}
+<a href=#450 id=450 data-nosnippet>450</a>
+<a href=#451 id=451 data-nosnippet>451</a><span class="kw">impl </span>From&lt;bool&gt; <span class="kw">for </span>Literal {
+<a href=#452 id=452 data-nosnippet>452</a>    <span class="kw">fn </span>from(b: bool) -&gt; <span class="self">Self </span>{
+<a href=#453 id=453 data-nosnippet>453</a>        Literal::Bool(b)
+<a href=#454 id=454 data-nosnippet>454</a>    }
+<a href=#455 id=455 data-nosnippet>455</a>}
+<a href=#456 id=456 data-nosnippet>456</a>
+<a href=#457 id=457 data-nosnippet>457</a><span class="kw">impl </span>From&lt;Literal&gt; <span class="kw">for </span>Ustr {
+<a href=#458 id=458 data-nosnippet>458</a>    <span class="kw">fn </span>from(value: Literal) -&gt; <span class="self">Self </span>{
+<a href=#459 id=459 data-nosnippet>459</a>        <span class="comment">// TODO: avoid the temporary-allocation of a string by format! here?
+<a href=#460 id=460 data-nosnippet>460</a>        </span>Ustr::from(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">"{value}"</span>))
+<a href=#461 id=461 data-nosnippet>461</a>    }
+<a href=#462 id=462 data-nosnippet>462</a>}
+<a href=#463 id=463 data-nosnippet>463</a>
+<a href=#464 id=464 data-nosnippet>464</a><span class="kw">impl </span>AbstractLiteral&lt;Expression&gt; {
+<a href=#465 id=465 data-nosnippet>465</a>    <span class="doccomment">/// If all the elements are literals, returns this as an AbstractLiteral&lt;Literal&gt;.
+<a href=#466 id=466 data-nosnippet>466</a>    /// Otherwise, returns `None`.
+<a href=#467 id=467 data-nosnippet>467</a>    </span><span class="kw">pub fn </span>into_literals(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;AbstractLiteral&lt;Literal&gt;&gt; {
+<a href=#468 id=468 data-nosnippet>468</a>        <span class="kw">match </span><span class="self">self </span>{
+<a href=#469 id=469 data-nosnippet>469</a>            AbstractLiteral::Set(<span class="kw">_</span>) =&gt; <span class="macro">todo!</span>(),
+<a href=#470 id=470 data-nosnippet>470</a>            AbstractLiteral::Matrix(items, domain) =&gt; {
+<a href=#471 id=471 data-nosnippet>471</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
+<a href=#472 id=472 data-nosnippet>472</a>                <span class="kw">for </span>item <span class="kw">in </span>items {
+<a href=#473 id=473 data-nosnippet>473</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>item {
+<a href=#474 id=474 data-nosnippet>474</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
+<a href=#475 id=475 data-nosnippet>475</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
+<a href=#476 id=476 data-nosnippet>476</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
+<a href=#477 id=477 data-nosnippet>477</a>                        }
+<a href=#478 id=478 data-nosnippet>478</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
+<a href=#479 id=479 data-nosnippet>479</a>                    }<span class="question-mark">?</span>;
+<a href=#480 id=480 data-nosnippet>480</a>                    literals.push(literal);
+<a href=#481 id=481 data-nosnippet>481</a>                }
+<a href=#482 id=482 data-nosnippet>482</a>
+<a href=#483 id=483 data-nosnippet>483</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Matrix(literals, domain))
+<a href=#484 id=484 data-nosnippet>484</a>            }
+<a href=#485 id=485 data-nosnippet>485</a>            AbstractLiteral::Tuple(items) =&gt; {
+<a href=#486 id=486 data-nosnippet>486</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
+<a href=#487 id=487 data-nosnippet>487</a>                <span class="kw">for </span>item <span class="kw">in </span>items {
+<a href=#488 id=488 data-nosnippet>488</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>item {
+<a href=#489 id=489 data-nosnippet>489</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
+<a href=#490 id=490 data-nosnippet>490</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
+<a href=#491 id=491 data-nosnippet>491</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
+<a href=#492 id=492 data-nosnippet>492</a>                        }
+<a href=#493 id=493 data-nosnippet>493</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
+<a href=#494 id=494 data-nosnippet>494</a>                    }<span class="question-mark">?</span>;
+<a href=#495 id=495 data-nosnippet>495</a>                    literals.push(literal);
+<a href=#496 id=496 data-nosnippet>496</a>                }
+<a href=#497 id=497 data-nosnippet>497</a>
+<a href=#498 id=498 data-nosnippet>498</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Tuple(literals))
+<a href=#499 id=499 data-nosnippet>499</a>            }
+<a href=#500 id=500 data-nosnippet>500</a>            AbstractLiteral::Record(entries) =&gt; {
+<a href=#501 id=501 data-nosnippet>501</a>                <span class="kw">let </span><span class="kw-2">mut </span>literals = <span class="macro">vec!</span>[];
+<a href=#502 id=502 data-nosnippet>502</a>                <span class="kw">for </span>entry <span class="kw">in </span>entries {
+<a href=#503 id=503 data-nosnippet>503</a>                    <span class="kw">let </span>literal = <span class="kw">match </span>entry.value {
+<a href=#504 id=504 data-nosnippet>504</a>                        Expression::Atomic(<span class="kw">_</span>, Atom::Literal(lit)) =&gt; <span class="prelude-val">Some</span>(lit),
+<a href=#505 id=505 data-nosnippet>505</a>                        Expression::AbstractLiteral(<span class="kw">_</span>, abslit) =&gt; {
+<a href=#506 id=506 data-nosnippet>506</a>                            <span class="prelude-val">Some</span>(Literal::AbstractLiteral(abslit.into_literals()<span class="question-mark">?</span>))
+<a href=#507 id=507 data-nosnippet>507</a>                        }
+<a href=#508 id=508 data-nosnippet>508</a>                        <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
+<a href=#509 id=509 data-nosnippet>509</a>                    }<span class="question-mark">?</span>;
+<a href=#510 id=510 data-nosnippet>510</a>
+<a href=#511 id=511 data-nosnippet>511</a>                    literals.push((entry.name, literal));
+<a href=#512 id=512 data-nosnippet>512</a>                }
+<a href=#513 id=513 data-nosnippet>513</a>                <span class="prelude-val">Some</span>(AbstractLiteral::Record(
+<a href=#514 id=514 data-nosnippet>514</a>                    literals
+<a href=#515 id=515 data-nosnippet>515</a>                        .into_iter()
+<a href=#516 id=516 data-nosnippet>516</a>                        .map(|(name, literal)| RecordValue {
+<a href=#517 id=517 data-nosnippet>517</a>                            name,
+<a href=#518 id=518 data-nosnippet>518</a>                            value: literal,
+<a href=#519 id=519 data-nosnippet>519</a>                        })
+<a href=#520 id=520 data-nosnippet>520</a>                        .collect(),
+<a href=#521 id=521 data-nosnippet>521</a>                ))
+<a href=#522 id=522 data-nosnippet>522</a>            }
+<a href=#523 id=523 data-nosnippet>523</a>        }
+<a href=#524 id=524 data-nosnippet>524</a>    }
+<a href=#525 id=525 data-nosnippet>525</a>}
+<a href=#526 id=526 data-nosnippet>526</a>
+<a href=#527 id=527 data-nosnippet>527</a><span class="comment">// need display implementations for other types as well
+<a href=#528 id=528 data-nosnippet>528</a></span><span class="kw">impl </span>Display <span class="kw">for </span>Literal {
+<a href=#529 id=529 data-nosnippet>529</a>    <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>Formatter&lt;<span class="lifetime">'_</span>&gt;) -&gt; std::fmt::Result {
+<a href=#530 id=530 data-nosnippet>530</a>        <span class="kw">match </span><span class="kw-2">&amp;</span><span class="self">self </span>{
+<a href=#531 id=531 data-nosnippet>531</a>            Literal::Int(i) =&gt; <span class="macro">write!</span>(f, <span class="string">"{i}"</span>),
+<a href=#532 id=532 data-nosnippet>532</a>            Literal::Bool(b) =&gt; <span class="macro">write!</span>(f, <span class="string">"{b}"</span>),
+<a href=#533 id=533 data-nosnippet>533</a>            Literal::AbstractLiteral(l) =&gt; <span class="macro">write!</span>(f, <span class="string">"{l:?}"</span>),
+<a href=#534 id=534 data-nosnippet>534</a>        }
+<a href=#535 id=535 data-nosnippet>535</a>    }
+<a href=#536 id=536 data-nosnippet>536</a>}
+<a href=#537 id=537 data-nosnippet>537</a>
+<a href=#538 id=538 data-nosnippet>538</a><span class="attr">#[cfg(test)]
+<a href=#539 id=539 data-nosnippet>539</a></span><span class="kw">mod </span>tests {
+<a href=#540 id=540 data-nosnippet>540</a>
+<a href=#541 id=541 data-nosnippet>541</a>    <span class="kw">use super</span>::<span class="kw-2">*</span>;
+<a href=#542 id=542 data-nosnippet>542</a>    <span class="kw">use crate</span>::{into_matrix, matrix};
+<a href=#543 id=543 data-nosnippet>543</a>    <span class="kw">use </span>uniplate::Uniplate;
 <a href=#544 id=544 data-nosnippet>544</a>
-<a href=#545 id=545 data-nosnippet>545</a>        <span class="kw">let </span>expected_index_domains = <span class="macro">vec!</span>[Domain::Bool; <span class="number">6</span>];
-<a href=#546 id=546 data-nosnippet>546</a>        <span class="kw">let </span>actual_index_domains: Vec&lt;Domain&gt; = my_matrix.cata(<span class="kw-2">&amp;</span><span class="kw">move </span>|elem, children| {
-<a href=#547 id=547 data-nosnippet>547</a>            <span class="kw">let </span><span class="kw-2">mut </span>res = <span class="macro">vec!</span>[];
-<a href=#548 id=548 data-nosnippet>548</a>            res.extend(children.into_iter().flatten());
-<a href=#549 id=549 data-nosnippet>549</a>            <span class="kw">if let </span>AbstractLiteral::Matrix(<span class="kw">_</span>, index_domain) = elem {
-<a href=#550 id=550 data-nosnippet>550</a>                res.push(<span class="kw-2">*</span>index_domain);
-<a href=#551 id=551 data-nosnippet>551</a>            }
+<a href=#545 id=545 data-nosnippet>545</a>    <span class="attr">#[test]
+<a href=#546 id=546 data-nosnippet>546</a>    </span><span class="kw">fn </span>matrix_uniplate_universe() {
+<a href=#547 id=547 data-nosnippet>547</a>        <span class="comment">// Can we traverse through matrices with uniplate?
+<a href=#548 id=548 data-nosnippet>548</a>        </span><span class="kw">let </span>my_matrix: AbstractLiteral&lt;Literal&gt; = <span class="macro">into_matrix!</span>[
+<a href=#549 id=549 data-nosnippet>549</a>            <span class="macro">vec!</span>[Literal::AbstractLiteral(<span class="macro">matrix!</span>[Literal::Bool(<span class="bool-val">true</span>);Domain::Bool]); <span class="number">5</span>];
+<a href=#550 id=550 data-nosnippet>550</a>            Domain::Bool
+<a href=#551 id=551 data-nosnippet>551</a>        ];
 <a href=#552 id=552 data-nosnippet>552</a>
-<a href=#553 id=553 data-nosnippet>553</a>            res
-<a href=#554 id=554 data-nosnippet>554</a>        });
-<a href=#555 id=555 data-nosnippet>555</a>
-<a href=#556 id=556 data-nosnippet>556</a>        <span class="macro">assert_eq!</span>(actual_index_domains, expected_index_domains);
-<a href=#557 id=557 data-nosnippet>557</a>    }
-<a href=#558 id=558 data-nosnippet>558</a>}</code></pre></div></section></main></body></html>
+<a href=#553 id=553 data-nosnippet>553</a>        <span class="kw">let </span>expected_index_domains = <span class="macro">vec!</span>[Domain::Bool; <span class="number">6</span>];
+<a href=#554 id=554 data-nosnippet>554</a>        <span class="kw">let </span>actual_index_domains: Vec&lt;Domain&gt; = my_matrix.cata(<span class="kw-2">&amp;</span><span class="kw">move </span>|elem, children| {
+<a href=#555 id=555 data-nosnippet>555</a>            <span class="kw">let </span><span class="kw-2">mut </span>res = <span class="macro">vec!</span>[];
+<a href=#556 id=556 data-nosnippet>556</a>            res.extend(children.into_iter().flatten());
+<a href=#557 id=557 data-nosnippet>557</a>            <span class="kw">if let </span>AbstractLiteral::Matrix(<span class="kw">_</span>, index_domain) = elem {
+<a href=#558 id=558 data-nosnippet>558</a>                res.push(<span class="kw-2">*</span>index_domain);
+<a href=#559 id=559 data-nosnippet>559</a>            }
+<a href=#560 id=560 data-nosnippet>560</a>
+<a href=#561 id=561 data-nosnippet>561</a>            res
+<a href=#562 id=562 data-nosnippet>562</a>        });
+<a href=#563 id=563 data-nosnippet>563</a>
+<a href=#564 id=564 data-nosnippet>564</a>        <span class="macro">assert_eq!</span>(actual_index_domains, expected_index_domains);
+<a href=#565 id=565 data-nosnippet>565</a>    }
+<a href=#566 id=566 data-nosnippet>566</a>}</code></pre></div></section></main></body></html>
