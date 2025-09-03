@@ -4,11 +4,11 @@
 <a href=#4 id=4 data-nosnippet>4</a><span class="kw">use </span>std::string::ToString;
 <a href=#5 id=5 data-nosnippet>5</a><span class="kw">use </span>std::sync::{Arc, Mutex, RwLock};
 <a href=#6 id=6 data-nosnippet>6</a>
-<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>conjure_core::ast::{DeclarationKind, Literal, Name};
-<a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span>conjure_core::bug;
-<a href=#9 id=9 data-nosnippet>9</a><span class="kw">use </span>conjure_core::context::Context;
+<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>conjure_cp_core::ast::{DeclarationKind, Literal, Name};
+<a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span>conjure_cp_core::bug;
+<a href=#9 id=9 data-nosnippet>9</a><span class="kw">use </span>conjure_cp_core::context::Context;
 <a href=#10 id=10 data-nosnippet>10</a>
-<a href=#11 id=11 data-nosnippet>11</a><span class="kw">use </span>conjure_core::solver::adaptors::Sat;
+<a href=#11 id=11 data-nosnippet>11</a><span class="kw">use </span>conjure_cp_core::solver::adaptors::Sat;
 <a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span>serde_json::{Map, Value <span class="kw">as </span>JsonValue};
 <a href=#13 id=13 data-nosnippet>13</a>
 <a href=#14 id=14 data-nosnippet>14</a><span class="kw">use </span>itertools::Itertools <span class="kw">as _</span>;
@@ -216,7 +216,7 @@
 <a href=#216 id=216 data-nosnippet>216</a>            <span class="kw">let </span><span class="kw-2">mut </span>solutions = BTreeMap::new();
 <a href=#217 id=217 data-nosnippet>217</a>            <span class="kw">for </span>(name, decl) <span class="kw">in </span>model.as_submodel().symbols().clone().into_iter() {
 <a href=#218 id=218 data-nosnippet>218</a>                <span class="kw">match </span><span class="kw-2">&amp;</span>decl.kind() <span class="kw">as </span><span class="kw-2">&amp;</span>DeclarationKind {
-<a href=#219 id=219 data-nosnippet>219</a>                    conjure_core::ast::DeclarationKind::ValueLetting(expression) =&gt; {
+<a href=#219 id=219 data-nosnippet>219</a>                    conjure_cp_core::ast::DeclarationKind::ValueLetting(expression) =&gt; {
 <a href=#220 id=220 data-nosnippet>220</a>                        <span class="kw">let </span>literal = expression
 <a href=#221 id=221 data-nosnippet>221</a>                            .clone()
 <a href=#222 id=222 data-nosnippet>222</a>                            .into_literal()

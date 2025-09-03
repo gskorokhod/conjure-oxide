@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"externcrate":["conjure_core"],"macro":["bug","domain_int","error","into_matrix","into_matrix_expr","matrix","matrix_expr","range","register_representation","throw_error"],"mod":["ast","bug","context","error","metadata","parse","representation","rule_engine","solver","stats"]};

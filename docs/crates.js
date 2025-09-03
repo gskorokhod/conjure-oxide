@@ -1,2 +1,2 @@
-window.ALL_CRATES = ["conjure_core","conjure_essence_macros","conjure_essence_parser","conjure_oxide","conjure_rule_macros","enum_compatability_macro","minion_sys"];
-//{"start":21,"fragment_lengths":[14,25,25,16,22,27,13]}
+window.ALL_CRATES = ["conjure_cp_core","conjure_cp_enum_compatibility_macro","conjure_cp_essence_macros","conjure_cp_essence_parser","conjure_cp_rule_macros","conjure_oxide","minion_sys"];
+//{"start":21,"fragment_lengths":[17,38,28,28,25,16,13]}
