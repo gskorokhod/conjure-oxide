@@ -24,15 +24,15 @@ digraph G {
             fillcolor="lightyellow"; // Color for crates cluster
             cluster = true;
 
-            conjure_core;
-            conjure_rules;
-            conjure_rule_macros;
-            conjure_essence_macros;
-            conjure_essence_parser;
+            core;
+            rules;
+            rule-macros;
+            essence-macros;
+            essence-parser;
             "tree-sitter-essence";
             tree_morph;
             randicheck;
-            enum_compatability_macro;
+            enum-compatibility-macro;
         }
 
         subgraph cluster_2 {
@@ -49,26 +49,26 @@ digraph G {
     "minion (original C++)" [fillcolor=mistyrose];
 
     // Edges
-    conjure_oxide -> conjure_core;
-    conjure_oxide -> conjure_rules;
+    conjure_oxide -> core;
+    conjure_oxide -> rules;
     conjure_oxide -> minion_sys;
-    conjure_oxide -> conjure_essence_parser;
-    conjure_oxide -> conjure_essence_macros;
+    conjure_oxide -> essence-parser;
+    conjure_oxide -> essence-macros;
 
-    conjure_core -> uniplate;
-    conjure_core -> minion_sys;
-    conjure_core -> enum_compatability_macro;
-    conjure_core -> conjure_rule_macros;
+    core -> uniplate;
+    core -> minion_sys;
+    core -> enum-compatibility-macro;
+    core -> rule-macros;
 
-    conjure_essence_macros -> conjure_core;
-    conjure_essence_macros -> conjure_essence_parser;
+    essence-macros -> core;
+    essence-macros -> essence-parser;
 
-    conjure_rules -> conjure_core;
-    conjure_rules -> conjure_rule_macros;
-    conjure_rules -> conjure_essence_macros;
+    rules -> core;
+    rules -> rule-macros;
+    rules -> essence-macros;
 
-    conjure_essence_parser -> conjure_core;
-    conjure_essence_parser -> "tree-sitter-essence";
+    essence-parser -> core;
+    essence-parser -> "tree-sitter-essence";
 
     tree_morph -> uniplate;
     minion_sys -> "minion (original C++)";
