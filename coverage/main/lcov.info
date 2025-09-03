@@ -368,11 +368,11 @@ DA:332,3091
 DA:337,1188
 DA:338,1188
 DA:339,3377
-DA:340,3894
-DA:341,3894
-DA:342,3894
-DA:343,3894
-DA:344,3894
+DA:340,3773
+DA:341,3773
+DA:342,3773
+DA:343,3773
+DA:344,3773
 DA:345,3377
 DA:346,1188
 DA:348,1188
@@ -2309,11 +2309,11 @@ DA:35,0
 DA:42,0
 DA:43,0
 DA:44,0
-DA:48,1842945
-DA:49,1842945
-DA:50,541268
-DA:51,1301677
-DA:53,1842945
+DA:48,1867268
+DA:49,1867268
+DA:50,511758
+DA:51,1355510
+DA:53,1867268
 DA:63,0
 DA:64,0
 DA:65,0
@@ -2375,17 +2375,17 @@ LF:73
 LH:62
 end_of_record
 SF:crates/tree-morph/src/update.rs
-FN:28,<tree_morph::update::Update<_, _>>::new_subtree
-FN:20,<tree_morph::update::Update<rule_groups::Expr, ()>>::new
-FN:20,<tree_morph::update::Update<_, _>>::new
-FN:20,<tree_morph::update::Update<mixed_fn_rules::Expr, ()>>::new
-FN:20,<tree_morph::update::Update<lambda_calc::Expr, u32>>::new
-FN:20,<tree_morph::update::Update<dirty_clean::Expr, dirty_clean::Meta>>::new
 FN:20,<tree_morph::update::Update<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::new
+FN:28,<tree_morph::update::Update<_, _>>::new_subtree
+FN:20,<tree_morph::update::Update<_, _>>::new
+FN:20,<tree_morph::update::Update<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FN:20,<tree_morph::update::Update<lambda_calc::Expr, u32>>::new
+FN:20,<tree_morph::update::Update<rule_groups::Expr, ()>>::new
+FN:20,<tree_morph::update::Update<dirty_clean::Expr, dirty_clean::Meta>>::new
 FN:20,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:20,<tree_morph::update::Update<enum_rules::Expr, enum_rules::Meta>>::new
 FN:28,<tree_morph::update::Update<_, _>>::new_subtree
-FN:20,<tree_morph::update::Update<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FN:20,<tree_morph::update::Update<mixed_fn_rules::Expr, ()>>::new
 FN:20,<tree_morph::update::Update<_, _>>::new
 FN:20,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:20,<tree_morph::update::Update<shapes::Shape, ()>>::new
@@ -2393,17 +2393,17 @@ FN:20,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression,
 FN:20,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:20,<tree_morph::update::Update<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::new
 FN:20,<tree_morph::update::Update<doctest_bundle_2024::__doctest_14::main::Term, ()>>::new
-FNDA:0,<tree_morph::update::Update<_, _>>::new_subtree
-FNDA:1,<tree_morph::update::Update<rule_groups::Expr, ()>>::new
-FNDA:0,<tree_morph::update::Update<_, _>>::new
-FNDA:1,<tree_morph::update::Update<mixed_fn_rules::Expr, ()>>::new
-FNDA:1,<tree_morph::update::Update<lambda_calc::Expr, u32>>::new
-FNDA:1,<tree_morph::update::Update<dirty_clean::Expr, dirty_clean::Meta>>::new
 FNDA:1,<tree_morph::update::Update<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::new
+FNDA:0,<tree_morph::update::Update<_, _>>::new_subtree
+FNDA:0,<tree_morph::update::Update<_, _>>::new
+FNDA:0,<tree_morph::update::Update<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FNDA:1,<tree_morph::update::Update<lambda_calc::Expr, u32>>::new
+FNDA:1,<tree_morph::update::Update<rule_groups::Expr, ()>>::new
+FNDA:1,<tree_morph::update::Update<dirty_clean::Expr, dirty_clean::Meta>>::new
 FNDA:0,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FNDA:1,<tree_morph::update::Update<enum_rules::Expr, enum_rules::Meta>>::new
 FNDA:0,<tree_morph::update::Update<_, _>>::new_subtree
-FNDA:0,<tree_morph::update::Update<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FNDA:1,<tree_morph::update::Update<mixed_fn_rules::Expr, ()>>::new
 FNDA:0,<tree_morph::update::Update<_, _>>::new
 FNDA:0,<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FNDA:1,<tree_morph::update::Update<shapes::Shape, ()>>::new
@@ -2754,54 +2754,54 @@ end_of_record
 SF:crates/conjure-cp-rule-macros/src/lib.rs
 FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::lit::LitStr>
 FN:130,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
+FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::lit::LitStr>
 FN:19,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
 FN:106,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
 FN:106,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
-FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::lit::LitStr>
+FN:35,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
 FN:35,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
 FN:82,conjure_cp_rule_macros::parse_parenthesized::<_>
-FN:35,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
 FN:106,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
-FN:130,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
 FN:57,conjure_cp_rule_macros::register_rule::{closure#0}
+FN:130,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
 FN:47,conjure_cp_rule_macros::register_rule
 FN:47,conjure_cp_rule_macros::register_rule
 FN:57,conjure_cp_rule_macros::register_rule::{closure#0}
 FN:35,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
-FN:150,conjure_cp_rule_macros::register_rule_set
-FN:150,conjure_cp_rule_macros::register_rule_set
 FN:130,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
 FN:150,conjure_cp_rule_macros::register_rule_set
+FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
+FN:150,conjure_cp_rule_macros::register_rule_set
+FN:150,conjure_cp_rule_macros::register_rule_set
+FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
 FN:19,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
-FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
-FN:82,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
 FN:19,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
 FN:47,conjure_cp_rule_macros::register_rule
 FN:57,conjure_cp_rule_macros::register_rule::{closure#0}
 FNDA:1,conjure_cp_rule_macros::parse_parenthesized::<syn::lit::LitStr>
 FNDA:0,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
-FNDA:1,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
-FNDA:0,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
-FNDA:1,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
 FNDA:1,conjure_cp_rule_macros::parse_parenthesized::<syn::lit::LitStr>
-FNDA:0,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
-FNDA:0,conjure_cp_rule_macros::parse_parenthesized::<_>
-FNDA:1,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
+FNDA:1,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
 FNDA:1,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
-FNDA:1,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
+FNDA:0,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
+FNDA:0,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
+FNDA:1,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
+FNDA:0,conjure_cp_rule_macros::parse_parenthesized::<_>
+FNDA:1,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse
 FNDA:1,conjure_cp_rule_macros::register_rule::{closure#0}
+FNDA:1,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
 FNDA:1,conjure_cp_rule_macros::register_rule
 FNDA:1,conjure_cp_rule_macros::register_rule
 FNDA:0,conjure_cp_rule_macros::register_rule::{closure#0}
 FNDA:1,<conjure_cp_rule_macros::RegisterRuleArgs as syn::parse::Parse>::parse
-FNDA:1,conjure_cp_rule_macros::register_rule_set
-FNDA:0,conjure_cp_rule_macros::register_rule_set
 FNDA:0,<conjure_cp_rule_macros::RuleSetArgs as syn::parse::Parse>::parse::{closure#0}
 FNDA:1,conjure_cp_rule_macros::register_rule_set
-FNDA:0,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
 FNDA:1,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
+FNDA:1,conjure_cp_rule_macros::register_rule_set
+FNDA:0,conjure_cp_rule_macros::register_rule_set
 FNDA:1,conjure_cp_rule_macros::parse_parenthesized::<syn::path::Path>
 FNDA:1,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
+FNDA:0,<conjure_cp_rule_macros::RuleSetAndPriority as syn::parse::Parse>::parse
 FNDA:0,conjure_cp_rule_macros::register_rule
 FNDA:1,conjure_cp_rule_macros::register_rule::{closure#0}
 FNF:26
@@ -3043,22 +3043,22 @@ FN:229,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_0::main::Expr,
 FN:51,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty
 FN:93,<tree_morph::engine::EngineZipper<_>>::mark_dirty_to_root
 FN:24,<tree_morph::engine::EngineNodeState>::is_dirty
+FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#1}
 FN:42,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
 FN:30,<tree_morph::engine::EngineNodeState>::new::<_>
-FN:30,<tree_morph::engine::EngineNodeState>::new::<mixed_fn_rules::Expr>
 FN:207,tree_morph::engine::morph::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>
+FN:30,<tree_morph::engine::EngineNodeState>::new::<mixed_fn_rules::Expr>
 FN:93,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FN:30,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FN:70,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::go_next_dirty::{closure#1}
+FN:51,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty
 FN:24,<tree_morph::engine::EngineNodeState>::is_dirty
 FN:88,<tree_morph::engine::EngineZipper<shapes::Shape>>::set_dirty_from
 FN:70,<tree_morph::engine::EngineZipper<mixed_fn_rules::Expr>>::go_next_dirty::{closure#1}
-FN:99,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
-FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#1}
+FN:30,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FN:229,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
 FN:42,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::new
 FN:30,<tree_morph::engine::EngineNodeState>::new::<_>
-FN:51,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty
+FN:99,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FN:93,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::mark_dirty_to_root
 FN:88,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::set_dirty_from
 FN:229,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
@@ -3066,31 +3066,31 @@ FN:229,tree_morph::engine::morph::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a
 FN:93,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
 FN:99,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FN:88,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
-FN:88,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::set_dirty_from
 FN:207,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>
-FN:51,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty
-FN:229,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
 FN:93,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::mark_dirty_to_root
+FN:88,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::set_dirty_from
+FN:229,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
+FN:51,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty
 FN:70,<tree_morph::engine::EngineZipper<_>>::go_next_dirty::{closure#1}
 FN:99,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::rebuild_root
 FN:207,tree_morph::engine::morph::<_, _, _, _>
-FN:51,<tree_morph::engine::EngineZipper<shapes::Shape>>::go_next_dirty
 FN:58,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#0}
+FN:51,<tree_morph::engine::EngineZipper<shapes::Shape>>::go_next_dirty
 FN:93,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::mark_dirty_to_root
 FN:99,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::rebuild_root
 FN:207,tree_morph::engine::morph::<_, _, _, _>
-FN:99,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::rebuild_root
-FN:42,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
-FN:88,<tree_morph::engine::EngineZipper<_>>::set_dirty_from
-FN:42,<tree_morph::engine::EngineZipper<shapes::Shape>>::new
-FN:42,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::new
-FN:58,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#0}
-FN:229,tree_morph::engine::morph::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}
-FN:58,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#0}
-FN:99,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::rebuild_root
-FN:70,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty::{closure#1}
-FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#1}
 FN:42,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::new
+FN:58,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#0}
+FN:88,<tree_morph::engine::EngineZipper<_>>::set_dirty_from
+FN:99,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::rebuild_root
+FN:42,<tree_morph::engine::EngineZipper<shapes::Shape>>::new
+FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#1}
+FN:229,tree_morph::engine::morph::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}
+FN:99,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::rebuild_root
+FN:42,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::new
+FN:70,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty::{closure#1}
+FN:42,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
+FN:58,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#0}
 FN:51,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty
 FN:51,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty
 FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#1}
@@ -3129,11 +3129,11 @@ FN:93,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::mark_dirty_to_root
 FN:93,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::mark_dirty_to_root
 FN:99,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FN:93,<tree_morph::engine::EngineZipper<_>>::mark_dirty_to_root
-FN:229,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
-FN:88,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
-FN:93,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FN:30,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_0::main::Expr>
 FN:58,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty::{closure#0}
+FN:30,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_0::main::Expr>
+FN:88,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
+FN:229,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
+FN:93,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
 FN:88,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::set_dirty_from
 FN:99,<tree_morph::engine::EngineZipper<mixed_fn_rules::Expr>>::rebuild_root
 FN:58,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::go_next_dirty::{closure#0}
@@ -3141,37 +3141,37 @@ FN:207,tree_morph::engine::morph::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(
 FN:93,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::mark_dirty_to_root
 FN:99,<tree_morph::engine::EngineZipper<_>>::rebuild_root
 FN:229,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>::{closure#0}
+FN:229,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>::{closure#0}
 FN:42,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::new
 FN:70,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
-FN:229,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>::{closure#0}
 FN:58,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#0}
 FN:99,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FN:207,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
 FN:42,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::new
 FN:42,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::new
 FN:88,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::set_dirty_from
-FN:229,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
 FN:99,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::rebuild_root
-FN:70,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FN:30,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_14::main::Term>
+FN:229,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
+FN:70,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FN:30,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
-FN:88,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::set_dirty_from
 FN:70,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty::{closure#1}
+FN:88,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::set_dirty_from
 FN:42,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
 FN:207,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>>
 FN:93,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FN:30,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FN:42,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::new
 FN:30,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_13::main::Expr>
+FN:30,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FN:51,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty
-FN:70,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
-FN:207,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
 FN:99,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::rebuild_root
+FN:207,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
+FN:70,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FN:207,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
-FN:70,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty::{closure#1}
+FN:51,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty
 FN:30,<tree_morph::engine::EngineNodeState>::new::<lambda_calc::Expr>
 FN:229,tree_morph::engine::morph::<_, _, _, _>::{closure#0}
-FN:51,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty
+FN:70,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty::{closure#1}
 FN:51,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::go_next_dirty
 FN:51,<tree_morph::engine::EngineZipper<_>>::go_next_dirty
 FN:207,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>
@@ -3213,22 +3213,22 @@ FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_0::main::Expr,
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineZipper<_>>::mark_dirty_to_root
 FNDA:1,<tree_morph::engine::EngineNodeState>::is_dirty
+FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#1}
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
 FNDA:0,<tree_morph::engine::EngineNodeState>::new::<_>
-FNDA:1,<tree_morph::engine::EngineNodeState>::new::<mixed_fn_rules::Expr>
 FNDA:1,tree_morph::engine::morph::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>
+FNDA:1,<tree_morph::engine::EngineNodeState>::new::<mixed_fn_rules::Expr>
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FNDA:0,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FNDA:1,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::go_next_dirty::{closure#1}
+FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineNodeState>::is_dirty
 FNDA:1,<tree_morph::engine::EngineZipper<shapes::Shape>>::set_dirty_from
 FNDA:1,<tree_morph::engine::EngineZipper<mixed_fn_rules::Expr>>::go_next_dirty::{closure#1}
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
-FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#1}
+FNDA:0,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FNDA:1,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
 FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::new
 FNDA:0,<tree_morph::engine::EngineNodeState>::new::<_>
-FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::mark_dirty_to_root
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::set_dirty_from
 FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
@@ -3236,31 +3236,31 @@ FNDA:1,tree_morph::engine::morph::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
-FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::set_dirty_from
 FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>
-FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty
-FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
 FNDA:0,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::mark_dirty_to_root
+FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::set_dirty_from
+FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>::{closure#0}
+FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineZipper<_>>::go_next_dirty::{closure#1}
 FNDA:1,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::rebuild_root
 FNDA:0,tree_morph::engine::morph::<_, _, _, _>
-FNDA:1,<tree_morph::engine::EngineZipper<shapes::Shape>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#0}
+FNDA:1,<tree_morph::engine::EngineZipper<shapes::Shape>>::go_next_dirty
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::mark_dirty_to_root
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::rebuild_root
 FNDA:0,tree_morph::engine::morph::<_, _, _, _>
-FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::rebuild_root
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
-FNDA:0,<tree_morph::engine::EngineZipper<_>>::set_dirty_from
-FNDA:1,<tree_morph::engine::EngineZipper<shapes::Shape>>::new
-FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::new
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#0}
-FNDA:1,tree_morph::engine::morph::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}
-FNDA:0,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#0}
-FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::rebuild_root
-FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty::{closure#1}
-FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#1}
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::new
+FNDA:0,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#0}
+FNDA:0,<tree_morph::engine::EngineZipper<_>>::set_dirty_from
+FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::rebuild_root
+FNDA:1,<tree_morph::engine::EngineZipper<shapes::Shape>>::new
+FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::go_next_dirty::{closure#1}
+FNDA:1,tree_morph::engine::morph::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}
+FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::rebuild_root
+FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::new
+FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty::{closure#1}
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#0}
 FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty::{closure#1}
@@ -3299,11 +3299,11 @@ FNDA:1,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::mark_dirty_to_root
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::mark_dirty_to_root
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FNDA:0,<tree_morph::engine::EngineZipper<_>>::mark_dirty_to_root
-FNDA:1,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FNDA:1,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_0::main::Expr>
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty::{closure#0}
+FNDA:1,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_0::main::Expr>
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::set_dirty_from
+FNDA:1,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>::{closure#0}
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
 FNDA:1,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::set_dirty_from
 FNDA:1,<tree_morph::engine::EngineZipper<mixed_fn_rules::Expr>>::rebuild_root
 FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::go_next_dirty::{closure#0}
@@ -3311,37 +3311,37 @@ FNDA:1,tree_morph::engine::morph::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(
 FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::mark_dirty_to_root
 FNDA:0,<tree_morph::engine::EngineZipper<_>>::rebuild_root
 FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>::{closure#0}
+FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>::{closure#0}
 FNDA:1,<tree_morph::engine::EngineZipper<rule_groups::Expr>>::new
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
-FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>::{closure#0}
 FNDA:0,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_15::main::Foo>>::go_next_dirty::{closure#0}
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::rebuild_root
 FNDA:1,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::new
 FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::new
 FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::set_dirty_from
-FNDA:1,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::rebuild_root
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FNDA:1,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_14::main::Term>
+FNDA:1,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FNDA:0,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
-FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::set_dirty_from
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::go_next_dirty::{closure#1}
+FNDA:1,<tree_morph::engine::EngineZipper<dirty_clean::Expr>>::set_dirty_from
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::new
 FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>>
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::mark_dirty_to_root
-FNDA:0,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_0::main::Expr>>::new
 FNDA:1,<tree_morph::engine::EngineNodeState>::new::<doctest_bundle_2024::__doctest_13::main::Expr>
+FNDA:0,<tree_morph::engine::EngineNodeState>::new::<conjure_cp_core::ast::expressions::Expression>
 FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty
-FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
-FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
 FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_13::main::Expr>>::rebuild_root
+FNDA:0,tree_morph::engine::morph::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
+FNDA:0,<tree_morph::engine::EngineZipper<conjure_cp_core::ast::expressions::Expression>>::go_next_dirty::{closure#1}
 FNDA:1,tree_morph::engine::morph::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
-FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty::{closure#1}
+FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty
 FNDA:1,<tree_morph::engine::EngineNodeState>::new::<lambda_calc::Expr>
 FNDA:0,tree_morph::engine::morph::<_, _, _, _>::{closure#0}
-FNDA:1,<tree_morph::engine::EngineZipper<doctest_bundle_2024::__doctest_14::main::Term>>::go_next_dirty
+FNDA:1,<tree_morph::engine::EngineZipper<enum_rules::Expr>>::go_next_dirty::{closure#1}
 FNDA:1,<tree_morph::engine::EngineZipper<lambda_calc::Expr>>::go_next_dirty
 FNDA:0,<tree_morph::engine::EngineZipper<_>>::go_next_dirty
 FNDA:1,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>
@@ -6342,58 +6342,58 @@ LF:505
 LH:390
 end_of_record
 SF:crates/tree-morph/src/rule.rs
-FN:91,<dirty_clean::MyRule as tree_morph::rule::Rule<dirty_clean::Expr, dirty_clean::Meta>>::apply_into_update
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply_into_update
+FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
 FN:104,<_ as tree_morph::rule::Rule<_, _>>::apply
-FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
+FN:91,<doctest_bundle_2024::__doctest_14::main::CustomRule as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
 FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr> as tree_morph::rule::Rule<rule_groups::Expr, ()>>::apply_into_update
 FN:91,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
-FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FN:91,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
-FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
-FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply_into_update
-FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
-FN:91,<doctest_bundle_2024::__doctest_14::main::CustomRule as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
-FN:91,<enum_rules::MyRule as tree_morph::rule::Rule<enum_rules::Expr, enum_rules::Meta>>::apply_into_update
-FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FN:91,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply_into_update
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
+FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
 FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
+FN:91,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
+FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
+FN:91,<dirty_clean::MyRule as tree_morph::rule::Rule<dirty_clean::Expr, dirty_clean::Meta>>::apply_into_update
+FN:91,<enum_rules::MyRule as tree_morph::rule::Rule<enum_rules::Expr, enum_rules::Meta>>::apply_into_update
+FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
+FN:91,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply_into_update
+FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply_into_update
+FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
 FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply
 FN:91,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FN:104,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
-FN:104,<_ as tree_morph::rule::Rule<_, _>>::apply
 FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply_into_update
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply_into_update
+FN:104,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
+FN:104,<_ as tree_morph::rule::Rule<_, _>>::apply
 FN:104,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr> as tree_morph::rule::Rule<rule_groups::Expr, ()>>::apply
 FN:91,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply_into_update
-FNDA:1,<dirty_clean::MyRule as tree_morph::rule::Rule<dirty_clean::Expr, dirty_clean::Meta>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply_into_update
+FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
 FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply
-FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
+FNDA:1,<doctest_bundle_2024::__doctest_14::main::CustomRule as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr> as tree_morph::rule::Rule<rule_groups::Expr, ()>>::apply_into_update
 FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
-FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
-FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
-FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply_into_update
-FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
-FNDA:1,<doctest_bundle_2024::__doctest_14::main::CustomRule as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
-FNDA:1,<enum_rules::MyRule as tree_morph::rule::Rule<enum_rules::Expr, enum_rules::Meta>>::apply_into_update
-FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FNDA:1,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply_into_update
+FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
+FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply_into_update
+FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
+FNDA:1,<dirty_clean::MyRule as tree_morph::rule::Rule<dirty_clean::Expr, dirty_clean::Meta>>::apply_into_update
+FNDA:1,<enum_rules::MyRule as tree_morph::rule::Rule<enum_rules::Expr, enum_rules::Meta>>::apply_into_update
+FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
+FNDA:1,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply_into_update
+FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply_into_update
+FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply
 FNDA:0,<&conjure_cp_core::rule_engine::rule::Rule as tree_morph::rule::Rule<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply_into_update
-FNDA:1,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
-FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply_into_update
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr> as tree_morph::rule::Rule<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply_into_update
+FNDA:1,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
+FNDA:0,<_ as tree_morph::rule::Rule<_, _>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr> as tree_morph::rule::Rule<rule_groups::Expr, ()>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply_into_update
 FNF:27
@@ -8378,9 +8378,9 @@ DA:258,269321
 DA:271,1607021
 DA:272,1607021
 DA:273,1607021
-DA:287,975182
-DA:288,975182
-DA:289,975182
+DA:287,974766
+DA:288,974766
+DA:289,974766
 DA:292,493324
 DA:293,493324
 DA:294,493324
@@ -8433,9 +8433,9 @@ DA:377,195
 DA:378,195
 DA:379,195
 DA:380,195
-DA:390,12645802
-DA:392,12645802
-DA:393,12645802
+DA:390,12645386
+DA:392,12645386
+DA:393,12645386
 DA:396,1232790
 DA:398,1232790
 DA:399,1232790
@@ -8444,9 +8444,9 @@ DA:433,169
 DA:434,169
 DA:435,169
 DA:436,169
-DA:439,2582203
-DA:440,2582203
-DA:441,2582203
+DA:439,2581787
+DA:440,2581787
+DA:441,2581787
 DA:444,0
 DA:445,0
 DA:446,0
@@ -8521,9 +8521,9 @@ DA:557,0
 DA:561,0
 DA:562,0
 DA:563,0
-DA:567,3632551
-DA:568,3632551
-DA:569,3632551
+DA:567,3632577
+DA:568,3632577
+DA:569,3632577
 DA:575,3817
 DA:577,3817
 DA:578,3817
@@ -8866,11 +8866,11 @@ DA:66,182419
 DA:67,33712
 DA:68,148707
 DA:72,182419
-DA:76,886067
-DA:77,886067
-DA:78,259571
-DA:79,626496
-DA:81,886067
+DA:76,885781
+DA:77,885781
+DA:78,259701
+DA:79,626080
+DA:81,885781
 DA:85,377
 DA:86,377
 DA:87,377
@@ -9577,45 +9577,45 @@ LF:170
 LH:90
 end_of_record
 SF:crates/tree-morph/src/commands.rs
-FN:74,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::new
-FN:104,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::apply
-FN:94,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::mut_meta
-FN:87,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
-FN:104,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::apply
-FN:104,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::apply
-FN:94,<tree_morph::commands::Commands<_, _>>::mut_meta
+FN:104,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::apply
+FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:94,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
+FN:87,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
+FN:104,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::apply
+FN:74,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::new
+FN:94,<tree_morph::commands::Commands<_, _>>::mut_meta
+FN:104,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::apply
 FN:87,<tree_morph::commands::Commands<_, _>>::transform
 FN:104,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
+FN:94,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::mut_meta
+FN:104,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::apply
+FN:94,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
 FN:104,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
-FN:94,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::mut_meta
-FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
 FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
 FN:87,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
 FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FN:104,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
-FN:74,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::new
+FN:94,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::mut_meta
 FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
+FN:104,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
 FN:74,<tree_morph::commands::Commands<_, _>>::new
 FN:74,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::new
-FN:104,<tree_morph::commands::Commands<shapes::Shape, ()>>::apply
 FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply
-FN:94,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::mut_meta
-FN:99,<tree_morph::commands::Commands<_, _>>::clear
+FN:104,<tree_morph::commands::Commands<shapes::Shape, ()>>::apply
 FN:74,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::new
-FN:104,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::apply
+FN:99,<tree_morph::commands::Commands<_, _>>::clear
 FN:87,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::transform
+FN:104,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::apply
+FN:94,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::mut_meta
 FN:94,<tree_morph::commands::Commands<_, _>>::mut_meta
 FN:74,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::new
-FN:74,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::new
+FN:74,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::new
 FN:74,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::new
-FN:104,<tree_morph::commands::Commands<_, _>>::apply
-FN:74,<tree_morph::commands::Commands<shapes::Shape, ()>>::new
-FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:74,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FN:104,<tree_morph::commands::Commands<_, _>>::apply
+FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FN:74,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>>::new
-FN:94,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::mut_meta
+FN:74,<tree_morph::commands::Commands<shapes::Shape, ()>>::new
+FN:74,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::new
 FN:87,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
 FN:94,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
 FN:94,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
@@ -9626,48 +9626,48 @@ FN:74,<tree_morph::commands::Commands<_, _>>::new
 FN:104,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
 FN:94,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::mut_meta
 FN:87,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
-FN:104,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::apply
-FN:74,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FN:94,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
-FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::new
-FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::apply
-FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::mut_meta
-FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
-FNDA:1,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::apply
-FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::apply
-FNDA:0,<tree_morph::commands::Commands<_, _>>::mut_meta
+FN:94,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::mut_meta
+FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
+FN:104,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
+FNDA:1,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::apply
+FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
+FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
+FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::apply
+FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::new
+FNDA:0,<tree_morph::commands::Commands<_, _>>::mut_meta
+FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::apply
 FNDA:0,<tree_morph::commands::Commands<_, _>>::transform
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
+FNDA:1,<tree_morph::commands::Commands<dirty_clean::Expr, dirty_clean::Meta>>::mut_meta
+FNDA:1,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::apply
+FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
-FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::mut_meta
-FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FNDA:0,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
-FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::new
+FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::mut_meta
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::apply
+FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
 FNDA:0,<tree_morph::commands::Commands<_, _>>::new
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::new
-FNDA:1,<tree_morph::commands::Commands<shapes::Shape, ()>>::apply
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>>::apply
-FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::mut_meta
-FNDA:0,<tree_morph::commands::Commands<_, _>>::clear
+FNDA:1,<tree_morph::commands::Commands<shapes::Shape, ()>>::apply
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::new
-FNDA:1,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::apply
+FNDA:0,<tree_morph::commands::Commands<_, _>>::clear
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::transform
+FNDA:1,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::apply
+FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::mut_meta
 FNDA:0,<tree_morph::commands::Commands<_, _>>::mut_meta
 FNDA:1,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::new
-FNDA:1,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::new
+FNDA:1,<tree_morph::commands::Commands<enum_rules::Expr, enum_rules::Meta>>::new
 FNDA:1,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::new
-FNDA:0,<tree_morph::commands::Commands<_, _>>::apply
-FNDA:1,<tree_morph::commands::Commands<shapes::Shape, ()>>::new
-FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::new
+FNDA:0,<tree_morph::commands::Commands<_, _>>::apply
+FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
 FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>>::new
-FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::mut_meta
+FNDA:1,<tree_morph::commands::Commands<shapes::Shape, ()>>::new
+FNDA:1,<tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>>::new
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
@@ -9678,9 +9678,9 @@ FNDA:0,<tree_morph::commands::Commands<_, _>>::new
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::apply
 FNDA:1,<tree_morph::commands::Commands<lambda_calc::Expr, u32>>::mut_meta
 FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::transform
-FNDA:1,<tree_morph::commands::Commands<rule_groups::Expr, ()>>::apply
-FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::new
-FNDA:0,<tree_morph::commands::Commands<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>::mut_meta
+FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>>::mut_meta
+FNDA:0,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>>::apply
+FNDA:1,<tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>>::apply
 FNF:52
 FNH:25
 BRF:0
@@ -12701,12 +12701,12 @@ DA:518,52
 DA:519,52
 DA:520,26
 DA:524,27326
-DA:529,504036
-DA:530,504036
-DA:531,486824
+DA:529,504166
+DA:530,504166
+DA:531,486954
 DA:532,15340
 DA:533,1872
-DA:535,504036
+DA:535,504166
 DA:546,1
 DA:548,1
 DA:549,1
@@ -13203,16 +13203,16 @@ DA:40,1248
 DA:44,0
 DA:45,0
 DA:46,0
-DA:52,1949857
-DA:53,1949857
-DA:54,1194986
-DA:55,335764
-DA:56,382837
-DA:57,382837
-DA:58,382837
+DA:52,1948843
+DA:53,1948843
+DA:54,1194531
+DA:55,335803
+DA:56,382239
+DA:57,382239
+DA:58,382239
 DA:60,36270
 DA:62,36270
-DA:65,1949857
+DA:65,1948843
 DA:69,0
 DA:70,0
 DA:71,0
@@ -14083,9 +14083,9 @@ DA:580,32734
 DA:581,32734
 DA:583,195
 DA:584,32734
-DA:585,182845
+DA:585,181727
 DA:586,5915
-DA:588,49959
+DA:588,49595
 DA:589,4121
 DA:591,2327
 DA:592,2327
@@ -17881,16 +17881,16 @@ BRH:0
 DA:21,26
 DA:23,26
 DA:24,26
-DA:27,91663
-DA:28,91663
-DA:29,91663
-DA:30,78975
-DA:31,78975
-DA:32,78975
+DA:27,91780
+DA:28,91780
+DA:29,91780
+DA:30,79092
+DA:31,79092
+DA:32,79092
 DA:33,2561
 DA:35,13
 DA:36,13
-DA:37,91650
+DA:37,91767
 DA:43,26
 DA:44,13
 DA:45,13
@@ -18351,11 +18351,11 @@ LF:97
 LH:60
 end_of_record
 SF:crates/tree-sitter-essence/bindings/rust/lib.rs
-FN:45,tree_sitter_essence::tests::test_can_load_grammar
 FN:7,rust_out::main
+FN:45,tree_sitter_essence::tests::test_can_load_grammar
 FN:7,rust_out::main::_doctest_main_crates_tree_sitter_essence_bindings_rust_lib_rs_6_0
-FNDA:1,tree_sitter_essence::tests::test_can_load_grammar
 FNDA:1,rust_out::main
+FNDA:1,tree_sitter_essence::tests::test_can_load_grammar
 FNDA:1,rust_out::main::_doctest_main_crates_tree_sitter_essence_bindings_rust_lib_rs_6_0
 FNF:3
 FNH:3
@@ -24104,12 +24104,12 @@ DA:183,7514
 DA:187,0
 DA:188,0
 DA:189,0
-DA:193,598
-DA:194,598
-DA:195,598
-DA:201,15145
-DA:202,15145
-DA:203,15145
+DA:193,468
+DA:194,468
+DA:195,468
+DA:201,15808
+DA:202,15808
+DA:203,15808
 DA:207,0
 DA:208,0
 DA:209,0
@@ -25916,15 +25916,15 @@ DA:103,377
 DA:105,34307
 DA:106,34307
 DA:107,34307
-DA:109,60905
+DA:109,60606
 DA:110,34307
-DA:111,7709
-DA:112,7709
-DA:113,7709
-DA:114,26598
+DA:111,8008
+DA:112,8008
+DA:113,8008
+DA:114,26299
 DA:117,34307
-DA:118,7709
-DA:119,26598
+DA:118,8008
+DA:119,26299
 DA:122,377
 DA:123,377
 DA:127,611
@@ -25942,9 +25942,9 @@ DA:142,234
 DA:143,234
 DA:148,611
 DA:149,611
-DA:153,7631
-DA:154,7631
-DA:155,7631
+DA:153,7787
+DA:154,7787
+DA:155,7787
 DA:161,44447
 DA:162,44447
 DA:163,44447
@@ -26439,9 +26439,9 @@ DA:651,328
 DA:652,328
 DA:653,328
 DA:654,328
-DA:655,37912
-DA:656,37912
-DA:657,37912
+DA:655,37710
+DA:656,37710
+DA:657,37710
 DA:658,328
 DA:660,328
 DA:661,328
@@ -26452,7 +26452,7 @@ DA:666,328
 DA:667,328
 DA:668,328
 DA:669,328
-DA:670,37912
+DA:670,37710
 DA:671,328
 DA:674,1
 DA:675,1
@@ -26461,116 +26461,116 @@ LF:400
 LH:212
 end_of_record
 SF:crates/tree-morph/src/helpers.rs
-FN:19,tree_morph::helpers::one_or_select::<_, _, _, _>
+FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FN:19,tree_morph::helpers::one_or_select::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>, &tree_morph::helpers::select_first<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>>
 FN:41,tree_morph::helpers::select_first::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>
-FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>
 FN:76,tree_morph::helpers::select_user_input::<_, _, _>
 FN:167,tree_morph::helpers::select_smallest_subtree::<_, _, _>
-FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>, &tree_morph::helpers::select_panic<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>>
+FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
 FN:41,tree_morph::helpers::select_first::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>
 FN:167,tree_morph::helpers::select_smallest_subtree::<_, _, _>
 FN:76,tree_morph::helpers::select_user_input::<_, _, _>
 FN:59,tree_morph::helpers::select_panic::<_, _, _>
 FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>
 FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FN:148,tree_morph::helpers::select_random::<_, _, _>
+FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FN:41,tree_morph::helpers::select_first::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>
+FN:148,tree_morph::helpers::select_random::<_, _, _>
 FN:99,tree_morph::helpers::select_user_input::<_, _, _>::{closure#0}
 FN:41,tree_morph::helpers::select_first::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>
+FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>, &tree_morph::helpers::select_panic<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>>
 FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FN:19,tree_morph::helpers::one_or_select::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>, &tree_morph::helpers::select_first<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>>
 FN:41,tree_morph::helpers::select_first::<_, _, _>
 FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FN:175,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}
-FN:41,tree_morph::helpers::select_first::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>
-FN:19,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
-FN:41,tree_morph::helpers::select_first::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>
+FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>
+FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
+FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>>
 FN:19,tree_morph::helpers::one_or_select::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, &tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>
-FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FN:19,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
 FN:175,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}
 FN:99,tree_morph::helpers::select_user_input::<_, _, _>::{closure#0}
 FN:41,tree_morph::helpers::select_first::<_, _, _>
 FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FN:148,tree_morph::helpers::select_random::<_, _, _>
-FN:176,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
-FN:19,tree_morph::helpers::one_or_select::<_, _, _, _>
-FN:19,tree_morph::helpers::one_or_select::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>, &tree_morph::helpers::select_first<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>>
-FN:19,tree_morph::helpers::one_or_select::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, &tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>
-FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FN:19,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
-FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>>
 FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>
 FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>>
+FN:176,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
 FN:59,tree_morph::helpers::select_panic::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>
+FN:19,tree_morph::helpers::one_or_select::<_, _, _, _>
+FN:41,tree_morph::helpers::select_first::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>
+FN:19,tree_morph::helpers::one_or_select::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>, &tree_morph::helpers::select_first<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>>
+FN:19,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
+FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
+FN:19,tree_morph::helpers::one_or_select::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, &tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>
+FN:41,tree_morph::helpers::select_first::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>
 FN:59,tree_morph::helpers::select_panic::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>
-FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>
 FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>
 FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>
+FN:19,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>
 FN:59,tree_morph::helpers::select_panic::<_, _, _>
-FN:41,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>
-FN:19,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
+FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FN:41,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FN:19,tree_morph::helpers::one_or_select::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, &tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>
 FN:176,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
-FN:59,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FNDA:0,tree_morph::helpers::one_or_select::<_, _, _, _>
+FN:19,tree_morph::helpers::one_or_select::<_, _, _, _>
+FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:1,tree_morph::helpers::one_or_select::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>, &tree_morph::helpers::select_first<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>>
 FNDA:0,tree_morph::helpers::select_first::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>
-FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>
 FNDA:0,tree_morph::helpers::select_user_input::<_, _, _>
 FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>
-FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>, &tree_morph::helpers::select_panic<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>>
+FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
 FNDA:0,tree_morph::helpers::select_first::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>
 FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>
 FNDA:0,tree_morph::helpers::select_user_input::<_, _, _>
 FNDA:0,tree_morph::helpers::select_panic::<_, _, _>
 FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>
 FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FNDA:0,tree_morph::helpers::select_random::<_, _, _>
+FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FNDA:0,tree_morph::helpers::select_first::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>
+FNDA:0,tree_morph::helpers::select_random::<_, _, _>
 FNDA:0,tree_morph::helpers::select_user_input::<_, _, _>::{closure#0}
 FNDA:0,tree_morph::helpers::select_first::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>
+FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>, &tree_morph::helpers::select_panic<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>>
 FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FNDA:1,tree_morph::helpers::one_or_select::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>, &tree_morph::helpers::select_first<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>>
 FNDA:0,tree_morph::helpers::select_first::<_, _, _>
 FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}
-FNDA:0,tree_morph::helpers::select_first::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>
-FNDA:1,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
-FNDA:0,tree_morph::helpers::select_first::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>
+FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>
+FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
+FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>>
 FNDA:1,tree_morph::helpers::one_or_select::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, &tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>
-FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:1,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_panic<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
 FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}
 FNDA:0,tree_morph::helpers::select_user_input::<_, _, _>::{closure#0}
 FNDA:0,tree_morph::helpers::select_first::<_, _, _>
 FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FNDA:0,tree_morph::helpers::select_random::<_, _, _>
-FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
-FNDA:0,tree_morph::helpers::one_or_select::<_, _, _, _>
-FNDA:1,tree_morph::helpers::one_or_select::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>, &tree_morph::helpers::select_first<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>>
-FNDA:1,tree_morph::helpers::one_or_select::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, &tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>
-FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
-FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
-FNDA:1,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
-FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>>
 FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>>
 FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>>
+FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
 FNDA:0,tree_morph::helpers::select_panic::<doctest_bundle_2024::__doctest_13::main::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_13::main::Expr, i32>, &'b doctest_bundle_2024::__doctest_13::main::Expr, &'c i32) -> core::option::Option<doctest_bundle_2024::__doctest_13::main::Expr>>
+FNDA:0,tree_morph::helpers::one_or_select::<_, _, _, _>
+FNDA:0,tree_morph::helpers::select_first::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>
+FNDA:1,tree_morph::helpers::one_or_select::<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>, &tree_morph::helpers::select_first<rule_groups::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rule_groups::Expr, ()>, &'b rule_groups::Expr, &'c ()) -> core::option::Option<rule_groups::Expr>>>
+FNDA:1,tree_morph::helpers::one_or_select::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>, &tree_morph::helpers::select_first<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>>
+FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &for<'a, 'b, 'c> fn(&'a conjure_cp_core::ast::expressions::Expression, &'b mut dyn core::iter::traits::iterator::Iterator<Item = (&'c &conjure_cp_core::rule_engine::rule::Rule, tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>)> + 'b) -> core::option::Option<tree_morph::update::Update<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable>>>
+FNDA:1,tree_morph::helpers::one_or_select::<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, &tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>
+FNDA:0,tree_morph::helpers::select_first::<mixed_fn_rules::Expr, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr>>
 FNDA:1,tree_morph::helpers::select_panic::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape>>
-FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>
 FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_0::main::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_0::main::Expr, bool>, &'b doctest_bundle_2024::__doctest_0::main::Expr, &'c bool) -> core::option::Option<doctest_bundle_2024::__doctest_0::main::Expr>>
 FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_14::main::Term, ()>, &'b doctest_bundle_2024::__doctest_14::main::Term, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_14::main::Term>>
+FNDA:0,tree_morph::helpers::one_or_select::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule, &tree_morph::helpers::select_panic<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>>
 FNDA:0,tree_morph::helpers::select_panic::<_, _, _>
-FNDA:0,tree_morph::helpers::select_first::<doctest_bundle_2024::__doctest_14::main::Term, (), doctest_bundle_2024::__doctest_14::main::CustomRule>
-FNDA:1,tree_morph::helpers::one_or_select::<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>, &tree_morph::helpers::select_first<doctest_bundle_2024::__doctest_15::main::Foo, (), for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<doctest_bundle_2024::__doctest_15::main::Foo, ()>, &'b doctest_bundle_2024::__doctest_15::main::Foo, &'c ()) -> core::option::Option<doctest_bundle_2024::__doctest_15::main::Foo>>>
+FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:0,tree_morph::helpers::select_first::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
 FNDA:1,tree_morph::helpers::one_or_select::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, &tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>
 FNDA:0,tree_morph::helpers::select_smallest_subtree::<_, _, _>::{closure#0}::{closure#0}
-FNDA:0,tree_morph::helpers::select_panic::<conjure_cp_core::ast::expressions::Expression, conjure_cp_core::ast::symbol_table::SymbolTable, &conjure_cp_core::rule_engine::rule::Rule>
+FNDA:0,tree_morph::helpers::one_or_select::<_, _, _, _>
 FNF:55
 FNH:13
 BRF:0
